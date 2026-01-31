@@ -1,51 +1,37 @@
 # 📺 Sistema Automático de Publicación para YouTube - Canal "El Tío Jota"
 
-Este sistema automatiza la recepción de videos desde Telegram, analiza el mejor horario de publicación basado en la audiencia del canal, genera metadatos optimizados (título, descripción, hashtags) y realiza la subida a YouTube mediante la API oficial.
+Este sistema avanzado automatiza la gestión de contenidos para YouTube desde Telegram, integrando análisis de tendencias y programación inteligente.
 
-## 🚀 Características
+## ✨ Novedades: Aviso Diario de Contenido
+Cada mañana, el sistema analiza tendencias (Google/YouTube Trends) y el rendimiento histórico del canal para enviarte una sugerencia de publicación vía Telegram:
+- **Tema recomendado** basado en tendencias actuales.
+- **Título e Idea** de contenido.
+- **Formato sugerido** (Short o Video Largo).
+- **Hora óptima** de publicación.
 
-- **Recepción vía Telegram**: Envía un video al bot y el sistema se encarga del resto.
-- **Análisis de Audiencia**: Utiliza YouTube Analytics para encontrar la hora de mayor impacto.
-- **Optimización con IA**: Generación automática de títulos y descripciones optimizados para SEO.
-- **Modos de Control**: Soporta modos Manual, Semiautomático y Automático.
-- **Listo para Railway**: Configuración incluida para despliegue inmediato.
+## 🚀 Características Principales
 
-## 🛠️ Requisitos Previos
+- **Recepción vía Telegram**: Envía un video y el sistema procesa la subida.
+- **Análisis de Audiencia**: Determina la hora de mayor impacto.
+- **Optimización con IA**: Metadatos generados para maximizar el SEO.
+- **Modos de Control**: 
+  - `manual`: Solo sugerencias, tú decides qué hacer.
+  - `semiautomatic`: El sistema prepara todo y pide tu confirmación final.
+  - `automatic`: Gestión total sin intervención.
 
-1. **Telegram Bot Token**: Créalo con [@BotFather](https://t.me/botfather).
-2. **Google Cloud Project**:
-   - Habilita YouTube Data API v3 y YouTube Analytics API.
-   - Crea credenciales OAuth 2.0.
-   - Obtén el `Client ID`, `Client Secret` y un `Refresh Token`.
-3. **OpenAI API Key** (Opcional): Para generación de metadatos con IA.
+## ⚙️ Configuración y Seguridad
 
-## 📦 Instalación y Despliegue
+Puedes activar o desactivar funciones específicas mediante variables de entorno:
+- `AUTO_UPLOAD`: Habilita la subida automática.
+- `AUTO_SCHEDULE`: Habilita la programación según analíticas.
+- `DAILY_ADVICE`: Activa el mensaje matutino de sugerencias.
+- `SYSTEM_MODE`: Cambia entre los modos de control.
 
-### Local
-1. Clona el repositorio.
-2. Instala dependencias: `pip install -r requirements.txt`.
-3. Configura el archivo `.env` basándote en `.env.example`.
-4. Ejecuta: `python main.py`.
+## 🛠️ Requisitos e Instalación
 
-### Railway
-1. Conecta este repositorio a tu cuenta de Railway.
-2. Configura las **Variables de Entorno** en el panel de Railway.
-3. El sistema se desplegará automáticamente usando el `Procfile`.
-
-## ⚙️ Variables de Entorno
-
-| Variable | Descripción |
-|----------|-------------|
-| `TELEGRAM_BOT_TOKEN` | Token de tu bot de Telegram. |
-| `YOUTUBE_CLIENT_ID` | ID de cliente de Google Cloud. |
-| `YOUTUBE_CLIENT_SECRET` | Secreto de cliente de Google Cloud. |
-| `YOUTUBE_REFRESH_TOKEN` | Token de refresco para acceso permanente. |
-| `OPENAI_API_KEY` | (Opcional) Para optimización con GPT. |
-| `SYSTEM_MODE` | `manual`, `semiautomatic` o `automatic`. |
-
-## 🔒 Seguridad y Políticas
-
-Este sistema utiliza únicamente la **API oficial de YouTube** y cumple con sus políticas de uso. No utiliza técnicas de spam ni bots prohibidos.
+1. **Tokens**: Necesitas `TELEGRAM_BOT_TOKEN`, `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET` y `YOUTUBE_REFRESH_TOKEN`.
+2. **OpenAI**: Opcional para mejores sugerencias de títulos.
+3. **Despliegue**: Listo para Railway mediante el `Procfile` incluido.
 
 ---
 Desarrollado para el canal **El Tío Jota**.
