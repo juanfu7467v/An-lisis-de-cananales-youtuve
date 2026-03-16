@@ -12,4 +12,4 @@ FROM python:3.12.13-slim
 WORKDIR /app
 COPY --from=builder /app/.venv .venv/
 COPY . .
-CMD ["/app/.venv/bin/gunicorn", "-w", "4", "main:app", "-b", "0.0.0.0:8080"]
+
