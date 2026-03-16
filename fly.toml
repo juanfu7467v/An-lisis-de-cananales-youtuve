@@ -1,1 +1,4 @@
 app = "sistema-analisis-canales"\nprimary_region = "mad"\n\n[http_service]\n  internal_port = 8080\n  force_https = true\n  auto_stop_machines = true\n  auto_start_machines = true\n  min_machines_running = 0\n  processes = ["app"]\n\n[env]\n  PORT = "8080"
+
+[processes]
+  app = "gunicorn -w 4 main:app -b 0.0.0.0:8080"
