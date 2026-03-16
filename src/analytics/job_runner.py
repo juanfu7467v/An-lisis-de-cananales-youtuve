@@ -23,46 +23,46 @@ def _job_execution():
     """
     logger.info("Iniciando ejecución del job autónomo...")
 
-    # Definir los canales a procesar
+    # Definir los canales a procesar en el orden correcto
     channels = [
-        {"id": os.getenv("ID_CANAL", "El Criterio ID"), "name": "El Criterio"},
-        {"id": os.getenv("ID_CANAL_2", "El Tío Jota ID"), "name": "El Tío Jota"}
+        {"id": os.getenv("ID_CANAL", "El Tío Jota ID"), "name": "El Tío Jota"},
+        {"id": os.getenv("ID_CANAL_2", "El Criterio ID"), "name": "El Criterio"}
     ]
 
     target_url = os.getenv("TARGET_URL", "https://crear-videos-subir-youtuve.fly.dev/trigger-video")
 
     for i, channel in enumerate(channels):
         if i > 0:
-            logger.info(f"Esperando 2 horas antes de analizar el siguiente canal: {channel['name']}...")
+            logger.info(f"Esperando 2 horas antes de analizar el siguiente canal: {channel["name"]}...")
             time.sleep(7200) # Esperar 2 horas (7200 segundos)
 
-        logger.info(f"Analizando canal: {channel['name']} (ID: {channel['id']})")
+        logger.info(f"Analizando canal: {channel["name"]} (ID: {channel["id"]})")
         
         # 1. Analizar tendencias de YouTube
-        trends = get_youtube_trends(channel_id=channel['id']) # Pasar el ID del canal para un análisis más específico si es necesario
+        trends = get_youtube_trends(channel_id=channel["id"]) # Pasar el ID del canal para un análisis más específico si es necesario
         if not trends:
-            logger.error(f"No se pudieron obtener las tendencias de YouTube para {channel['name']}.")
+            logger.error(f"No se pudieron obtener las tendencias de YouTube para {channel["name"]}.")
             continue
 
         # 2. Generar recomendaciones usando Gemini 2.5 Flash
-        recommendation = analyze_trends_and_recommend(trends, channel_name=channel['name'])
+        recommendation = analyze_trends_and_recommend(trends, channel_name=channel["name"])
         if not recommendation:
-            logger.error(f"No se pudo generar la recomendación para {channel['name']}.")
+            logger.error(f"No se pudo generar la recomendación para {channel["name"]}.")
             continue
 
         # Asegurar que la recomendación incluya el nombre del canal para el sistema receptor
-        recommendation["canal_objetivo"] = channel['name']
+        recommendation["canal_objetivo"] = channel["name"]
 
         # 3. Enviar el JSON al servidor externo (Endpoint Receptor)
         try:
-            logger.info(f"Enviando recomendación para {channel['name']} a {target_url}...")
+            logger.info(f"Enviando recomendación para {channel["name"]} a {target_url}...")
             response = requests.post(target_url, json=recommendation, timeout=60)
             if response.status_code in [200, 201, 202]:
-                logger.info(f"Recomendación para {channel['name']} enviada con éxito: {response.status_code}")
+                logger.info(f"Recomendación para {channel["name"]} enviada con éxito: {response.status_code}")
             else:
-                logger.error(f"Error al enviar recomendación para {channel['name']}: {response.status_code} - {response.text}")
+                logger.error(f"Error al enviar recomendación para {channel["name"]}: {response.status_code} - {response.text}")
         except Exception as e:
-            logger.error(f"Error en la petición HTTP al servidor de destino para {channel['name']}: {e}")
+            logger.error(f"Error en la petición HTTP al servidor de destino para {channel["name"]}: {e}")
 
     logger.info("Todos los jobs autónomos completados. Entrando en modo de espera hasta el siguiente ciclo.")
     # El servidor se apagará automáticamente después de este proceso si no hay más tráfico
