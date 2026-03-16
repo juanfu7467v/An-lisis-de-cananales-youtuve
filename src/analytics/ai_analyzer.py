@@ -5,9 +5,10 @@ import google.generativeai as genai
 
 logger = logging.getLogger(__name__)
 
-def analyze_trends_and_recommend(trends_data):
+def analyze_trends_and_recommend(trends_data, channel_name=None):
     """
     Utiliza Gemini 2.5 Flash para analizar tendencias y generar recomendaciones de video.
+    Ahora considera el nombre del canal para adaptar las recomendaciones.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -15,32 +16,35 @@ def analyze_trends_and_recommend(trends_data):
         return None
 
     try:
-        # Configurar Gemini 2.5 Flash
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.5-flash')
+        model = genai.GenerativeModel("gemini-2.5-flash")
+
+        channel_context = ""
+        if channel_name:
+            channel_context = f"El canal objetivo es '{channel_name}'. Adapta las recomendaciones para que sean altamente relevantes y atractivas para la audiencia específica de este canal, considerando su estilo y contenido habitual. El contenido debe ser interesante, dinámico y atractivo para el espectador, captando su atención desde el inicio y manteniéndola durante todo el video. Evita contenido aburrido y busca ideas que generen alta retención y crecimiento del canal.\n\n"
 
         prompt = f"""
         Analiza los siguientes datos de tendencias de YouTube:
         {json.dumps(trends_data, indent=2)}
 
+        {channel_context}
         Basado en este análisis, genera una recomendación estratégica para un nuevo video.
-        Considera que tenemos dos canales disponibles (CHANNEL_NAME y CHANNEL_NAME_2).
-        Debes decidir cuál es el canal más apropiado según el tema.
 
         Responde ÚNICAMENTE en formato JSON válido con la siguiente estructura:
         {{
           "tema_recomendado": "Ejemplo: Misterios del océano profundo descubiertos recientemente",
           "titulo": "Ejemplo: Los secretos del océano que los científicos acaban de descubrir",
-          "idea_contenido": "Ejemplo: Un video que muestra descubrimientos recientes en el océano profundo, criaturas extrañas, lugares nunca explorados y datos sorprendentes.",
+          "idea_contenido": "Ejemplo: Un video que muestra descubrimientos recientes en el océano profundo, criaturas extrañas, lugares nunca explorados y datos sorprendentes. El contenido debe ser dinámico, con transiciones rápidas, música envolvente y narración cautivadora para mantener al espectador enganchado.",
           "formato_sugerido": "Short o video largo",
           "hora_optima_publicacion": "19:30",
-          "canal": "CHANNEL_NAME o CHANNEL_NAME_2"
+          "tags_sugeridos": ["tag1", "tag2", "tag3"],
+          "miniaturas_sugeridas": ["Descripción de miniatura 1", "Descripción de miniatura 2"],
+          "gancho_inicial": "Pregunta intrigante o afirmación sorprendente para los primeros 15 segundos."
         }}
         """
 
         response = model.generate_content(prompt)
         
-        # Limpiar respuesta por si acaso Gemini incluye markdown
         clean_text = response.text.strip()
         if clean_text.startswith("```json"):
             clean_text = clean_text[7:-3].strip()
@@ -49,11 +53,6 @@ def analyze_trends_and_recommend(trends_data):
 
         recommendation = json.loads(clean_text)
         
-        # Asegurar que el campo 'canal' tenga un valor coherente
-        # El sistema receptor espera CHANNEL_NAME o CHANNEL_NAME_2 según el ejemplo
-        if "canal" not in recommendation:
-            recommendation["canal"] = "CHANNEL_NAME"
-            
         return recommendation
 
     except Exception as e:

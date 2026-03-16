@@ -4,9 +4,11 @@ from googleapiclient.discovery import build
 
 logger = logging.getLogger(__name__)
 
-def get_youtube_trends():
+def get_youtube_trends(channel_id=None):
     """
     Analiza las tendencias actuales de YouTube utilizando videoCategories y videos.list (mostPopular).
+    El parámetro channel_id se incluye para futura extensibilidad, pero no se usa para filtrar
+    las tendencias populares generales.
     """
     api_key = os.getenv("YOUTUBE_API_KEY")
     if not api_key:
@@ -14,7 +16,7 @@ def get_youtube_trends():
         return None
 
     try:
-        youtube = build('youtube', 'v3', developerKey=api_key)
+        youtube = build("youtube", "v3", developerKey=api_key)
 
         # 1. Obtener categorías de video
         categories_request = youtube.videoCategories().list(
@@ -22,7 +24,7 @@ def get_youtube_trends():
             regionCode="ES" # Se puede parametrizar o usar 'US'
         )
         categories_response = categories_request.execute()
-        categories = {item['id']: item['snippet']['title'] for item in categories_response.get('items', [])}
+        categories = {item["id"]: item["snippet"]["title"] for item in categories_response.get("items", [])}
 
         # 2. Obtener videos más populares
         videos_request = youtube.videos().list(
@@ -34,16 +36,16 @@ def get_youtube_trends():
         videos_response = videos_request.execute()
 
         trends_data = []
-        for item in videos_response.get('items', []):
-            snippet = item['snippet']
-            category_id = snippet.get('categoryId')
+        for item in videos_response.get("items", []):
+            snippet = item["snippet"]
+            category_id = snippet.get("categoryId")
             category_name = categories.get(category_id, "Unknown")
             
             trends_data.append({
-                "title": snippet['title'],
+                "title": snippet["title"],
                 "category": category_name,
-                "description": snippet['description'][:200],
-                "tags": snippet.get('tags', [])
+                "description": snippet["description"][:200],
+                "tags": snippet.get("tags", [])
             })
 
         return trends_data
