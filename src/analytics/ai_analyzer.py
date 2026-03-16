@@ -24,7 +24,7 @@ def analyze_trends_and_recommend(trends_data):
         {json.dumps(trends_data, indent=2)}
 
         Basado en este análisis, genera una recomendación estratégica para un nuevo video.
-        Considera que tenemos dos canales disponibles (ID_CANAL e ID_CANAL_2).
+        Considera que tenemos dos canales disponibles (CHANNEL_NAME y CHANNEL_NAME_2).
         Debes decidir cuál es el canal más apropiado según el tema.
 
         Responde ÚNICAMENTE en formato JSON válido con la siguiente estructura:
@@ -34,7 +34,7 @@ def analyze_trends_and_recommend(trends_data):
           "idea_contenido": "Ejemplo: Un video que muestra descubrimientos recientes en el océano profundo, criaturas extrañas, lugares nunca explorados y datos sorprendentes.",
           "formato_sugerido": "Short o video largo",
           "hora_optima_publicacion": "19:30",
-          "canal": "ID_CANAL o ID_CANAL_2"
+          "canal": "CHANNEL_NAME o CHANNEL_NAME_2"
         }}
         """
 
