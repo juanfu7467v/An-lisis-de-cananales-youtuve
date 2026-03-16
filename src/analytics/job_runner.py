@@ -36,14 +36,15 @@ def _job_execution():
         logger.error("No se pudo generar la recomendación.")
         return
 
-    # 3. Enviar el JSON al servidor externo
-    target_url = "https://crear-videos-subir-youtuve.fly.dev/"
+    # 3. Enviar el JSON al servidor externo (Endpoint Receptor)
+    target_url = "https://crear-videos-subir-youtuve.fly.dev/trigger-video"
     try:
-        response = requests.post(target_url, json=recommendation, timeout=30)
+        logger.info(f"Enviando reporte matutino a {target_url}...")
+        response = requests.post(target_url, json=recommendation, timeout=60)
         if response.status_code in [200, 201, 202]:
-            logger.info(f"Recomendación enviada con éxito: {response.status_code}")
+            logger.info(f"Reporte matutino enviado con éxito: {response.status_code}")
         else:
-            logger.error(f"Error al enviar recomendación: {response.status_code} - {response.text}")
+            logger.error(f"Error al enviar reporte matutino: {response.status_code} - {response.text}")
     except Exception as e:
         logger.error(f"Error en la petición HTTP al servidor de destino: {e}")
 

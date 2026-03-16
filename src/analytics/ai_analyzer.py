@@ -49,14 +49,11 @@ def analyze_trends_and_recommend(trends_data):
 
         recommendation = json.loads(clean_text)
         
-        # Traducir el nombre del canal a su valor real de variable de entorno
-        canal_key = recommendation.get("canal", "ID_CANAL")
-        canal_id = os.getenv(canal_key)
-        if not canal_id:
-            canal_id = os.getenv("ID_CANAL") # Fallback
+        # Asegurar que el campo 'canal' tenga un valor coherente
+        # El sistema receptor espera CHANNEL_NAME o CHANNEL_NAME_2 según el ejemplo
+        if "canal" not in recommendation:
+            recommendation["canal"] = "CHANNEL_NAME"
             
-        recommendation["canal"] = canal_id
-        
         return recommendation
 
     except Exception as e:
