@@ -7,3 +7,5 @@ apscheduler
 python-dotenv
 flask
 gunicorn
+requests
+google-generativeai
