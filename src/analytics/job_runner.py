@@ -2,9 +2,12 @@ import os
 import logging
 import requests
 import threading
-import time # Importar el módulo time para la función sleep
+import time
+from datetime import datetime
 from src.analytics.youtube_trends import get_youtube_trends
 from src.analytics.ai_analyzer import analyze_trends_and_recommend
+from src.analytics.channel_config import get_all_channels_ordered
+from src.utils.github_storage import save_to_github_json, check_if_analyzed_today
 
 logger = logging.getLogger(__name__)
 
@@ -14,56 +17,66 @@ def run_autonomous_job():
     """
     job_thread = threading.Thread(target=_job_execution)
     job_thread.start()
-    return {"status": "Job started in background"}, 202
+    return {"status": "Job de análisis profundo iniciado en background"}, 202
 
 def _job_execution():
     """
     Ejecución detallada del job en un hilo separado.
     Procesa canales secuencialmente con una espera de 2 horas entre ellos.
+    Persiste los resultados en data.json en GitHub.
     """
-    logger.info("Iniciando ejecución del job autónomo...")
+    logger.info("Iniciando ejecución del job autónomo con análisis profundo...")
 
-    # Definir los canales a procesar en el orden correcto
-    channels = [
-        {"id": os.getenv("ID_CANAL", "El Tío Jota ID"), "name": "El Tío Jota"},
-        {"id": os.getenv("ID_CANAL_2", "El Criterio ID"), "name": "El Criterio"}
-    ]
-
+    # Obtener los canales configurados en orden
+    channels_data = get_all_channels_ordered()
     target_url = os.getenv("TARGET_URL", "https://crear-videos-subir-youtuve.fly.dev/trigger-video")
 
-    for i, channel in enumerate(channels):
+    for i, (channel_name, config) in enumerate(channels_data):
+        channel_id = config.get("id")
+        
+        # Verificar si ya fue analizado hoy en data.json (especificación del usuario)
+        if check_if_analyzed_today(channel_name):
+            logger.info(f"El canal {channel_name} ya ha sido analizado hoy. Saltando...")
+            continue
+
         if i > 0:
-            logger.info(f"Esperando 2 horas antes de analizar el siguiente canal: {channel["name"]}...")
+            logger.info(f"Esperando 2 horas antes de analizar el siguiente canal: {channel_name}...")
             time.sleep(7200) # Esperar 2 horas (7200 segundos)
 
-        logger.info(f"Analizando canal: {channel["name"]} (ID: {channel["id"]})")
+        logger.info(f"Analizando canal: {channel_name} (ID: {channel_id})")
         
-        # 1. Analizar tendencias de YouTube
-        trends = get_youtube_trends(channel_id=channel["id"]) # Pasar el ID del canal para un análisis más específico si es necesario
+        # 1. Analizar tendencias de YouTube (Generales + Específicas del canal)
+        trends = get_youtube_trends(channel_id=channel_id)
         if not trends:
-            logger.error(f"No se pudieron obtener las tendencias de YouTube para {channel["name"]}.")
+            logger.error(f"No se pudieron obtener las tendencias de YouTube para {channel_name}.")
             continue
 
-        # 2. Generar recomendaciones usando Gemini 2.5 Flash
-        recommendation = analyze_trends_and_recommend(trends, channel_name=channel["name"])
+        # 2. Generar recomendaciones profundas usando Gemini 2.5 Flash
+        recommendation = analyze_trends_and_recommend(trends, channel_name=channel_name)
         if not recommendation:
-            logger.error(f"No se pudo generar la recomendación para {channel["name"]}.")
+            logger.error(f"No se pudo generar la recomendación profunda para {channel_name}.")
             continue
 
-        # Asegurar que la recomendación incluya el nombre del canal para el sistema receptor
-        recommendation["canal_objetivo"] = channel["name"]
+        # Asegurar campos requeridos
+        recommendation["canal_objetivo"] = channel_name
+        recommendation["fecha_analisis"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        # 3. Enviar el JSON al servidor externo (Endpoint Receptor)
+        # 3. Guardar el resultado en data.json en GitHub (Persistencia)
+        save_success = save_to_github_json(recommendation)
+        if save_success:
+            logger.info(f"Resultado del análisis para {channel_name} guardado exitosamente en GitHub.")
+        else:
+            logger.warning(f"No se pudo guardar el resultado para {channel_name} en GitHub.")
+
+        # 4. Enviar el JSON al servidor externo (Endpoint Receptor)
         try:
-            logger.info(f"Enviando recomendación para {channel["name"]} a {target_url}...")
+            logger.info(f"Enviando recomendación para {channel_name} a {target_url}...")
             response = requests.post(target_url, json=recommendation, timeout=60)
             if response.status_code in [200, 201, 202]:
-                logger.info(f"Recomendación para {channel["name"]} enviada con éxito: {response.status_code}")
+                logger.info(f"Recomendación para {channel_name} enviada con éxito: {response.status_code}")
             else:
-                logger.error(f"Error al enviar recomendación para {channel["name"]}: {response.status_code} - {response.text}")
+                logger.error(f"Error al enviar recomendación para {channel_name}: {response.status_code} - {response.text}")
         except Exception as e:
-            logger.error(f"Error en la petición HTTP al servidor de destino para {channel["name"]}: {e}")
+            logger.error(f"Error en la petición HTTP al servidor de destino para {channel_name}: {e}")
 
     logger.info("Todos los jobs autónomos completados. Entrando en modo de espera hasta el siguiente ciclo.")
-    # El servidor se apagará automáticamente después de este proceso si no hay más tráfico
-    # gracias a la configuración auto_stop de Fly.io

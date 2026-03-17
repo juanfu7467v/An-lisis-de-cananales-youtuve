@@ -12,7 +12,9 @@ class ConfigManager:
             "auto_upload": os.getenv("AUTO_UPLOAD", "false").lower() == "true",
             "auto_schedule": os.getenv("AUTO_SCHEDULE", "false").lower() == "true",
             "daily_advice": os.getenv("DAILY_ADVICE", "true").lower() == "true",
-            "auto_comments": os.getenv("AUTO_COMMENTS", "false").lower() == "true"
+            "auto_comments": os.getenv("AUTO_COMMENTS", "true").lower() == "true",
+            "deep_analysis": os.getenv("DEEP_ANALYSIS", "true").lower() == "true",
+            "github_storage": os.getenv("GITHUB_STORAGE", "true").lower() == "true"
         }
         return features.get(feature_name, False)
 
