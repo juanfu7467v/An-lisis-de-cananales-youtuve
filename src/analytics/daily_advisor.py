@@ -2,28 +2,28 @@ import os
 import datetime
 import logging
 from src.metadata.generator import generate_metadata
+from src.analytics.content_strategy import get_content_type_for_day, get_theme_for_content_type, get_hook_for_format
 
 logger = logging.getLogger(__name__)
 
 def get_daily_recommendation():
     """
-    Genera una recomendación diaria basada en tendencias y rendimiento histórico.
+    Genera una recomendación diaria basada en la estrategia de rotación de contenido.
+    Alterna entre Short, Video largo (análisis de película) y Video educativo (filosofía).
     """
-    # En una implementación real, aquí se consultaría Google Trends o YouTube Search API
-    # Por ahora, simulamos la obtención de una tendencia relevante para 'El Tío Jota'
-    trends = [
-        "Cómo Marco Aurelio enfrentaba la ansiedad moderna",
-        "Hábitos estoicos para una mente inquebrantable",
-        "La disciplina de Séneca en el siglo XXI",
-        "Lecciones de Epicteto para el éxito personal"
-    ]
+    # Obtener el tipo de contenido para hoy según la rotación
+    content_config = get_content_type_for_day()
+    formato = content_config.get("formato")
+    duracion = content_config.get("duracion")
     
-    # Seleccionamos una tendencia (podría ser aleatoria o basada en fecha)
-    today_index = datetime.datetime.now().day % len(trends)
-    topic = trends[today_index]
+    # Seleccionar un tema apropiado para el tipo de contenido
+    topic = get_theme_for_content_type(content_config)
     
-    # Generamos metadatos sugeridos
+    # Generar metadatos sugeridos
     metadata = generate_metadata(f"Video sobre {topic}")
+    
+    # Obtener un hook impactante
+    hook = get_hook_for_format(formato)
     
     # Simulamos la hora óptima basada en analíticas previas
     optimal_hour = "19:30"
@@ -31,10 +31,12 @@ def get_daily_recommendation():
     recommendation = {
         "topic": topic,
         "title": metadata['title'],
-        "type": "Short" if datetime.datetime.now().weekday() < 5 else "Video Largo",
-        "duration": "30-40 segundos" if datetime.datetime.now().weekday() < 5 else "8-12 minutos",
+        "type": formato,
+        "duration": duracion,
         "hashtags": metadata['tags'],
-        "optimal_time": optimal_hour
+        "optimal_time": optimal_hour,
+        "hook": hook,
+        "style": content_config.get("estilo")
     }
     
     return recommendation
@@ -42,6 +44,7 @@ def get_daily_recommendation():
 def format_daily_message(rec):
     """
     Formatea la recomendación para el mensaje de Telegram.
+    Incluye información sobre el Super Prompt y la estrategia de contenido.
     """
     msg = (
         f"☀️ *Buenos días, El Tío Jota*\n\n"
@@ -50,7 +53,10 @@ def format_daily_message(rec):
         f"📌 *Título sugerido:* {rec['title']}\n"
         f"⏱️ *Duración ideal:* {rec['duration']}\n"
         f"⏰ *Hora recomendada:* {rec['optimal_time']}\n"
+        f"🎯 *Estilo:* {rec.get('style', 'Profesional')}\n"
+        f"🪝 *Hook inicial:* {rec.get('hook', 'Impactante')}\n"
         f"🏷️ *Hashtags:* {' '.join(['#' + t.replace(' ', '') for t in rec['hashtags']])}\n\n"
+        f"Este contenido ha sido optimizado con nuestro sistema de Super Prompts para máxima retención.\n\n"
         f"¿Quieres que preparemos este contenido?"
     )
     return msg

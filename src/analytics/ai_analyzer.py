@@ -3,6 +3,7 @@ import json
 import logging
 import google.generativeai as genai
 from src.analytics.channel_config import get_channel_config
+from src.analytics.content_strategy import get_content_type_for_day, build_enhanced_recommendation
 
 logger = logging.getLogger(__name__)
 
@@ -82,6 +83,10 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
         
         # Asegurar campos requeridos por el usuario
         recommendation["canal"] = channel_name
+        
+        # Enriquecer con Super Prompt y campos avanzados
+        content_config = get_content_type_for_day()
+        recommendation = build_enhanced_recommendation(recommendation, content_config)
         
         return recommendation
 
