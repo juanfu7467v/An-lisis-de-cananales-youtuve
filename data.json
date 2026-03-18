@@ -45,5 +45,31 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-18 00:39:45"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-18",
+    "hora": "16:22:16",
+    "analisis": {
+      "tema_recomendado": "Análisis crítico y filosófico de franquicias cinematográficas de superhéroes y sus implicaciones narrativas y existenciales",
+      "titulo": "SPIDER-MAN: BRAND NEW DAY | ¿Una amnesia colectiva es el inicio de tu FELICIDAD? Análisis Crítico",
+      "idea_contenido": "El video se centrará en el reciente tráiler de 'SPIDER-MAN: BRAND NEW DAY'. Más allá de la trama o los efectos visuales, el análisis profundizará en la implicación filosófica de la narrativa de un 'borrón y cuenta nueva' para Peter Parker. Se explorará si la amnesia colectiva o el reinicio de las condiciones es realmente el camino hacia la felicidad o el crecimiento, o si, por el contrario, representa una evasión de las consecuencias y un estancamiento del personaje. Se conectará con la experiencia del espectador y la cultura de 'borrar el pasado' en la búsqueda de bienestar. Se pueden establecer paralelismos con 'Spider-Man: No Way Home' y las decisiones tomadas allí, así como con el concepto de multiverso y elección libre que el canal ya ha tocado con 'Todo a la vez en todas partes'. El tono será reflexivo, crítico y fundamentado, buscando siempre el 'criterio propio' que caracteriza al canal. La estructura incluirá: una introducción contextualizando el tráiler y su premisa, un análisis de cómo esta 'Brand New Day' impacta la identidad de Spider-Man, una reflexión filosófica sobre el valor del recuerdo y la experiencia, y una conclusión que invite a la audiencia a cuestionar si un 'nuevo comienzo' sin memoria es un camino auténtico hacia la realización personal.",
+      "formato_sugerido": "Video largo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Film & Animation",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "N/A (No hay comentarios de la audiencia para analizar)",
+        "observaciones_engagement": "El rendimiento reciente del canal es extremadamente bajo, con videos que reciben 2-3 vistas, 0 likes y 0 comentarios. Esto impide identificar qué temas están funcionando mejor a nivel de engagement. Los videos actuales se centran en análisis profundos de películas ('Dune', 'Todo a la vez en todas partes') con un enfoque filosófico/de crecimiento personal, lo cual es coherente con la descripción del canal. La falta de comentarios hace imposible detectar peticiones directas de la audiencia."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "profundo, reflexivo, emocionante",
+      "estructura": "introducción + análisis profundo + conclusiones + reflexión final",
+      "hook": "Te revelaré la verdad detrás de...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser profundo, reflexivo, emocionante.\n\nTEMA: Análisis crítico y filosófico de franquicias cinematográficas de superhéroes y sus implicaciones narrativas y existenciales\nTÍTULO: SPIDER-MAN: BRAND NEW DAY | ¿Una amnesia colectiva es el inicio de tu FELICIDAD? Análisis Crítico\nFORMATO: Video largo\nDURACIÓN: 12-20 minutos\n\nIDEA DEL CONTENIDO:\nEl video se centrará en el reciente tráiler de 'SPIDER-MAN: BRAND NEW DAY'. Más allá de la trama o los efectos visuales, el análisis profundizará en la implicación filosófica de la narrativa de un 'borrón y cuenta nueva' para Peter Parker. Se explorará si la amnesia colectiva o el reinicio de las condiciones es realmente el camino hacia la felicidad o el crecimiento, o si, por el contrario, representa una evasión de las consecuencias y un estancamiento del personaje. Se conectará con la experiencia del espectador y la cultura de 'borrar el pasado' en la búsqueda de bienestar. Se pueden establecer paralelismos con 'Spider-Man: No Way Home' y las decisiones tomadas allí, así como con el concepto de multiverso y elección libre que el canal ya ha tocado con 'Todo a la vez en todas partes'. El tono será reflexivo, crítico y fundamentado, buscando siempre el 'criterio propio' que caracteriza al canal. La estructura incluirá: una introducción contextualizando el tráiler y su premisa, un análisis de cómo esta 'Brand New Day' impacta la identidad de Spider-Man, una reflexión filosófica sobre el valor del recuerdo y la experiencia, y una conclusión que invite a la audiencia a cuestionar si un 'nuevo comienzo' sin memoria es un camino auténtico hacia la realización personal.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono profundo, reflexivo, emocionante en todo momento.\n2. ESTRUCTURA: Sigue este orden: introducción + análisis profundo + conclusiones + reflexión final\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-18 16:22:16"
+    }
   }
 ]
