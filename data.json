@@ -134,5 +134,36 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-19 13:50:41"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-19",
+    "hora": "13:50:49",
+    "analisis": {
+      "tema_recomendado": "Análisis crítico del impacto de los 'reboots' y 'nuevos comienzos' en franquicias cinematográficas, usando SPIDER-MAN: BRAND NEW DAY como caso de estudio.",
+      "titulo": "SPIDER-MAN: BRAND NEW DAY | ¿Reinicio o Rendición? La Crisis de Identidad de las Grandes Franquicias",
+      "idea_contenido": "El video abordará el fenómeno de los 'nuevos comienzos' o 'reboots' en el cine, utilizando el inminente estreno de 'SPIDER-MAN: BRAND NEW DAY' como punto de partida. Se analizará críticamente la decisión creativa de 'borrar el pasado' o reconfigurar la memoria de los personajes principales, explorando las implicaciones filosóficas sobre la identidad, la nostalgia y la evolución de las narrativas. El contenido se dividirá en: 1) Contexto y expectación generada por el tráiler de 'Brand New Day'. 2) Un análisis profundo de los pros y contras de esta estrategia narrativa para la longevidad de una franquicia. 3) Comparativas con otros casos similares en el cine y los cómics (ej. DC Rebirth, Star Wars, etc.), evaluando su éxito o fracaso. 4) Una reflexión final sobre el impacto en la audiencia y el futuro de las narrativas cinematográficas. El tono será crítico, argumentado y reflexivo, manteniendo la esencia del canal de 'criterio propio y fundamentado'. Se buscará enganchar con el público que ha visto el tráiler y está debatiendo el tema, fomentando la participación en los comentarios.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Film & Animation",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "No determinado debido a la ausencia de comentarios en videos recientes.",
+        "observaciones_engagement": "Los videos recientes del canal, centrados exclusivamente en 'SPIDER-MAN: BRAND NEW DAY' con un enfoque filosófico, han mostrado un rendimiento extremadamente bajo (0-2 vistas, 0 likes, 0 comentarios). A pesar de que 'SPIDER-MAN: BRAND NEW DAY' es un tema trending en las tendencias generales (principalmente a través de tráilers), la audiencia del canal no ha conectado con la aproximación actual. Esto sugiere que, o bien el momento de publicación (quizás antes del hype masivo por el tráiler) o el título y la presentación del contenido no están alineados con lo que el público busca actualmente sobre este tema."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "¡Excelente análisis! Siempre me haces pensar en profundidad. ¿Crees que estas estrategias de 'borrar el pasado' son una señal de agotamiento creativo en Hollywood?",
+          "respuesta_sugerida": "¡Hola! Me alegra mucho que el análisis te haya hecho reflexionar. Es una pregunta crucial y creo que, en ocasiones, sí puede serlo, mientras que en otras, puede abrir nuevas vías narrativas si se ejecuta con maestría. La clave está en cómo se justifica ese 'borrado'. ¿Qué opinas tú? ¡Gracias por tu comentario! No olvides visitar https://masitaprex.com/PeliPREX para más contenido sobre cine y cultura."
+        }
+      ],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "Descubre cómo aplicar esta enseñanza a tu vida...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: Análisis crítico del impacto de los 'reboots' y 'nuevos comienzos' en franquicias cinematográficas, usando SPIDER-MAN: BRAND NEW DAY como caso de estudio.\nTÍTULO: SPIDER-MAN: BRAND NEW DAY | ¿Reinicio o Rendición? La Crisis de Identidad de las Grandes Franquicias\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nEl video abordará el fenómeno de los 'nuevos comienzos' o 'reboots' en el cine, utilizando el inminente estreno de 'SPIDER-MAN: BRAND NEW DAY' como punto de partida. Se analizará críticamente la decisión creativa de 'borrar el pasado' o reconfigurar la memoria de los personajes principales, explorando las implicaciones filosóficas sobre la identidad, la nostalgia y la evolución de las narrativas. El contenido se dividirá en: 1) Contexto y expectación generada por el tráiler de 'Brand New Day'. 2) Un análisis profundo de los pros y contras de esta estrategia narrativa para la longevidad de una franquicia. 3) Comparativas con otros casos similares en el cine y los cómics (ej. DC Rebirth, Star Wars, etc.), evaluando su éxito o fracaso. 4) Una reflexión final sobre el impacto en la audiencia y el futuro de las narrativas cinematográficas. El tono será crítico, argumentado y reflexivo, manteniendo la esencia del canal de 'criterio propio y fundamentado'. Se buscará enganchar con el público que ha visto el tráiler y está debatiendo el tema, fomentando la participación en los comentarios.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-19 13:50:49"
+    }
   }
 ]
