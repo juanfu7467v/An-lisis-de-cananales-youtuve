@@ -70,5 +70,31 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-20 16:29:19"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-21",
+    "hora": "04:29:23",
+    "analisis": {
+      "tema_recomendado": "Análisis crítico profundo sobre el reboot de Spider-Man: Brand New Day y las implicaciones para el cine de superhéroes.",
+      "titulo": "SPIDER-MAN: BRAND NEW DAY | ¿El 'NUEVO DÍA' que MARVEL y SONY NUNCA DEBÍAN HABER ABierto? ANÁLISIS CRÍTICO",
+      "idea_contenido": "El video se centrará en el reciente anuncio y trailers de 'SPIDER-MAN: BRAND NEW DAY', explorando si este reinicio es una señal de agotamiento creativo en la industria cinematográfica o una audaz estrategia narrativa. Se analizará la historia de los reboots del personaje de Spider-Man, comparando este nuevo enfoque con versiones anteriores y las expectativas de la audiencia. Se hará una reflexión filosófica sobre la necesidad de reinvención en el cine vs. el respeto por la continuidad y el legado de los personajes. El tono será provocador pero siempre fundamentado en un análisis crítico y propio. La estructura incluirá un gancho fuerte con el tráiler, un desglose de los elementos clave de 'Brand New Day', un contexto histórico de reboots en superhéroes, la crítica a las decisiones de estudio y un cierre con una reflexión sobre el futuro del género. Se buscará maximizar la retención mediante el uso de ejemplos visuales, cortes dinámicos y una narración fluida y argumentada. La duración ideal sería entre 10 y 15 minutos para permitir un desarrollo profundo del tema.",
+      "formato_sugerido": "Video largo",
+      "hora_optima_publicacion": "20:00",
+      "canal": "El Criterio",
+      "categoria": "Cine y cultura",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "N/A - Sin comentarios de la audiencia para analizar.",
+        "observaciones_engagement": "Los videos recientes del canal sobre 'SPIDER-MAN: BRAND NEW DAY' han mostrado un rendimiento extremadamente bajo (0-1 vistas y 0 likes/comentarios), a pesar de que el tema es una tendencia fuerte en la categoría 'Film & Animation'. Esto sugiere que la formulación actual de los títulos o el enfoque inicial no está logrando captar la atención de la audiencia, aunque el tema principal se alinee perfectamente con los intereses del canal y las tendencias generales. No hay comentarios que permitan inferir peticiones o sentimientos específicos de la audiencia en este momento."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "profundo, reflexivo, emocionante",
+      "estructura": "introducción + análisis profundo + conclusiones + reflexión final",
+      "hook": "Descubre los secretos ocultos que nadie notó...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser profundo, reflexivo, emocionante.\n\nTEMA: Análisis crítico profundo sobre el reboot de Spider-Man: Brand New Day y las implicaciones para el cine de superhéroes.\nTÍTULO: SPIDER-MAN: BRAND NEW DAY | ¿El 'NUEVO DÍA' que MARVEL y SONY NUNCA DEBÍAN HABER ABierto? ANÁLISIS CRÍTICO\nFORMATO: Video largo\nDURACIÓN: 12-20 minutos\n\nIDEA DEL CONTENIDO:\nEl video se centrará en el reciente anuncio y trailers de 'SPIDER-MAN: BRAND NEW DAY', explorando si este reinicio es una señal de agotamiento creativo en la industria cinematográfica o una audaz estrategia narrativa. Se analizará la historia de los reboots del personaje de Spider-Man, comparando este nuevo enfoque con versiones anteriores y las expectativas de la audiencia. Se hará una reflexión filosófica sobre la necesidad de reinvención en el cine vs. el respeto por la continuidad y el legado de los personajes. El tono será provocador pero siempre fundamentado en un análisis crítico y propio. La estructura incluirá un gancho fuerte con el tráiler, un desglose de los elementos clave de 'Brand New Day', un contexto histórico de reboots en superhéroes, la crítica a las decisiones de estudio y un cierre con una reflexión sobre el futuro del género. Se buscará maximizar la retención mediante el uso de ejemplos visuales, cortes dinámicos y una narración fluida y argumentada. La duración ideal sería entre 10 y 15 minutos para permitir un desarrollo profundo del tema.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono profundo, reflexivo, emocionante en todo momento.\n2. ESTRUCTURA: Sigue este orden: introducción + análisis profundo + conclusiones + reflexión final\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-21 04:29:22"
+    }
   }
 ]
