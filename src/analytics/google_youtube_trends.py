@@ -9,6 +9,15 @@ import google.generativeai as genai
 
 logger = logging.getLogger(__name__)
 
+# Países de Latinoamérica a consultar
+LATAM_COUNTRIES = {
+    "PE": {"hl": "es-PE", "pn": "peru"},
+    "MX": {"hl": "es-MX", "pn": "mexico"},
+    "AR": {"hl": "es-AR", "pn": "argentina"},
+    "CO": {"hl": "es-CO", "pn": "colombia"},
+    "CL": {"hl": "es-CL", "pn": "chile"},
+}
+
 def _get_youtube_search_views(query):
     """
     Busca el término en YouTube y calcula el promedio de vistas de los primeros 5 videos.
@@ -31,7 +40,7 @@ def _get_youtube_search_views(query):
         video_ids = [item["id"]["videoId"] for item in search_response.get("items", [])]
         
         if not video_ids:
-            logger.warning(f"No se encontraron videos en YouTube para la búsqueda: '{query}'")
+            logger.warning(f"No se encontraron videos en YouTube para la búsqueda: \'{query}\'")
             return 0
 
         videos_stats = youtube.videos().list(
@@ -44,11 +53,11 @@ def _get_youtube_search_views(query):
             total_views += int(item["statistics"].get("viewCount", 0))
         
         avg_views = total_views / len(video_ids)
-        logger.info(f"✓ Validación de vistas en YouTube para '{query}': {avg_views:.0f} vistas promedio.")
+        logger.info(f"✓ Validación de vistas en YouTube para \'{query}\': {avg_views:.0f} vistas promedio.")
         return avg_views
 
     except Exception as e:
-        logger.error(f"Error al obtener vistas de YouTube para '{query}': {e}")
+        logger.error(f"Error al obtener vistas de YouTube para \'{query}\': {e}")
         return 0
 
 def _transform_title_with_ia(trend_topic):
@@ -87,42 +96,53 @@ def _transform_title_with_ia(trend_topic):
         Salida (solo el título transformado, sin comillas):
         """
         response = model.generate_content(prompt)
-        transformed_title = response.text.strip().replace('"', '')
+        transformed_title = response.text.strip().replace(\'"\', \'\')
         return transformed_title if transformed_title else trend_topic
 
     except Exception as e:
-        logger.error(f"Error al transformar título con IA para '{trend_topic}': {e}")
+        logger.error(f"Error al transformar título con IA para \'{trend_topic}\': {e}")
         return trend_topic
 
 def get_validated_trends(channel_id=None):
     """
-    Flujo principal: Google Trends (Perú) -> YouTube Search Validation -> IA Title Transformation.
+    Flujo principal: Google Trends (Latinoamérica) -> YouTube Search Validation -> IA Title Transformation.
     """
-    logger.info("Iniciando detección de tendencias con Google Trends (Perú) y validación de YouTube.")
+    logger.info("Iniciando detección de tendencias con Google Trends (Latinoamérica) y validación de YouTube.")
     
-    daily_trends_list = []
-    # 1. Obtener tendencias diarias de Google Trends para Perú
-    try:
-        # Configuración específica para Perú
-        pytrends = TrendReq(hl='es-PE', tz=360, timeout=(15, 15))
-        daily_trends = pytrends.trending_searches(pn='peru')
-        
-        if not daily_trends.empty:
-            daily_trends_list = daily_trends.iloc[:, 0].tolist()
-            logger.info(f"✓ Tendencia obtenida de Google Trends (Perú): {len(daily_trends_list)} temas encontrados.")
-        else:
-            logger.warning("Google Trends no devolvió datos para Perú.")
-    except Exception as e:
-        logger.error(f"Error crítico al consultar Google Trends: {e}")
+    all_latam_trends = set() # Usar un set para evitar duplicados
+    trends_with_origin = [] # Para guardar el origen de cada tendencia
 
-    if not daily_trends_list:
-        logger.warning("No se encontraron tendencias reales. El sistema NO generará contenido (fallback eliminado).")
+    # 1. Obtener tendencias diarias de Google Trends para cada país de Latinoamérica
+    for country_code, config in LATAM_COUNTRIES.items():
+        hl = config["hl"]
+        pn = config["pn"]
+        logger.info(f"Consultando Google Trends para {pn.upper()} (hl={hl})...")
+        try:
+            pytrends = TrendReq(hl=hl, tz=360, timeout=(15, 15))
+            daily_trends = pytrends.trending_searches(pn=pn)
+            
+            if not daily_trends.empty:
+                country_trends = daily_trends.iloc[:, 0].tolist()
+                logger.info(f"✓ {len(country_trends)} tendencias obtenidas de Google Trends para {pn.upper()}.")
+                for trend in country_trends:
+                    if trend not in all_latam_trends:
+                        all_latam_trends.add(trend)
+                        trends_with_origin.append({"topic": trend, "origin": pn.upper()})
+            else:
+                logger.warning(f"Google Trends no devolvió datos para {pn.upper()}.")
+        except Exception as e:
+            logger.error(f"Error al consultar Google Trends para {pn.upper()}: {e}")
+
+    if not all_latam_trends:
+        logger.warning("No se encontraron tendencias reales en ningún país de Latinoamérica. El sistema NO generará contenido.")
         return None
 
     validated_trends = []
-    # Procesar máximo 10 tendencias para optimizar tiempo y cuotas de API
-    for trend_topic in daily_trends_list[:10]:
-        logger.info(f"Analizando tendencia potencial: '{trend_topic}'")
+    # Procesar máximo 20 tendencias combinadas para optimizar tiempo y cuotas de API
+    for trend_item in trends_with_origin[:20]:
+        trend_topic = trend_item["topic"]
+        trend_origin = trend_item["origin"]
+        logger.info(f"Analizando tendencia potencial de {trend_origin}: \'{trend_topic}\'")
         
         # 2. Validación con YouTube Search
         avg_views = _get_youtube_search_views(trend_topic)
@@ -130,11 +150,11 @@ def get_validated_trends(channel_id=None):
         # 3. Reglas de validación (Filtro Real de Viralidad)
         if avg_views > 500000:
             priority = "ALTA" if avg_views > 1000000 else "NORMAL"
-            logger.info(f"✓ Tendencia aprobada: '{trend_topic}' con prioridad {priority} ({avg_views:.0f} vistas).")
+            logger.info(f"✓ Tendencia aprobada de {trend_origin}: \'{trend_topic}\' con prioridad {priority} ({avg_views:.0f} vistas).")
             
             # 4. Transformación con IA
             transformed_title = _transform_title_with_ia(trend_topic)
-            logger.info(f"✓ Título viral generado: '{transformed_title}'")
+            logger.info(f"✓ Título viral generado: \'{transformed_title}\'")
             
             # Detección de formato automático
             format_sugerido = "Short"
@@ -147,17 +167,18 @@ def get_validated_trends(channel_id=None):
                 "avg_youtube_views": avg_views,
                 "format_sugerido": format_sugerido,
                 "priority": priority,
-                "potential_category": "trending"
+                "potential_category": "trending",
+                "origin_country": trend_origin
             })
         else:
             reason = "Vistas insuficientes (< 500,000)"
-            logger.info(f"✗ Tendencia rechazada: '{trend_topic}'. Motivo: {reason} ({avg_views:.0f} vistas).")
+            logger.info(f"✗ Tendencia rechazada de {trend_origin}: \'{trend_topic}\'. Motivo: {reason} ({avg_views:.0f} vistas).")
 
     if not validated_trends:
-        logger.warning("Ninguna tendencia de hoy superó el filtro de viralidad de 500K vistas.")
+        logger.warning("Ninguna tendencia de hoy superó el filtro de viralidad de 500K vistas en Latinoamérica.")
         return None
 
     # Ordenar por vistas para priorizar lo más viral
-    validated_trends.sort(key=lambda x: x['avg_youtube_views'], reverse=True)
+    validated_trends.sort(key=lambda x: x["avg_youtube_views"], reverse=True)
     
     return {"validated_trends": validated_trends}
