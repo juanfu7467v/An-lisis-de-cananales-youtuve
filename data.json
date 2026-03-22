@@ -102,5 +102,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-03-22 02:22:29"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-22",
+    "hora": "02:22:32",
+    "analisis": {
+      "tema_recomendado": "La crisis de la originalidad y la identidad en el cine de superhéroes, analizando el fenómeno de los reboots y el caso de 'Spider-Man: Brand New Day'.",
+      "titulo": "SPIDER-MAN: BRAND NEW DAY | ¿El 'DÍA CERO' de Hollywood? La TRAGEDIA de olvidar cómo crear",
+      "idea_contenido": "El video abordará el fenómeno de los reboots en Hollywood, utilizando el inminente estreno de 'Spider-Man: Brand New Day' como catalizador. Se explorará la idea del 'nuevo comienzo' o 'borrar la pizarra' desde una perspectiva filosófica y crítica, cuestionando si es una solución creativa o un síntoma de agotamiento y falta de riesgo en la industria. Se analizará cómo la identidad del personaje (Peter Parker) y la memoria colectiva de la audiencia se ven afectadas por estos reinicios constantes. El contenido buscará ir más allá del mero anuncio, profundizando en las implicaciones culturales y el futuro de la narrativa cinematográfica. Se pueden usar ejemplos de otros reboots exitosos y fallidos para fundamentar la tesis. El tono será reflexivo, crítico y fundamentado, buscando siempre el criterio propio que caracteriza al canal. La estructura incluirá una introducción impactante (usando fragmentos del tráiler de Spider-Man), un desarrollo con argumentos sólidos y ejemplos, y una conclusión que invite a la reflexión del espectador sobre el valor de la originalidad y la evolución frente al eterno retorno.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Cine y Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "Neutro/Indeterminado (debido a la ausencia de comentarios y al muy bajo engagement general, no es posible determinar el sentimiento de la audiencia).",
+        "observaciones_engagement": "Los videos recientes sobre 'Dune' (centrados en el destino, el poder y el libre albedrío) mostraron un rendimiento ligeramente superior en vistas en comparación con la extensa serie de videos sobre 'Spider-Man: Brand New Day'. A pesar de que 'Spider-Man: Brand New Day' es una tendencia general fuerte, la aproximación del canal a este tema, centrada en la crítica filosófica de los reboots, no logró captar un alto nivel de engagement. El rendimiento general del canal es extremadamente bajo en las últimas publicaciones."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "Este principio antiguo sigue siendo relevante hoy porque...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: La crisis de la originalidad y la identidad en el cine de superhéroes, analizando el fenómeno de los reboots y el caso de 'Spider-Man: Brand New Day'.\nTÍTULO: SPIDER-MAN: BRAND NEW DAY | ¿El 'DÍA CERO' de Hollywood? La TRAGEDIA de olvidar cómo crear\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nEl video abordará el fenómeno de los reboots en Hollywood, utilizando el inminente estreno de 'Spider-Man: Brand New Day' como catalizador. Se explorará la idea del 'nuevo comienzo' o 'borrar la pizarra' desde una perspectiva filosófica y crítica, cuestionando si es una solución creativa o un síntoma de agotamiento y falta de riesgo en la industria. Se analizará cómo la identidad del personaje (Peter Parker) y la memoria colectiva de la audiencia se ven afectadas por estos reinicios constantes. El contenido buscará ir más allá del mero anuncio, profundizando en las implicaciones culturales y el futuro de la narrativa cinematográfica. Se pueden usar ejemplos de otros reboots exitosos y fallidos para fundamentar la tesis. El tono será reflexivo, crítico y fundamentado, buscando siempre el criterio propio que caracteriza al canal. La estructura incluirá una introducción impactante (usando fragmentos del tráiler de Spider-Man), un desarrollo con argumentos sólidos y ejemplos, y una conclusión que invite a la reflexión del espectador sobre el valor de la originalidad y la evolución frente al eterno retorno.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-22 02:22:31"
+    }
   }
 ]
