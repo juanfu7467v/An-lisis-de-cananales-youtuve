@@ -9,3 +9,4 @@ flask
 gunicorn
 requests
 google-generativeai
+pytrends

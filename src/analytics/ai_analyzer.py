@@ -36,10 +36,10 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
 
         {channel_context}
 
-        DATOS DE TENDENCIAS GENERALES:
-        {json.dumps(trends_data.get('general_trends', []), indent=2)}
+        TENDENCIAS VALIDADAS (Google Trends + YouTube Search):
+        {json.dumps(trends_data.get('validated_trends', []), indent=2)}
 
-        DATOS ESPECÍFICOS DEL CANAL (Rendimiento y Comentarios):
+        DATOS ESPECÍFICOS DEL CANAL (Rendimiento y Comentarios - si aplica):
         {json.dumps(trends_data.get('channel_specific', {}), indent=2)}
 
         TAREAS:
@@ -50,8 +50,8 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
 
         Responde ÚNICAMENTE en formato JSON válido con la siguiente estructura:
         {{
-          "tema_recomendado": "Ejemplo: Análisis filosófico de la película X",
-          "titulo": "Ejemplo: El secreto oculto en X que nadie notó",
+          "tema_recomendado": "Ejemplo: El secreto oscuro de Spider-Man que nadie entendió",
+          "titulo": "Ejemplo: El secreto oscuro de Spider-Man que nadie entendió",
           "idea_contenido": "Descripción detallada del video, tono y estructura para maximizar retención.",
           "formato_sugerido": "Short o video largo",
           "hora_optima_publicacion": "HH:MM",
@@ -84,6 +84,14 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
         # Asegurar campos requeridos por el usuario
         recommendation["canal"] = channel_name
         
+        # Si hay tendencias validadas, usar la primera como base para la recomendación
+        if trends_data.get('validated_trends'):
+            first_validated_trend = trends_data['validated_trends'][0]
+            recommendation['tema_recomendado'] = first_validated_trend['transformed_title']
+            recommendation['titulo'] = first_validated_trend['transformed_title']
+            recommendation['formato_sugerido'] = first_validated_trend['format_sugerido']
+            recommendation['idea_contenido'] = f"Crear un video sobre '{first_validated_trend['original_topic']}' con el título '{first_validated_trend['transformed_title']}' para maximizar el CTR y las vistas. El formato sugerido es {first_validated_trend['format_sugerido']}."
+
         # Enriquecer con Super Prompt y campos avanzados
         content_config = get_content_type_for_day()
         recommendation = build_enhanced_recommendation(recommendation, content_config)

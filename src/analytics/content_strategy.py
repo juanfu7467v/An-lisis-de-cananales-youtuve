@@ -8,7 +8,7 @@ CONTENT_ROTATION = {
     0: {  # Día 1 del ciclo
         "formato": "Short",
         "duracion": "30-60 segundos",
-        "categoria_temas": "trending",
+        "categoria_temas": "dinamico",
         "estilo": "viral, impactante, directo",
         "estructura": "gancho + punto clave + llamada a la acción"
     },
@@ -30,11 +30,7 @@ CONTENT_ROTATION = {
 
 # Temas para cada categoría
 TEMA_POOLS = {
-    "trending": [
-        "Tendencia viral de hoy",
-        "Reacción a noticia trending",
-        "Análisis rápido de tema del momento"
-    ],
+
     "análisis_película": [
         "Análisis filosófico de película reciente",
         "Lecciones de vida en películas clásicas",
@@ -107,11 +103,9 @@ def get_theme_for_content_type(content_type):
     if not temas:
         return "Contenido de calidad"
     
-    # Usar el día del año para seleccionar un tema de manera consistente
-    day_of_year = datetime.datetime.now().timetuple().tm_yday
-    tema_index = day_of_year % len(temas)
-    
-    return temas[tema_index]
+    # Con el nuevo sistema, el tema se obtiene de las tendencias validadas, no de un pool predefinido.
+    # Esta función ahora solo sirve para categorizar el tipo de contenido general.
+    return f"Tema dinámico de {categoria}"
 
 def get_hook_for_format(formato):
     """

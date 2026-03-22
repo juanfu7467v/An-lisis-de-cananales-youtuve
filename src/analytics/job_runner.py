@@ -3,7 +3,7 @@ import logging
 import requests
 import threading
 from datetime import datetime
-from src.analytics.youtube_trends import get_youtube_trends
+from src.analytics.google_youtube_trends import get_validated_trends
 from src.analytics.ai_analyzer import analyze_trends_and_recommend
 from src.analytics.channel_config import get_channel_config
 from src.analytics.state_manager import get_next_channel_to_analyze, has_channel_been_analyzed_today
@@ -63,9 +63,9 @@ def _job_execution():
     logger.info(f"Analizando canal: {channel_name} (ID: {channel_id})")
 
     try:
-        # 1. Analizar tendencias de YouTube
+        # 1. Analizar tendencias con Google Trends y validar con YouTube Search
         logger.info(f"Obteniendo tendencias de YouTube para {channel_name}...")
-        trends = get_youtube_trends(channel_id=channel_id)
+        trends = get_validated_trends(channel_id=channel_id)
         if not trends:
             logger.error(f"No se pudieron obtener las tendencias de YouTube para {channel_name}.")
             logger.info("=" * 80)
