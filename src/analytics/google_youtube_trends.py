@@ -1,7 +1,7 @@
-
 import os
 import logging
 import json
+import random
 from pytrends.request import TrendReq
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
@@ -9,15 +9,10 @@ import google.generativeai as genai
 
 logger = logging.getLogger(__name__)
 
-def _get_google_trends(keyword):
-    pytrends = TrendReq(hl='es-ES', tz=360)
-    pytrends.build_payload([keyword], cat=0, timeframe='now 1-d', geo='ES', gprop='')
-    data = pytrends.interest_over_time()
-    if not data.empty:
-        return data[keyword].iloc[-1] # Último valor de interés
-    return 0
-
 def _get_youtube_search_views(query):
+    """
+    Busca el término en YouTube y calcula el promedio de vistas de los primeros 5 videos.
+    """
     api_key = os.getenv("YOUTUBE_API_KEY")
     if not api_key:
         logger.error("Falta YOUTUBE_API_KEY para la validación de YouTube Search.")
@@ -33,10 +28,10 @@ def _get_youtube_search_views(query):
             maxResults=5
         ).execute()
 
-        total_views = 0
         video_ids = [item["id"]["videoId"] for item in search_response.get("items", [])]
         
         if not video_ids:
+            logger.warning(f"No se encontraron videos en YouTube para la búsqueda: '{query}'")
             return 0
 
         videos_stats = youtube.videos().list(
@@ -44,35 +39,52 @@ def _get_youtube_search_views(query):
             id=",".join(video_ids)
         ).execute()
 
+        total_views = 0
         for item in videos_stats.get("items", []):
             total_views += int(item["statistics"].get("viewCount", 0))
         
-        return total_views / len(video_ids) if video_ids else 0 # Promedio de vistas
+        avg_views = total_views / len(video_ids)
+        logger.info(f"✓ Validación de vistas en YouTube para '{query}': {avg_views:.0f} vistas promedio.")
+        return avg_views
 
     except Exception as e:
         logger.error(f"Error al obtener vistas de YouTube para '{query}': {e}")
         return 0
 
 def _transform_title_with_ia(trend_topic):
+    """
+    Usa IA para transformar una tendencia en un título emocional y viral.
+    """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         logger.error("Falta GEMINI_API_KEY para la transformación de títulos con IA.")
-        return trend_topic # Retorna el original si no hay API key
+        return trend_topic
 
     try:
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel("gemini-2.5-flash")
 
         prompt = f"""
-        Actúa como un experto en marketing de YouTube. Transforma el siguiente tema de tendencia en un título de video altamente atractivo y clickbait que aumente el CTR. Debe ser intrigante, generar curiosidad y ser emocionalmente resonante.
+        Actúa como un experto en marketing viral de YouTube. 
+        
+        TAREA: Convierte el siguiente tema en un TÍTULO ALTAMENTE VIRAL.
+        
+        REGLAS DE ORO:
+        1. Debe generar CURIOSIDAD EXTREMA, EMOCIÓN o MISTERIO.
+        2. No usar títulos genéricos.
+        3. Usar estilo clickbait inteligente (sin mentir).
+        4. Debe sonar como algo que el usuario NECESITA saber ahora mismo.
 
-        Tema: "{trend_topic}"
-
-        Ejemplo de transformación:
+        EJEMPLO:
+        Entrada: "gatos"
+        Salida: "Por qué los gatos te observan mientras duermes (da miedo)"
+        
         Entrada: "Spider Man"
-        Salida: "El secreto oscuro de Spider-Man que nadie entendió"
+        Salida: "El caso real que nadie pudo explicar sobre Spider-Man"
 
-        Salida (solo el título transformado):
+        TEMA A TRANSFORMAR: "{trend_topic}"
+
+        Salida (solo el título transformado, sin comillas):
         """
         response = model.generate_content(prompt)
         transformed_title = response.text.strip().replace('"', '')
@@ -83,53 +95,50 @@ def _transform_title_with_ia(trend_topic):
         return trend_topic
 
 def get_validated_trends(channel_id=None):
-    logger.info("Iniciando detección de tendencias con Google Trends y validación de YouTube.")
+    """
+    Flujo principal: Google Trends (Perú) -> YouTube Search Validation -> IA Title Transformation.
+    """
+    logger.info("Iniciando detección de tendencias con Google Trends (Perú) y validación de YouTube.")
     
     daily_trends_list = []
-    # 1. Obtener tendencias diarias y búsquedas en crecimiento de Google Trends
+    # 1. Obtener tendencias diarias de Google Trends para Perú
     try:
-        pytrends = TrendReq(hl='es-ES', tz=360, timeout=(10, 10))
-        daily_trends = pytrends.trending_searches(pn='united_states') # Usamos US por defecto, se puede parametrizar
-        # Convertir a lista de strings
-        daily_trends_list = daily_trends.iloc[:, 0].tolist() if not daily_trends.empty else []
+        # Configuración específica para Perú
+        pytrends = TrendReq(hl='es-PE', tz=360, timeout=(15, 15))
+        daily_trends = pytrends.trending_searches(pn='peru')
+        
+        if not daily_trends.empty:
+            daily_trends_list = daily_trends.iloc[:, 0].tolist()
+            logger.info(f"✓ Tendencia obtenida de Google Trends (Perú): {len(daily_trends_list)} temas encontrados.")
+        else:
+            logger.warning("Google Trends no devolvió datos para Perú.")
     except Exception as e:
-        logger.warning(f"Error al inicializar o consultar Google Trends: {e}")
-    
+        logger.error(f"Error crítico al consultar Google Trends: {e}")
 
-    # Búsquedas en crecimiento (rising queries) - No hay una API directa para esto en pytrends para un timeframe 'now 1-d'
-    # Se podría simular buscando términos relacionados con las tendencias diarias y viendo su interés.
-    # Por simplicidad, nos centraremos en las tendencias diarias y las validaremos.
-    
-    potential_trends = daily_trends_list # + rising_queries_list (si se implementa)
-    
-    if not potential_trends:
-        logger.warning("No se encontraron tendencias potenciales de Google Trends. Usando temas de respaldo basados en intereses del canal.")
-        # Fallback: Usar temas de interés general que suelen ser virales/emocionales
-        potential_trends = ["Misterios sin resolver", "Curiosidades impactantes", "Teorías conspirativas famosas", "Secretos oscuros de la historia"]
-    
+    if not daily_trends_list:
+        logger.warning("No se encontraron tendencias reales. El sistema NO generará contenido (fallback eliminado).")
+        return None
 
     validated_trends = []
-    for trend_topic in potential_trends:
-        logger.info(f"Analizando tendencia: '{trend_topic}'")
+    # Procesar máximo 10 tendencias para optimizar tiempo y cuotas de API
+    for trend_topic in daily_trends_list[:10]:
+        logger.info(f"Analizando tendencia potencial: '{trend_topic}'")
         
-        # Filtrar tendencias reales (alto volumen, actuales, virales/emocionales)
-        # La API de pytrends ya nos da tendencias actuales. El volumen y la virilidad
-        # se infieren de que sea una tendencia. La validación de YouTube confirmará el interés.
-        
-        # 2. Validación con YouTube
+        # 2. Validación con YouTube Search
         avg_views = _get_youtube_search_views(trend_topic)
-        logger.info(f"Promedio de vistas en YouTube para '{trend_topic}': {avg_views:.0f}")
 
-        if avg_views >= 100000: # Más de 100K vistas -> CREAR VIDEO
-            logger.info(f"✓ Tendencia '{trend_topic}' validada con éxito (>{avg_views:.0f} vistas).")
-            transformed_title = _transform_title_with_ia(trend_topic)
+        # 3. Reglas de validación (Filtro Real de Viralidad)
+        if avg_views > 500000:
+            priority = "ALTA" if avg_views > 1000000 else "NORMAL"
+            logger.info(f"✓ Tendencia aprobada: '{trend_topic}' con prioridad {priority} ({avg_views:.0f} vistas).")
             
-            # Detección de formato automático (simplificado por ahora)
-            # Si el tema es viral (alta validación), sugerir Short. Si es más de análisis, Video largo.
-            # Por ahora, si pasa la validación de 100K, asumimos que es viral y sugerimos Short.
-            # Esto se puede refinar con un análisis de texto del trend_topic.
-            format_sugerido = "Short" # Default para tendencias virales
-            if "análisis" in trend_topic.lower() or "secreto" in trend_topic.lower() or "teoría" in trend_topic.lower():
+            # 4. Transformación con IA
+            transformed_title = _transform_title_with_ia(trend_topic)
+            logger.info(f"✓ Título viral generado: '{transformed_title}'")
+            
+            # Detección de formato automático
+            format_sugerido = "Short"
+            if any(word in trend_topic.lower() for word in ["análisis", "secreto", "teoría", "historia", "por qué", "explicación"]):
                 format_sugerido = "Video largo"
 
             validated_trends.append({
@@ -137,18 +146,18 @@ def get_validated_trends(channel_id=None):
                 "transformed_title": transformed_title,
                 "avg_youtube_views": avg_views,
                 "format_sugerido": format_sugerido,
-                "potential_category": "trending", # Se puede refinar con IA
-                "emotional_appeal": True # Asumimos que una tendencia viral tiene atractivo emocional
+                "priority": priority,
+                "potential_category": "trending"
             })
-        elif avg_views < 50000: # Menos de 50K vistas -> DESCARTAR
-            logger.info(f"✗ Tendencia '{trend_topic}' descartada (<{avg_views:.0f} vistas).")
         else:
-            logger.info(f"Tendencia '{trend_topic}' en zona gris ({avg_views:.0f} vistas). Descartando por seguridad.")
+            reason = "Vistas insuficientes (< 500,000)"
+            logger.info(f"✗ Tendencia rechazada: '{trend_topic}'. Motivo: {reason} ({avg_views:.0f} vistas).")
 
     if not validated_trends:
-        logger.warning("Ninguna tendencia validada cumplió los criterios.")
+        logger.warning("Ninguna tendencia de hoy superó el filtro de viralidad de 500K vistas.")
         return None
 
+    # Ordenar por vistas para priorizar lo más viral
+    validated_trends.sort(key=lambda x: x['avg_youtube_views'], reverse=True)
+    
     return {"validated_trends": validated_trends}
-
-

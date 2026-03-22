@@ -19,6 +19,7 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
 
     try:
         genai.configure(api_key=api_key)
+        # Se recomienda usar gemini-2.5-flash según las instrucciones del usuario
         model = genai.GenerativeModel("gemini-2.5-flash")
 
         config = get_channel_config(channel_name)
@@ -90,7 +91,17 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
             recommendation['tema_recomendado'] = first_validated_trend['transformed_title']
             recommendation['titulo'] = first_validated_trend['transformed_title']
             recommendation['formato_sugerido'] = first_validated_trend['format_sugerido']
-            recommendation['idea_contenido'] = f"Crear un video sobre '{first_validated_trend['original_topic']}' con el título '{first_validated_trend['transformed_title']}' para maximizar el CTR y las vistas. El formato sugerido es {first_validated_trend['format_sugerido']}."
+            
+            priority_msg = f" (PRIORIDAD {first_validated_trend['priority']})" if first_validated_trend['priority'] == "ALTA" else ""
+            avg_views = first_validated_trend.get('avg_youtube_views', 0)
+            
+            recommendation['idea_contenido'] = (
+                f"Crear un video sobre '{first_validated_trend['original_topic']}' "
+                f"con el título '{first_validated_trend['transformed_title']}' "
+                f"para maximizar el CTR y las vistas. "
+                f"Promedio de vistas: {avg_views:.0f}{priority_msg}. "
+                f"El formato sugerido es {first_validated_trend['format_sugerido']}."
+            )
 
         # Enriquecer con Super Prompt y campos avanzados
         content_config = get_content_type_for_day()
