@@ -40,7 +40,7 @@ def _get_youtube_search_views(query):
         video_ids = [item["id"]["videoId"] for item in search_response.get("items", [])]
         
         if not video_ids:
-            logger.warning(f"No se encontraron videos en YouTube para la búsqueda: \'{query}\'")
+            logger.warning(f"No se encontraron videos en YouTube para la búsqueda: {query}")
             return 0
 
         videos_stats = youtube.videos().list(
@@ -53,11 +53,11 @@ def _get_youtube_search_views(query):
             total_views += int(item["statistics"].get("viewCount", 0))
         
         avg_views = total_views / len(video_ids)
-        logger.info(f"✓ Validación de vistas en YouTube para \'{query}\': {avg_views:.0f} vistas promedio.")
+        logger.info(f"✓ Validación de vistas en YouTube para {query}: {avg_views:.0f} vistas promedio.")
         return avg_views
 
     except Exception as e:
-        logger.error(f"Error al obtener vistas de YouTube para \'{query}\': {e}")
+        logger.error(f"Error al obtener vistas de YouTube para {query}: {e}")
         return 0
 
 def _transform_title_with_ia(trend_topic):
@@ -96,11 +96,11 @@ def _transform_title_with_ia(trend_topic):
         Salida (solo el título transformado, sin comillas):
         """
         response = model.generate_content(prompt)
-        transformed_title = response.text.strip().replace(\'"\', \'\')
+        transformed_title = response.text.strip().replace('"', '')
         return transformed_title if transformed_title else trend_topic
 
     except Exception as e:
-        logger.error(f"Error al transformar título con IA para \'{trend_topic}\': {e}")
+        logger.error(f"Error al transformar título con IA para {trend_topic}: {e}")
         return trend_topic
 
 def get_validated_trends(channel_id=None):
@@ -142,7 +142,7 @@ def get_validated_trends(channel_id=None):
     for trend_item in trends_with_origin[:20]:
         trend_topic = trend_item["topic"]
         trend_origin = trend_item["origin"]
-        logger.info(f"Analizando tendencia potencial de {trend_origin}: \'{trend_topic}\'")
+        logger.info(f"Analizando tendencia potencial de {trend_origin}: {trend_topic}")
         
         # 2. Validación con YouTube Search
         avg_views = _get_youtube_search_views(trend_topic)
@@ -150,11 +150,11 @@ def get_validated_trends(channel_id=None):
         # 3. Reglas de validación (Filtro Real de Viralidad)
         if avg_views > 500000:
             priority = "ALTA" if avg_views > 1000000 else "NORMAL"
-            logger.info(f"✓ Tendencia aprobada de {trend_origin}: \'{trend_topic}\' con prioridad {priority} ({avg_views:.0f} vistas).")
+            logger.info(f"✓ Tendencia aprobada de {trend_origin}: {trend_topic} con prioridad {priority} ({avg_views:.0f} vistas).")
             
             # 4. Transformación con IA
             transformed_title = _transform_title_with_ia(trend_topic)
-            logger.info(f"✓ Título viral generado: \'{transformed_title}\'")
+            logger.info(f"✓ Título viral generado: {transformed_title}")
             
             # Detección de formato automático
             format_sugerido = "Short"
@@ -172,7 +172,7 @@ def get_validated_trends(channel_id=None):
             })
         else:
             reason = "Vistas insuficientes (< 500,000)"
-            logger.info(f"✗ Tendencia rechazada de {trend_origin}: \'{trend_topic}\'. Motivo: {reason} ({avg_views:.0f} vistas).")
+            logger.info(f"✗ Tendencia rechazada de {trend_origin}: {trend_topic}. Motivo: {reason} ({avg_views:.0f} vistas).")
 
     if not validated_trends:
         logger.warning("Ninguna tendencia de hoy superó el filtro de viralidad de 500K vistas en Latinoamérica.")
