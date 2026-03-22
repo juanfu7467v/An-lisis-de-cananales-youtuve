@@ -1,0 +1,41 @@
+[
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-03-22",
+    "hora": "13:50:11",
+    "analisis": {
+      "tema_recomendado": "La VERDAD ATERRADORA de los misterios que JAMÁS quisieron que resolvieras.",
+      "titulo": "La VERDAD ATERRADORA de los misterios que JAMÁS quisieron que resolvieras.",
+      "idea_contenido": "Crear un video sobre 'Misterios sin resolver' con el título 'La VERDAD ATERRADORA de los misterios que JAMÁS quisieron que resolvieras.' para maximizar el CTR y las vistas. El formato sugerido es Short.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "18:00",
+      "canal": "El Tío Jota",
+      "categoria": "Filosofía y Análisis Crítico",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "No hay datos de comentarios específicos del canal para analizar el sentimiento o peticiones de la audiencia.",
+        "observaciones_engagement": "No se proporcionaron datos específicos de rendimiento (vistas/likes) del canal 'El Tío Jota'. El análisis se basa en tendencias generales de YouTube validadas, que indican un alto interés en temas de 'misterios sin resolver', 'curiosidades impactantes', 'teorías conspirativas famosas' y 'secretos oscuros de la historia', con títulos que apelan a la emoción y la intriga."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "¡Wow, Tío Jota! Este video me dejó pensando mucho. Siempre quise saber más sobre X teoría conspirativa, ¿crees que tenga base en la realidad o es solo una forma de manipularnos?",
+          "respuesta_sugerida": "¡Hola [Nombre de usuario]! Me alegra mucho que el video te haya hecho reflexionar. Es fascinante cómo algunas narrativas nos hacen cuestionar la realidad. La clave no está solo en la 'verdad' de la teoría, sino en qué nos revela sobre nuestra percepción y cómo nos movemos en un mundo lleno de información. Te recomiendo ver nuestro análisis sobre 'La construcción de la realidad en el cine' en nuestra web para profundizar más: https://masitaprex.com/PeliPREX. ¡Gracias por el comentario!"
+        },
+        {
+          "comentario_original": "Excelente video, como siempre, Tío Jota. Tu forma de conectar la filosofía con temas actuales es única. ¿Has pensado en analizar la película 'V for Vendetta' desde la perspectiva de las verdades ocultas y la libertad?",
+          "respuesta_sugerida": "¡Muchas gracias por tu valioso comentario, [Nombre de usuario]! Me alegra que la conexión te resuene. 'V for Vendetta' es una joya cinematográfica que definitivamente aborda estas temáticas de forma magistral, ¡y es una de mis favoritas! De hecho, en https://masitaprex.com/PeliPREX tenemos algunos artículos y reflexiones sobre películas distópicas que exploran precisamente la libertad y el control social. ¡Seguro te gustarán!"
+        },
+        {
+          "comentario_original": "Este tipo de contenido es el que necesitamos, Tío Jota. ¡Me hace cuestionar absolutamente todo! ¿Cómo podemos desarrollar más nuestro pensamiento crítico para no caer en la desinformación?",
+          "respuesta_sugerida": "¡Esa es la actitud, [Nombre de usuario]! Cuestionarlo todo es el primer paso para el crecimiento personal y el pensamiento crítico. No hay una fórmula mágica, pero te puedo asegurar que la curiosidad y el análisis profundo son tus mejores aliados. En el canal tenemos otros videos sobre 'Filosofía para la vida diaria' y 'Crecimiento personal' que te darán más herramientas. ¡Sigue explorando y formando tu propia verdad!"
+        }
+      ],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "Este principio antiguo sigue siendo relevante hoy porque...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: La VERDAD ATERRADORA de los misterios que JAMÁS quisieron que resolvieras.\nTÍTULO: La VERDAD ATERRADORA de los misterios que JAMÁS quisieron que resolvieras.\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre 'Misterios sin resolver' con el título 'La VERDAD ATERRADORA de los misterios que JAMÁS quisieron que resolvieras.' para maximizar el CTR y las vistas. El formato sugerido es Short.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-03-22 13:50:10"
+    }
+  }
+]
