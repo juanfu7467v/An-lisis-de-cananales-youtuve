@@ -1,22 +1,11 @@
 import os
 import logging
 import json
-import random
-from pytrends.request import TrendReq
 from googleapiclient.discovery import build
-from datetime import datetime, timedelta
+from datetime import datetime
 import google.generativeai as genai
 
 logger = logging.getLogger(__name__)
-
-# Países de Latinoamérica a consultar
-LATAM_COUNTRIES = {
-    "PE": {"hl": "es-PE", "pn": "peru"},
-    "MX": {"hl": "es-MX", "pn": "mexico"},
-    "AR": {"hl": "es-AR", "pn": "argentina"},
-    "CO": {"hl": "es-CO", "pn": "colombia"},
-    "CL": {"hl": "es-CL", "pn": "chile"},
-}
 
 def _get_youtube_search_views(query):
     """
@@ -105,80 +94,147 @@ def _transform_title_with_ia(trend_topic):
 
 def get_validated_trends(channel_id=None):
     """
-    Flujo principal: Google Trends (Latinoamérica) -> YouTube Search Validation -> IA Title Transformation.
+    Flujo principal: Escucha Activa (Comentarios de YouTube) -> YouTube Search Validation -> IA Title Transformation.
     """
-    logger.info("Iniciando detección de tendencias con Google Trends (Latinoamérica) y validación de YouTube.")
+    logger.info("Iniciando detección de tendencias basada en Escucha Activa (Comentarios y YouTube).")
     
-    all_latam_trends = set() # Usar un set para evitar duplicados
-    trends_with_origin = [] # Para guardar el origen de cada tendencia
+    api_key = os.getenv("YOUTUBE_API_KEY")
+    if not api_key:
+        logger.error("Falta YOUTUBE_API_KEY para la Escucha Activa.")
+        return None
 
-    # 1. Obtener tendencias diarias de Google Trends para cada país de Latinoamérica
-    for country_code, config in LATAM_COUNTRIES.items():
-        hl = config["hl"]
-        pn = config["pn"]
-        logger.info(f"Consultando Google Trends para {pn.upper()} (hl={hl})...")
-        try:
-            pytrends = TrendReq(hl=hl, tz=360, timeout=(15, 15))
-            daily_trends = pytrends.trending_searches(pn=pn)
+    potential_topics = []
+    channel_data = {"recent_performance": [], "audience_comments": []}
+
+    try:
+        youtube = build("youtube", "v3", developerKey=api_key)
+
+        # 1. Obtener los últimos videos del canal para extraer comentarios
+        if channel_id:
+            logger.info(f"Extrayendo comentarios del canal: {channel_id}")
+            search_response = youtube.search().list(
+                channelId=channel_id,
+                part="id,snippet",
+                order="date",
+                maxResults=5,
+                type="video"
+            ).execute()
+
+            video_ids = [item["id"]["videoId"] for item in search_response.get("items", [])]
             
-            if not daily_trends.empty:
-                country_trends = daily_trends.iloc[:, 0].tolist()
-                logger.info(f"✓ {len(country_trends)} tendencias obtenidas de Google Trends para {pn.upper()}.")
-                for trend in country_trends:
-                    if trend not in all_latam_trends:
-                        all_latam_trends.add(trend)
-                        trends_with_origin.append({"topic": trend, "origin": pn.upper()})
-            else:
-                logger.warning(f"Google Trends no devolvió datos para {pn.upper()}.")
-        except Exception as e:
-            logger.error(f"Error al consultar Google Trends para {pn.upper()}: {e}")
+            if video_ids:
+                videos_stats = youtube.videos().list(
+                    part="snippet,statistics",
+                    id=",".join(video_ids)
+                ).execute()
 
-    if not all_latam_trends:
-        logger.warning("No se encontraron tendencias reales en ningún país de Latinoamérica. El sistema NO generará contenido.")
+                for v in videos_stats.get("items", []):
+                    v_id = v["id"]
+                    stats = v["statistics"]
+                    snippet = v["snippet"]
+                    
+                    channel_data["recent_performance"].append({
+                        "title": snippet["title"],
+                        "views": stats.get("viewCount", 0),
+                        "likes": stats.get("likeCount", 0)
+                    })
+
+                    # Obtener comentarios para detectar peticiones
+                    try:
+                        comments_response = youtube.commentThreads().list(
+                            part="snippet",
+                            videoId=v_id,
+                            maxResults=20,
+                            order="relevance"
+                        ).execute()
+
+                        for c in comments_response.get("items", []):
+                            comment_text = c["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
+                            channel_data["audience_comments"].append(comment_text)
+                    except Exception as ce:
+                        logger.warning(f"No se pudieron obtener comentarios para el video {v_id}: {ce}")
+
+        # 2. Usar IA para identificar temas sugeridos por la audiencia o temas relacionados con el éxito actual
+        if channel_data["audience_comments"] or channel_data["recent_performance"]:
+            logger.info("Analizando comentarios y rendimiento con IA para detectar temas...")
+            gemini_key = os.getenv("GEMINI_API_KEY")
+            if gemini_key:
+                genai.configure(api_key=gemini_key)
+                model = genai.GenerativeModel("gemini-2.5-flash")
+                
+                prompt = f"""
+                Analiza los siguientes comentarios y el rendimiento de los videos recientes de un canal de YouTube.
+                Identifica 5 temas de alta demanda o curiosidades que la audiencia esté pidiendo o que tengan relación con los videos más exitosos.
+                
+                RENDIMIENTO RECIENTE:
+                {json.dumps(channel_data['recent_performance'], indent=2)}
+                
+                COMENTARIOS DE LA AUDIENCIA:
+                {json.dumps(channel_data['audience_comments'][:50], indent=2)}
+                
+                Responde ÚNICAMENTE con una lista de 5 temas cortos (ej: "El secreto de la Atlántida", "Teoría sobre el Joker").
+                """
+                response = model.generate_content(prompt)
+                extracted_topics = response.text.strip().split('\n')
+                potential_topics = [t.strip('- ').strip() for t in extracted_topics if t.strip()]
+                logger.info(f"✓ Temas detectados por Escucha Activa: {potential_topics}")
+
+    except Exception as e:
+        logger.error(f"Error en el proceso de Escucha Activa: {e}")
+
+    # Si no hay temas de comentarios, usar tendencias generales de YouTube como último recurso
+    if not potential_topics:
+        logger.info("No se detectaron temas en comentarios. Usando tendencias generales de YouTube.")
+        try:
+            youtube = build("youtube", "v3", developerKey=api_key)
+            trends_response = youtube.videos().list(
+                part="snippet",
+                chart="mostPopular",
+                regionCode="PE",
+                maxResults=5
+            ).execute()
+            potential_topics = [item["snippet"]["title"] for item in trends_response.get("items", [])]
+        except Exception as e:
+            logger.error(f"Error al obtener tendencias generales: {e}")
+
+    if not potential_topics:
+        logger.warning("No se encontraron temas potenciales. El sistema NO generará contenido.")
         return None
 
     validated_trends = []
-    # Procesar máximo 20 tendencias combinadas para optimizar tiempo y cuotas de API
-    for trend_item in trends_with_origin[:20]:
-        trend_topic = trend_item["topic"]
-        trend_origin = trend_item["origin"]
-        logger.info(f"Analizando tendencia potencial de {trend_origin}: {trend_topic}")
-        
-        # 2. Validación con YouTube Search
-        avg_views = _get_youtube_search_views(trend_topic)
+    for topic in potential_topics[:10]:
+        logger.info(f"Validando tema: '{topic}'")
+        avg_views = _get_youtube_search_views(topic)
 
-        # 3. Reglas de validación (Filtro Real de Viralidad)
         if avg_views > 500000:
             priority = "ALTA" if avg_views > 1000000 else "NORMAL"
-            logger.info(f"✓ Tendencia aprobada de {trend_origin}: {trend_topic} con prioridad {priority} ({avg_views:.0f} vistas).")
+            logger.info(f"✓ Tema aprobado: '{topic}' con prioridad {priority} ({avg_views:.0f} vistas).")
             
-            # 4. Transformación con IA
-            transformed_title = _transform_title_with_ia(trend_topic)
-            logger.info(f"✓ Título viral generado: {transformed_title}")
+            transformed_title = _transform_title_with_ia(topic)
+            logger.info(f"✓ Título viral generado: '{transformed_title}'")
             
-            # Detección de formato automático
             format_sugerido = "Short"
-            if any(word in trend_topic.lower() for word in ["análisis", "secreto", "teoría", "historia", "por qué", "explicación"]):
+            if any(word in topic.lower() for word in ["análisis", "secreto", "teoría", "historia", "por qué", "explicación"]):
                 format_sugerido = "Video largo"
 
             validated_trends.append({
-                "original_topic": trend_topic,
+                "original_topic": topic,
                 "transformed_title": transformed_title,
                 "avg_youtube_views": avg_views,
                 "format_sugerido": format_sugerido,
                 "priority": priority,
-                "potential_category": "trending",
-                "origin_country": trend_origin
+                "potential_category": "escucha_activa"
             })
         else:
-            reason = "Vistas insuficientes (< 500,000)"
-            logger.info(f"✗ Tendencia rechazada de {trend_origin}: {trend_topic}. Motivo: {reason} ({avg_views:.0f} vistas).")
+            logger.info(f"✗ Tema rechazado: '{topic}'. Vistas insuficientes ({avg_views:.0f}).")
 
     if not validated_trends:
-        logger.warning("Ninguna tendencia de hoy superó el filtro de viralidad de 500K vistas en Latinoamérica.")
+        logger.warning("Ningún tema de la Escucha Activa superó el filtro de 500K vistas.")
         return None
 
-    # Ordenar por vistas para priorizar lo más viral
     validated_trends.sort(key=lambda x: x["avg_youtube_views"], reverse=True)
     
-    return {"validated_trends": validated_trends}
+    return {
+        "validated_trends": validated_trends,
+        "channel_specific": channel_data
+    }
