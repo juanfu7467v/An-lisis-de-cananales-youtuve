@@ -24,5 +24,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-03-22 02:22:20"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-22",
+    "hora": "02:22:23",
+    "analisis": {
+      "tema_recomendado": "La 'Novedad' como Ciclo en el Cine: Análisis de los Reboots y la Memoria Cultural",
+      "titulo": "SPIDER-MAN: BRAND NEW DAY | ¿El 'DÍA CERO' de la MEMORIA CULTURAL? | Análisis Profundo",
+      "idea_contenido": "Este video utilizará el anuncio y los tráilers de 'SPIDER-MAN: BRAND NEW DAY' como el punto de partida para una reflexión más amplia y profunda. Se explorará la fascinación actual de Hollywood por los reboots, los 'días cero' narrativos y la constante necesidad de 'reiniciar' franquicias establecidas. El análisis se centrará en si estos reinicios representan una verdadera innovación creativa, un síntoma de agotamiento o simplemente un 'eterno retorno' comercial de las mismas historias bajo nuevas formas. Se vincularán estos fenómenos con conceptos filosóficos sobre la memoria cultural, la identidad narrativa de los personajes icónicos y cómo la sociedad se relaciona con su pasado ficticio. Se buscará responder: ¿Qué se gana y qué se pierde al borrar o reinterpretar la historia de un personaje como Spider-Man? El tono será serio, reflexivo y crítico, pero presentado de manera accesible y atractiva para maximizar la retención. La estructura incluirá una introducción dinámica usando fragmentos del tráiler, un desarrollo con ejemplos de otros reboots exitosos y fallidos, y una conclusión que invite a la audiencia a formar su propio 'criterio' sobre la evolución del cine de superhéroes y la cultura pop en general.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "19:30",
+      "canal": "El Criterio",
+      "categoria": "Film & Animation (con enfoque en análisis crítico y filosofía)",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "Neutro a negativo (dada la falta de interacción y el rendimiento extremadamente bajo de los videos recientes)",
+        "observaciones_engagement": "Los videos recientes sobre 'SPIDER-MAN: BRAND NEW DAY', a pesar de abordar un tema de tendencia evidente ('Film & Animation' y 'Spider-Man' aparecen varias veces en las tendencias generales), han tenido un rendimiento críticamente bajo (0-1 vista, 0 likes, 0 comentarios). Esto sugiere una severa falta de alcance o visibilidad para el canal, o que la presentación/titulación de estos temas específicos no está logrando captar la atención de una audiencia, incluso si el contenido en sí es de nicho y de alta calidad. No hay comentarios de la audiencia para analizar peticiones o sentimientos."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "Este principio antiguo sigue siendo relevante hoy porque...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: La 'Novedad' como Ciclo en el Cine: Análisis de los Reboots y la Memoria Cultural\nTÍTULO: SPIDER-MAN: BRAND NEW DAY | ¿El 'DÍA CERO' de la MEMORIA CULTURAL? | Análisis Profundo\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nEste video utilizará el anuncio y los tráilers de 'SPIDER-MAN: BRAND NEW DAY' como el punto de partida para una reflexión más amplia y profunda. Se explorará la fascinación actual de Hollywood por los reboots, los 'días cero' narrativos y la constante necesidad de 'reiniciar' franquicias establecidas. El análisis se centrará en si estos reinicios representan una verdadera innovación creativa, un síntoma de agotamiento o simplemente un 'eterno retorno' comercial de las mismas historias bajo nuevas formas. Se vincularán estos fenómenos con conceptos filosóficos sobre la memoria cultural, la identidad narrativa de los personajes icónicos y cómo la sociedad se relaciona con su pasado ficticio. Se buscará responder: ¿Qué se gana y qué se pierde al borrar o reinterpretar la historia de un personaje como Spider-Man? El tono será serio, reflexivo y crítico, pero presentado de manera accesible y atractiva para maximizar la retención. La estructura incluirá una introducción dinámica usando fragmentos del tráiler, un desarrollo con ejemplos de otros reboots exitosos y fallidos, y una conclusión que invite a la audiencia a formar su propio 'criterio' sobre la evolución del cine de superhéroes y la cultura pop en general.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-22 02:22:22"
+    }
   }
 ]
