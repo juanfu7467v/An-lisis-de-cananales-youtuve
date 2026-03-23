@@ -24,5 +24,36 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-22 15:38:52"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-23",
+    "hora": "13:25:43",
+    "analisis": {
+      "tema_recomendado": "BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO (¡Tienes que saber esto AHORA!)",
+      "titulo": "BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO (¡Tienes que saber esto AHORA!)",
+      "idea_contenido": "Crear un video sobre 'BTS (방탄소년단) ‘SWIM’ Official MV' con el título 'BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO (¡Tienes que saber esto AHORA!)' para maximizar el CTR y las vistas. Promedio de vistas: 16370007 (PRIORIDAD ALTA). El formato sugerido es Short.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "18:00",
+      "canal": "El Criterio",
+      "categoria": "Análisis Cultural / K-Pop y Sociedad",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "No hay datos de comentarios de la audiencia para analizar el sentimiento.",
+        "observaciones_engagement": "No se proporcionaron datos de rendimiento recientes del canal 'El Criterio' ni comentarios de la audiencia. El análisis y la estrategia se basan en el contexto temático del canal (análisis crítico, cine y cultura, reflexiones filosóficas) y en las tendencias de alta prioridad validadas externamente, que demuestran alto interés en 'secretos' o 'detalles ocultos' dentro de fenómenos culturales como BTS."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "¡Me encanta cómo analizas todo a fondo! Nunca había visto el MV de BTS 'SWIM' desde esa perspectiva. ¿Podrías analizar alguna película de Bong Joon-ho?",
+          "respuesta_sugerida": "¡Hola [Nombre de usuario]! ¡Qué excelente comentario! Nos alegra mucho que nuestro análisis de 'SWIM' te haya abierto nuevas perspectivas, ese es el espíritu de 'El Criterio'. ¡Tu sugerencia de Bong Joon-ho es fantástica! Tomamos nota para futuros análisis profundos. Mientras tanto, si te interesan más miradas críticas al cine y la cultura, te invitamos a explorar contenido relacionado en nuestra web: https://masitaprex.com/PeliPREX. ¡Gracias por tu apoyo!"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Mira esto, es increíble...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO (¡Tienes que saber esto AHORA!)\nTÍTULO: BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO (¡Tienes que saber esto AHORA!)\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre 'BTS (방탄소년단) ‘SWIM’ Official MV' con el título 'BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO (¡Tienes que saber esto AHORA!)' para maximizar el CTR y las vistas. Promedio de vistas: 16370007 (PRIORIDAD ALTA). El formato sugerido es Short.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-23 13:25:42"
+    }
   }
 ]
