@@ -102,5 +102,31 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-23 13:27:25"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-24",
+    "hora": "04:30:49",
+    "analisis": {
+      "tema_recomendado": "K-Pop: El SECRETO más perturbador que NUNCA debiste conocer (Teorías que lo cambian todo)",
+      "titulo": "K-Pop: El SECRETO más perturbador que NUNCA debiste conocer (Teorías que lo cambian todo)",
+      "idea_contenido": "Crear un video sobre '*   Teorías secretas de K-Pop' con el título 'K-Pop: El SECRETO más perturbador que NUNCA debiste conocer (Teorías que lo cambian todo)' para maximizar el CTR y las vistas. Promedio de vistas: 5901360 (PRIORIDAD ALTA). El formato sugerido es Video largo.",
+      "formato_sugerido": "Video largo",
+      "hora_optima_publicacion": "18:00",
+      "canal": "El Criterio",
+      "categoria": "Cine y Análisis Cultural",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "No se puede determinar debido a la falta de comentarios y el bajo volumen de engagement en el único video reciente.",
+        "observaciones_engagement": "El único video disponible ('BTS 'SWIM': El ÚNICO DETALLE que NADIE ha VISTO y LO CAMBIA TODO') muestra un engagement extremadamente bajo (4 vistas, 0 likes). Esto dificulta identificar temas internos exitosos. Sin embargo, el hecho de que el tema K-Pop sea una tendencia de 'ALTA' prioridad con millones de vistas a nivel general, sugiere que hay un público, pero el canal no está logrando alcanzarlo o resonar con él en esta instancia. La tendencia de 'Detalles ocultos en películas Pixar' se alinea mucho mejor con la descripción del canal ('análisis profundo de la cultura, el cine') y su web de referencia (PeliPREX), ofreciendo una base más sólida para comenzar a generar engagement."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "profundo, reflexivo, emocionante",
+      "estructura": "introducción + análisis profundo + conclusiones + reflexión final",
+      "hook": "Este análisis te hará repensar todo lo que sabías sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser profundo, reflexivo, emocionante.\n\nTEMA: K-Pop: El SECRETO más perturbador que NUNCA debiste conocer (Teorías que lo cambian todo)\nTÍTULO: K-Pop: El SECRETO más perturbador que NUNCA debiste conocer (Teorías que lo cambian todo)\nFORMATO: Video largo\nDURACIÓN: 12-20 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Teorías secretas de K-Pop' con el título 'K-Pop: El SECRETO más perturbador que NUNCA debiste conocer (Teorías que lo cambian todo)' para maximizar el CTR y las vistas. Promedio de vistas: 5901360 (PRIORIDAD ALTA). El formato sugerido es Video largo.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono profundo, reflexivo, emocionante en todo momento.\n2. ESTRUCTURA: Sigue este orden: introducción + análisis profundo + conclusiones + reflexión final\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-24 04:30:49"
+    }
   }
 ]
