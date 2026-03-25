@@ -201,5 +201,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-03-25 04:31:19"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-03-25",
+    "hora": "16:31:40",
+    "analisis": {
+      "tema_recomendado": "El DESCUBRIMIENTO del OCÉANO PROFUNDO que DEBIÓ PERMANECER OCULTO (La verdad es INEXPLICABLE)",
+      "titulo": "El DESCUBRIMIENTO del OCÉANO PROFUNDO que DEBIÓ PERMANECER OCULTO (La verdad es INEXPLICABLE)",
+      "idea_contenido": "Crear un video sobre '*   Misterios del Océano Profundo' con el título 'El DESCUBRIMIENTO del OCÉANO PROFUNDO que DEBIÓ PERMANECER OCULTO (La verdad es INEXPLICABLE)' para maximizar el CTR y las vistas. Promedio de vistas: 33665111 (PRIORIDAD ALTA). El formato sugerido es Short.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Tío Jota",
+      "categoria": "Cine y Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro",
+        "observaciones_engagement": "El video '¡El Tío Jota te Revela! Misterios Alucinantes del Océano Profundo' es el que mejor rendimiento tuvo recientemente (958 vistas, 36 likes), lo que valida el interés de la audiencia en los temas de 'misterios del océano'. Un video corto sobre motivación también tuvo cierto engagement (99 vistas). El resto de los videos tienen un rendimiento muy bajo. No se proporcionaron comentarios de la audiencia, por lo que no hay peticiones específicas ni sentimiento directo detectado."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "Aprende la lección que los filósofos querían que entendieras...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: El DESCUBRIMIENTO del OCÉANO PROFUNDO que DEBIÓ PERMANECER OCULTO (La verdad es INEXPLICABLE)\nTÍTULO: El DESCUBRIMIENTO del OCÉANO PROFUNDO que DEBIÓ PERMANECER OCULTO (La verdad es INEXPLICABLE)\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Misterios del Océano Profundo' con el título 'El DESCUBRIMIENTO del OCÉANO PROFUNDO que DEBIÓ PERMANECER OCULTO (La verdad es INEXPLICABLE)' para maximizar el CTR y las vistas. Promedio de vistas: 33665111 (PRIORIDAD ALTA). El formato sugerido es Short.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-03-25 16:31:39"
+    }
   }
 ]
