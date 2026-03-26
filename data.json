@@ -201,5 +201,48 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-25 16:31:39"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-26",
+    "hora": "16:31:43",
+    "analisis": {
+      "tema_recomendado": "El mensaje OCULTO en las letras K-Pop que la industria NO quiere que sepas",
+      "titulo": "El mensaje OCULTO en las letras K-Pop que la industria NO quiere que sepas",
+      "idea_contenido": "Crear un video sobre '*   Análisis de letras K-Pop' con el título 'El mensaje OCULTO en las letras K-Pop que la industria NO quiere que sepas' para maximizar el CTR y las vistas. Promedio de vistas: 5496960 (PRIORIDAD ALTA). El formato sugerido es Video largo.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Análisis Cultural y Sociológico",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro",
+        "observaciones_engagement": "Los videos recientes sobre K-Pop han mostrado un rendimiento extremadamente bajo (1-15 vistas), lo que sugiere una desconexión entre el enfoque actual y la audiencia del canal, o una alta saturación del nicho sin una propuesta diferenciada que resuene con 'El Criterio'. A pesar de esto, 'Análisis de letras K-Pop' es una tendencia validada con alto potencial general. La clave es una reinterpretación del tema que combine el gancho viral con la profundidad crítica y filosófica característica del canal, buscando atraer a una audiencia interesada en análisis profundos, incluso sobre temas pop."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "No estoy de acuerdo, el K-Pop es arte y los idols trabajan muy duro, ¡no es todo manipulación!",
+          "respuesta_sugerida": "¡Hola! Entiendo tu punto de vista y valoro tu pasión por el K-Pop. Nuestro objetivo en El Criterio es precisamente invitar a una reflexión más allá de la superficie, reconociendo el arte y el esfuerzo, pero también analizando las estructuras subyacentes. ¿Qué aspectos específicos te parecen más relevantes de este fenómeno? Te invito a explorar otros análisis de cultura y sociedad en nuestro canal o en https://masitaprex.com/PeliPREX, seguro encontrarás temas para debatir."
+        },
+        {
+          "comentario_original": "¡Por fin un video que analiza K-Pop en profundidad y con seriedad! Necesitamos más de esto.",
+          "respuesta_sugerida": "¡Muchas gracias por tu comentario! Nos alegra mucho saber que este tipo de análisis resuena contigo. En El Criterio buscamos siempre esa profundidad y seriedad para entender mejor el mundo que nos rodea. Si te interesa el análisis cinematográfico con criterio, te recomiendo visitar https://masitaprex.com/PeliPREX. ¡Tu apoyo nos impulsa a seguir creando contenido así!"
+        },
+        {
+          "comentario_original": "¿Podrías hacer un análisis similar sobre la industria del cine de Hollywood o la cultura de influencers?",
+          "respuesta_sugerida": "¡Excelente sugerencia! Agradecemos mucho tu interés en más análisis críticos. En El Criterio ya tenemos contenido que aborda la industria cinematográfica y sus implicaciones culturales, ¡te animamos a explorar nuestros videos sobre cine! Además, en https://masitaprex.com/PeliPREX encontrarás análisis de películas que seguro te gustarán. ¡Tomamos nota de la cultura de influencers para futuras reflexiones!"
+        },
+        {
+          "comentario_original": "Excelente video, muy reflexivo y bien argumentado.",
+          "respuesta_sugerida": "¡Gracias por tus amables palabras! Nos esforzamos por ofrecer contenido reflexivo y bien argumentado para nuestros espectadores. Si te interesan los análisis culturales y de cine, no dudes en explorar más videos de El Criterio y visitar https://masitaprex.com/PeliPREX para encontrar críticas y reflexiones sobre películas."
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Esto es lo que nadie te dice sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: El mensaje OCULTO en las letras K-Pop que la industria NO quiere que sepas\nTÍTULO: El mensaje OCULTO en las letras K-Pop que la industria NO quiere que sepas\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Análisis de letras K-Pop' con el título 'El mensaje OCULTO en las letras K-Pop que la industria NO quiere que sepas' para maximizar el CTR y las vistas. Promedio de vistas: 5496960 (PRIORIDAD ALTA). El formato sugerido es Video largo.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-26 16:31:43"
+    }
   }
 ]
