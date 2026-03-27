@@ -24,5 +24,49 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-03-27 04:32:07"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-03-27",
+    "hora": "16:32:32",
+    "analisis": {
+      "tema_recomendado": "Estos animales guardaban un secreto... (y su historia te cambiará para siempre)",
+      "titulo": "Estos animales guardaban un secreto... (y su historia te cambiará para siempre)",
+      "idea_contenido": "Crear un video sobre '1.  Historias inspiradoras de animales' con el título 'Estos animales guardaban un secreto... (y su historia te cambiará para siempre)' para maximizar el CTR y las vistas. Promedio de vistas: 5303172 (PRIORIDAD ALTA). El formato sugerido es Video largo.",
+      "formato_sugerido": "Video largo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Tío Jota",
+      "categoria": "Filosofía y Crecimiento Personal",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "historias inspiradoras de animales",
+          "reflexiones sobre la empatía y la condición humana",
+          "superación personal y resiliencia",
+          "sabiduría bíblica y espiritualidad"
+        ],
+        "sentimiento_general": "La audiencia muestra un sentimiento mayoritariamente positivo y empático, conectándose profundamente con contenido que provoca reflexión y aborda luchas personales o historias de superación. Hay una fuerte resonancia con el contenido moral y espiritual.",
+        "observaciones_engagement": "Los Shorts con mensajes motivacionales, especialmente aquellos que incorporan imágenes de animales (como el video del Pitbull), generan un engagement masivo en vistas. Los videos sobre misterios profundos y narrativas bíblicas también muestran una buena interacción y ratios de likes, indicando un interés en contenido que desafía la mente o nutre el espíritu. La audiencia valora las narrativas que ofrecen lecciones de vida."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "Как то в гипермаркете, в тамбуре лежал такой битбуль.. Вся голова в крови и очень плохо себя чувствовал,, все с опаской мимо него проходили,, мне очень стало его жаль, он лежал такой несчастный с потухшими глазками.. Я не побоялась, подошла, сначала поговорила с ним, потом погладила, никакой агрессии от него,, забрала его домой,, несла на руках, а он тяжеленный такой... Дома вызвала ветеренарную службу,, у него была пробита голова, осколки от бутылки удалили из головы.. Лечила долго, он поправился, я его уже хотела оставить себе, но дала объявление все же,, нашёлся хозяин,, пришлось вернуть.. Он рассказал, что оставил бабушке присмотреть за псом, а он убежал,, собака очень добрая и контактная, но люди от страха его ударили по голове бутылкой, проще убивали . Люди ненадо демонстрировать их мощь и силу лишний раз, покажите лучше их доброе сердце. Только в России сейчас бойцовых пород собак заводчики воспитывают с детства давно в добре и ласке. Только его хозяин в будущем ответственный за поведение своего питомца, только правильное воспитание и главное любить.. Тогда и собака ведёт себя так- же...",
+          "respuesta_sugerida": "¡Hola! Gracias por compartir esta historia tan conmovedora y poderosa. Es increíble cómo los animales nos enseñan sobre la empatía y la bondad, y tu acto de compasión es un gran ejemplo. Tu comentario resalta una verdad profunda: el miedo a veces nos ciega, pero la bondad siempre abre caminos. Te invitamos a explorar más historias con lecciones de vida en nuestro sitio: https://masitaprex.com/PeliPREX ¡Un abrazo!"
+        },
+        {
+          "comentario_original": "Se pareze a mi ayudo pero nadie me ayuda😢",
+          "respuesta_sugerida": "¡Hola! Entiendo perfectamente ese sentimiento de dar y no recibir. Es una experiencia humana profunda que muchos compartimos. Recuerda que tu valor no depende de la reciprocidad de los demás. Lo importante es que sigas siendo esa persona que ayuda. Te recomiendo ver nuestros videos sobre el crecimiento personal y la resiliencia, seguro encontrarás inspiración. ¡Un abrazo de 'El Tío Jota'!"
+        },
+        {
+          "comentario_original": "Amén señor nuestro y Salvador 🙏😇❤️😊",
+          "respuesta_sugerida": "¡Amén! Gracias por tu hermosa fe y por compartir tu sentimiento. Nos alegra que nuestro contenido resuene contigo. Siempre buscaremos traer reflexiones que fortalezcan el espíritu y te inspiren en tu camino. Te invitamos a seguir explorando temas de crecimiento espiritual en nuestro canal y en nuestra web: https://masitaprex.com/PeliPREX ¡Bendiciones!"
+        }
+      ],
+      "estilo_contenido": "profundo, reflexivo, emocionante",
+      "estructura": "introducción + análisis profundo + conclusiones + reflexión final",
+      "hook": "Prepárate, esto cambiará tu perspectiva sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser profundo, reflexivo, emocionante.\n\nTEMA: Estos animales guardaban un secreto... (y su historia te cambiará para siempre)\nTÍTULO: Estos animales guardaban un secreto... (y su historia te cambiará para siempre)\nFORMATO: Video largo\nDURACIÓN: 12-20 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '1.  Historias inspiradoras de animales' con el título 'Estos animales guardaban un secreto... (y su historia te cambiará para siempre)' para maximizar el CTR y las vistas. Promedio de vistas: 5303172 (PRIORIDAD ALTA). El formato sugerido es Video largo.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono profundo, reflexivo, emocionante en todo momento.\n2. ESTRUCTURA: Sigue este orden: introducción + análisis profundo + conclusiones + reflexión final\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-03-27 16:32:31"
+    }
   }
 ]
