@@ -68,5 +68,31 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-27 16:32:31"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-28",
+    "hora": "04:32:02",
+    "analisis": {
+      "tema_recomendado": "La VERDAD PROHIBIDA de la industria K-Pop que cambiará TODO lo que crees (nadie quiere que sepas esto)",
+      "titulo": "La VERDAD PROHIBIDA de la industria K-Pop que cambiará TODO lo que crees (nadie quiere que sepas esto)",
+      "idea_contenido": "Crear un video sobre '*   Teorías de la industria K-Pop' con el título 'La VERDAD PROHIBIDA de la industria K-Pop que cambiará TODO lo que crees (nadie quiere que sepas esto)' para maximizar el CTR y las vistas. Promedio de vistas: 4893159 (PRIORIDAD ALTA). El formato sugerido es Video largo.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "18:30",
+      "canal": "El Criterio",
+      "categoria": "Análisis Crítico / Cultura Pop",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "Neutro",
+        "observaciones_engagement": "Los videos recientes del canal enfocados en 'teorías K-Pop' han mostrado un rendimiento extremadamente bajo (vistas de 1 a 16, 0 likes). Esto contrasta fuertemente con la 'ALTA' prioridad de la tendencia 'Teorías de la industria K-Pop' a nivel global. Sugiere que, o bien la audiencia actual del canal no está interesada en K-Pop tal como se ha presentado, o el enfoque de 'teorías conspirativas' no resuena con la identidad de 'análisis crítico' del canal. No hay comentarios que indiquen peticiones o preferencias de la audiencia."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "La sabiduría que necesitas para triunfar está aquí...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: La VERDAD PROHIBIDA de la industria K-Pop que cambiará TODO lo que crees (nadie quiere que sepas esto)\nTÍTULO: La VERDAD PROHIBIDA de la industria K-Pop que cambiará TODO lo que crees (nadie quiere que sepas esto)\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Teorías de la industria K-Pop' con el título 'La VERDAD PROHIBIDA de la industria K-Pop que cambiará TODO lo que crees (nadie quiere que sepas esto)' para maximizar el CTR y las vistas. Promedio de vistas: 4893159 (PRIORIDAD ALTA). El formato sugerido es Video largo.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-28 04:32:02"
+    }
   }
 ]
