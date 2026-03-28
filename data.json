@@ -94,5 +94,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-03-28 04:32:02"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-03-28",
+    "hora": "16:32:12",
+    "analisis": {
+      "tema_recomendado": "Lo que ENCONTRARON a 11,000 metros bajo el mar CAMBIARÁ tu forma de ver el mundo",
+      "titulo": "Lo que ENCONTRARON a 11,000 metros bajo el mar CAMBIARÁ tu forma de ver el mundo",
+      "idea_contenido": "Crear un video sobre '*   Misterios del océano profundo' con el título 'Lo que ENCONTRARON a 11,000 metros bajo el mar CAMBIARÁ tu forma de ver el mundo' para maximizar el CTR y las vistas. Promedio de vistas: 33670850 (PRIORIDAD ALTA). El formato sugerido es Short.",
+      "formato_sugerido": "Video educativo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Tío Jota",
+      "categoria": "Filosofía, Crecimiento Personal, Análisis de Cine, Misterio",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "No hay comentarios recientes para analizar el sentimiento específico. El engagement se basa en el rendimiento de los videos.",
+        "observaciones_engagement": "El video '¡El Tío Jota te Revela! Misterios Alucinantes del Océano Profundo' con 958 vistas y 43 likes fue el de mejor rendimiento reciente, lo que indica un fuerte interés de la audiencia en temas de misterios profundos y revelaciones. Esto valida la tendencia de 'Misterios del Océano Profundo'. El short de motivación también tuvo un rendimiento aceptable, mostrando que los temas de crecimiento personal también tienen un nicho."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "educativo, inspirador, motivador",
+      "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión",
+      "hook": "La sabiduría que necesitas para triunfar está aquí...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser educativo, inspirador, motivador.\n\nTEMA: Lo que ENCONTRARON a 11,000 metros bajo el mar CAMBIARÁ tu forma de ver el mundo\nTÍTULO: Lo que ENCONTRARON a 11,000 metros bajo el mar CAMBIARÁ tu forma de ver el mundo\nFORMATO: Video educativo\nDURACIÓN: 8-15 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Misterios del océano profundo' con el título 'Lo que ENCONTRARON a 11,000 metros bajo el mar CAMBIARÁ tu forma de ver el mundo' para maximizar el CTR y las vistas. Promedio de vistas: 33670850 (PRIORIDAD ALTA). El formato sugerido es Short.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono educativo, inspirador, motivador en todo momento.\n2. ESTRUCTURA: Sigue este orden: contexto histórico + enseñanza + aplicación práctica + conclusión\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-03-28 16:32:11"
+    }
   }
 ]
