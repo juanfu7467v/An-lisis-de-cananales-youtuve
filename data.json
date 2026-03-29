@@ -120,5 +120,31 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-03-28 16:32:11"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-03-29",
+    "hora": "16:32:34",
+    "analisis": {
+      "tema_recomendado": "El SECRETO MÁS OSCURO del K-POP que los IDOLS no quieren que descubras",
+      "titulo": "El SECRETO MÁS OSCURO del K-POP que los IDOLS no quieren que descubras",
+      "idea_contenido": "Crear un video sobre '*   Teorías conspirativas K-Pop' con el título 'El SECRETO MÁS OSCURO del K-POP que los IDOLS no quieren que descubras' para maximizar el CTR y las vistas. Promedio de vistas: 2003734 (PRIORIDAD ALTA). El formato sugerido es Video largo.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Cine, Cultura, Análisis Crítico, Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro",
+        "observaciones_engagement": "Los videos recientes del canal sobre 'Teorías conspirativas K-Pop' y 'El lado oscuro del K-Pop' muestran un rendimiento extremadamente bajo (entre 1 y 16 vistas y 0 likes). Esto contrasta fuertemente con las tendencias validadas que indican un alto interés general en estos temas. Sugiere que, aunque la temática de 'revelar secretos' o 'lados oscuros' es popular, el K-Pop no resuena con la audiencia actual de 'El Criterio' o el enfoque no está alineado con la esencia del canal. Dada la descripción del canal ('cine y cultura', 'análisis profundo') y la web de referencia (PeliPREX, enfocada en películas), se infiere que la audiencia actual y el nicho del canal están más orientados hacia el análisis cinematográfico y cultural. No hay comentarios que permitan inferir solicitudes o sentimientos."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Espera al final, te sorprenderá...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: El SECRETO MÁS OSCURO del K-POP que los IDOLS no quieren que descubras\nTÍTULO: El SECRETO MÁS OSCURO del K-POP que los IDOLS no quieren que descubras\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Teorías conspirativas K-Pop' con el título 'El SECRETO MÁS OSCURO del K-POP que los IDOLS no quieren que descubras' para maximizar el CTR y las vistas. Promedio de vistas: 2003734 (PRIORIDAD ALTA). El formato sugerido es Video largo.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-03-29 16:32:34"
+    }
   }
 ]
