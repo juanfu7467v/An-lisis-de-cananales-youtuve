@@ -146,5 +146,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-03-29 16:32:34"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-03-30",
+    "hora": "04:33:00",
+    "analisis": {
+      "tema_recomendado": "El SECRETO más grande del océano que NUNCA debió salir a la luz",
+      "titulo": "El SECRETO más grande del océano que NUNCA debió salir a la luz",
+      "idea_contenido": "Crear un video sobre '*   Misterios del océano profundo' con el título 'El SECRETO más grande del océano que NUNCA debió salir a la luz' para maximizar el CTR y las vistas. Promedio de vistas: 33675278 (PRIORIDAD ALTA). El formato sugerido es Short.",
+      "formato_sugerido": "Video largo",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Tío Jota",
+      "categoria": "Misterio, Filosofía y Crecimiento Personal",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "No hay comentarios de audiencia proporcionados para analizar el sentimiento general del canal.",
+        "observaciones_engagement": "Los videos recientes del canal muestran un engagement extremadamente bajo (entre 4 y 8 vistas, con 0 o 1 'me gusta'). Es difícil identificar temas que 'funcionen mejor' con estos números tan bajos. Sin embargo, los títulos sobre 'misterios del océano profundo' están directamente alineados con las 'TENDENCIAS VALIDADAS' y el canal ya ha intentado abordar esta temática. El video de 'SPIDER-MAN película completa' tiene la mayor cantidad de vistas (8), pero es una pieza que no encaja con la descripción de 'análisis crítico y profundo' del canal y podría indicar un problema de definición de nicho o intento de captar audiencia con contenido ajeno a su propuesta de valor. La baja performance general sugiere la necesidad de optimizar títulos, miniaturas, scripts y estrategias de promoción para aprovechar las tendencias de forma efectiva y relevante para la audiencia objetivo del canal."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "profundo, reflexivo, emocionante",
+      "estructura": "introducción + análisis profundo + conclusiones + reflexión final",
+      "hook": "Te revelaré la verdad detrás de...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser profundo, reflexivo, emocionante.\n\nTEMA: El SECRETO más grande del océano que NUNCA debió salir a la luz\nTÍTULO: El SECRETO más grande del océano que NUNCA debió salir a la luz\nFORMATO: Video largo\nDURACIÓN: 12-20 minutos\n\nIDEA DEL CONTENIDO:\nCrear un video sobre '*   Misterios del océano profundo' con el título 'El SECRETO más grande del océano que NUNCA debió salir a la luz' para maximizar el CTR y las vistas. Promedio de vistas: 33675278 (PRIORIDAD ALTA). El formato sugerido es Short.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono profundo, reflexivo, emocionante en todo momento.\n2. ESTRUCTURA: Sigue este orden: introducción + análisis profundo + conclusiones + reflexión final\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-03-30 04:33:00"
+    }
   }
 ]
