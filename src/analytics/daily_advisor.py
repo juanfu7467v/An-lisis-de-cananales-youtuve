@@ -6,17 +6,17 @@ from src.analytics.content_strategy import get_content_type_for_day, get_theme_f
 
 logger = logging.getLogger(__name__)
 
-def get_daily_recommendation():
+def get_daily_recommendation(channel_name="El Tío Jota"):
     """
     Genera una recomendación diaria basada en la estrategia de rotación de contenido.
-    Alterna entre Short, Video largo (análisis de película) y Video educativo (filosofía).
+    Alterna entre Short y Video largo según el historial del canal.
     """
-    # Obtener el tipo de contenido para hoy según la rotación
-    content_config = get_content_type_for_day()
+    # Obtener el tipo de contenido para hoy según la rotación y el canal
+    content_config = get_content_type_for_day(channel_name)
     formato = content_config.get("formato")
     duracion = content_config.get("duracion")
     
-    # Seleccionar un tema apropiado para el tipo de contenido
+    # Seleccionar un tema base (será refinado por el analizador de IA en el flujo completo)
     topic = get_theme_for_content_type(content_config)
     
     # Generar metadatos sugeridos
@@ -36,7 +36,8 @@ def get_daily_recommendation():
         "hashtags": metadata['tags'],
         "optimal_time": optimal_hour,
         "hook": hook,
-        "style": content_config.get("estilo")
+        "style": content_config.get("estilo"),
+        "canal": channel_name
     }
     
     return recommendation
@@ -46,8 +47,9 @@ def format_daily_message(rec):
     Formatea la recomendación para el mensaje de Telegram.
     Incluye información sobre el Super Prompt y la estrategia de contenido.
     """
+    canal = rec.get('canal', 'Canal')
     msg = (
-        f"☀️ *Buenos días, El Tío Jota*\n\n"
+        f"☀️ *Buenos días, {canal}*\n\n"
         f"Hoy se recomienda publicar un *{rec['type']}* sobre:\n"
         f"'{rec['topic']}'\n\n"
         f"📌 *Título sugerido:* {rec['title']}\n"
@@ -56,7 +58,7 @@ def format_daily_message(rec):
         f"🎯 *Estilo:* {rec.get('style', 'Profesional')}\n"
         f"🪝 *Hook inicial:* {rec.get('hook', 'Impactante')}\n"
         f"🏷️ *Hashtags:* {' '.join(['#' + t.replace(' ', '') for t in rec['hashtags']])}\n\n"
-        f"Este contenido ha sido optimizado con nuestro sistema de Super Prompts para máxima retención.\n\n"
+        f"Este contenido ha sido optimizado con nuestro sistema de Super Prompts para máxima retención y variedad temática.\n\n"
         f"¿Quieres que preparemos este contenido?"
     )
     return msg

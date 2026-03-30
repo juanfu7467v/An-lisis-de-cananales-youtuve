@@ -19,10 +19,33 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
 
     try:
         genai.configure(api_key=api_key)
-        # Se recomienda usar gemini-2.5-flash según las instrucciones del usuario
         model = genai.GenerativeModel("gemini-2.5-flash")
 
         config = get_channel_config(channel_name)
+        
+        # Determinar el tipo de contenido para hoy (alternancia Short/Largo)
+        content_config = get_content_type_for_day(channel_name)
+        formato_hoy = content_config.get("formato")
+        
+        # Definir restricciones de temas según el formato de hoy
+        tema_contexto = ""
+        if formato_hoy == "Video largo":
+            tema_contexto = """
+            IMPORTANTE: Hoy toca un VIDEO LARGO. El tema DEBE estar relacionado con:
+            - Análisis de Películas (crítica profunda, mensajes ocultos, lecciones de vida en el cine).
+            - Análisis de personajes o guiones.
+            - Relación entre cine y realidad social/filosófica.
+            """
+        else:
+            tema_contexto = """
+            IMPORTANTE: Hoy toca un SHORT. El tema DEBE ser VARIADO y DINÁMICO, alternando entre:
+            - Películas (curiosidades rápidas, tops, escenas icónicas).
+            - Filosofía (Estoicismo, Sócrates, Diógenes, Maquiavelo).
+            - Historia (Imperio Inca, civilizaciones antiguas, grandes hitos).
+            - Pensamiento crítico y reflexiones rápidas.
+            EVITA repetir el mismo tema de los últimos días.
+            """
+
         channel_context = ""
         if config:
             channel_context = f"""
@@ -30,6 +53,8 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
             - Temas principales: {", ".join(config['topics'])}
             - Descripción: {config['description']}
             - Web de referencia: {config['website_promo']}
+            
+            {tema_contexto}
             """
 
         prompt = f"""
@@ -40,33 +65,34 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
         TENDENCIAS VALIDADAS (Google Trends + YouTube Search):
         {json.dumps(trends_data.get('validated_trends', []), indent=2)}
 
-        DATOS ESPECÍFICOS DEL CANAL (Rendimiento y Comentarios - si aplica):
+        DATOS ESPECÍFICOS DEL CANAL (Rendimiento y Comentarios):
         {json.dumps(trends_data.get('channel_specific', {}), indent=2)}
 
         TAREAS:
-        1. ANALISIS PROFUNDO: Identifica qué temas del canal están funcionando mejor (vistas/likes).
-        2. ESCUCHA ACTIVA: Revisa los comentarios para detectar peticiones específicas de la audiencia o temas recurrentes.
-        3. ESTRATEGIA: Genera una recomendación de video que combine las tendencias actuales con la esencia del canal.
-        4. INTERACCIÓN: Genera respuestas sugeridas para los comentarios más relevantes, saludando y recomendando contenido relacionado o la web {config.get('website_promo') if config else 'la web oficial'}.
+        1. ANALISIS PROFUNDO: Identifica qué temas del canal están funcionando mejor.
+        2. ESCUCHA ACTIVA: Revisa los comentarios para detectar peticiones de la audiencia.
+        3. ESTRATEGIA: Genera una recomendación de video que combine las tendencias con la esencia del canal.
+        4. VARIEDAD: Asegúrate de que el tema propuesto sea diferente a los anteriores del canal para evitar el aburrimiento de la audiencia.
+        5. FORMATO: El formato sugerido DEBE ser '{formato_hoy}'.
 
         Responde ÚNICAMENTE en formato JSON válido con la siguiente estructura:
         {{
-          "tema_recomendado": "Ejemplo: El secreto oscuro de Spider-Man que nadie entendió",
-          "titulo": "Ejemplo: El secreto oscuro de Spider-Man que nadie entendió",
-          "idea_contenido": "Descripción detallada del video, tono y estructura para maximizar retención.",
-          "formato_sugerido": "Short o video largo",
+          "tema_recomendado": "Título viral y atractivo",
+          "titulo": "Título viral y atractivo",
+          "idea_contenido": "Descripción detallada del video, tono y estructura.",
+          "formato_sugerido": "{formato_hoy}",
           "hora_optima_publicacion": "HH:MM",
           "canal": "{channel_name}",
-          "categoria": "Categoría específica basada en el contenido (ej: películas, filosofía, etc.)",
+          "categoria": "Categoría específica (ej: Cine, Filosofía, Historia, etc.)",
           "analisis_audiencia": {{
             "temas_solicitados": ["tema1", "tema2"],
             "sentimiento_general": "positivo/neutro/negativo",
-            "observaciones_engagement": "Breve nota sobre qué videos funcionaron mejor"
+            "observaciones_engagement": "Breve nota sobre el rendimiento reciente"
           }},
           "interaccion_sugerida": [
             {{
-              "comentario_original": "Texto del comentario al que se responde",
-              "respuesta_sugerida": "Respuesta amable, saludando al usuario y dirigiendo hacia contenido relacionado o la web de películas."
+              "comentario_original": "Texto del comentario",
+              "respuesta_sugerida": "Respuesta amable saludando al usuario"
             }}
           ]
         }}
@@ -82,29 +108,11 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
 
         recommendation = json.loads(clean_text)
         
-        # Asegurar campos requeridos por el usuario
+        # Forzar el canal y el formato
         recommendation["canal"] = channel_name
+        recommendation["formato_sugerido"] = formato_hoy
         
-        # Si hay tendencias validadas, usar la primera como base para la recomendación
-        if trends_data.get('validated_trends'):
-            first_validated_trend = trends_data['validated_trends'][0]
-            recommendation['tema_recomendado'] = first_validated_trend['transformed_title']
-            recommendation['titulo'] = first_validated_trend['transformed_title']
-            recommendation['formato_sugerido'] = first_validated_trend['format_sugerido']
-            
-            priority_msg = f" (PRIORIDAD {first_validated_trend['priority']})" if first_validated_trend['priority'] == "ALTA" else ""
-            avg_views = first_validated_trend.get('avg_youtube_views', 0)
-            
-            recommendation['idea_contenido'] = (
-                f"Crear un video sobre '{first_validated_trend['original_topic']}' "
-                f"con el título '{first_validated_trend['transformed_title']}' "
-                f"para maximizar el CTR y las vistas. "
-                f"Promedio de vistas: {avg_views:.0f}{priority_msg}. "
-                f"El formato sugerido es {first_validated_trend['format_sugerido']}."
-            )
-
         # Enriquecer con Super Prompt y campos avanzados
-        content_config = get_content_type_for_day()
         recommendation = build_enhanced_recommendation(recommendation, content_config)
         
         return recommendation

@@ -1,50 +1,44 @@
 import datetime
 import logging
+import json
+import os
 
 logger = logging.getLogger(__name__)
 
 # Configuración de rotación de contenido
+# Ahora alternamos entre Short y Video largo
 CONTENT_ROTATION = {
-    0: {  # Día 1 del ciclo
+    "Short": {
         "formato": "Short",
         "duracion": "30-60 segundos",
-        "categoria_temas": "dinamico",
+        "categoria_temas": "variado_shorts",
         "estilo": "viral, impactante, directo",
         "estructura": "gancho + punto clave + llamada a la acción"
     },
-    1: {  # Día 2 del ciclo
+    "Video largo": {
         "formato": "Video largo",
         "duracion": "12-20 minutos",
-        "categoria_temas": "análisis_película",
+        "categoria_temas": "peliculas_analisis",
         "estilo": "profundo, reflexivo, emocionante",
         "estructura": "introducción + análisis profundo + conclusiones + reflexión final"
-    },
-    2: {  # Día 3 del ciclo
-        "formato": "Video educativo",
-        "duracion": "8-15 minutos",
-        "categoria_temas": "filosofía_educativo",
-        "estilo": "educativo, inspirador, motivador",
-        "estructura": "contexto histórico + enseñanza + aplicación práctica + conclusión"
     }
 }
 
-# Temas para cada categoría
+# Temas para cada categoría (como fallback o guía para la IA)
 TEMA_POOLS = {
-
-    "análisis_película": [
-        "Análisis filosófico de película reciente",
-        "Lecciones de vida en películas clásicas",
-        "Mensajes ocultos en películas populares",
-        "Análisis profundo de saga cinematográfica"
+    "peliculas_analisis": [
+        "Análisis profundo de películas",
+        "Análisis de personajes y sus motivaciones",
+        "Mensajes ocultos en el cine",
+        "Análisis de guion y dirección",
+        "Lecciones de vida a través del cine"
     ],
-    "filosofía_educativo": [
-        "Lecciones de Sócrates para la vida moderna",
-        "Nicolás Maquiavelo y el poder en la actualidad",
-        "Friedrich Nietzsche y la superación personal",
-        "Marco Aurelio y el estoicismo en el siglo XXI",
-        "Aristóteles y la virtud en nuestros días",
-        "Immanuel Kant y la ética contemporánea",
-        "Jean-Paul Sartre y la libertad individual"
+    "variado_shorts": [
+        "Curiosidades de películas",
+        "Filosofía aplicada (Estoicismo)",
+        "Grandes pensadores (Sócrates, Diógenes, Maquiavelo)",
+        "Historia fascinante (Imperio Inca, etc.)",
+        "Lecciones rápidas de vida"
     ]
 }
 
@@ -54,94 +48,72 @@ HOOKS_TEMPLATES = {
         "Espera al final, te sorprenderá...",
         "Esto es lo que nadie te dice sobre...",
         "Mira esto, es increíble...",
-        "No puedes creer lo que pasó con..."
+        "No puedes creer lo que pasó con...",
+        "¿Sabías esto sobre...?"
     ],
     "Video largo": [
         "Descubre los secretos ocultos que nadie notó...",
         "Te revelaré la verdad detrás de...",
         "Prepárate, esto cambiará tu perspectiva sobre...",
-        "Este análisis te hará repensar todo lo que sabías sobre..."
-    ],
-    "Video educativo": [
-        "Aprende la lección que los filósofos querían que entendieras...",
-        "Este principio antiguo sigue siendo relevante hoy porque...",
-        "Descubre cómo aplicar esta enseñanza a tu vida...",
-        "La sabiduría que necesitas para triunfar está aquí..."
+        "Este análisis te hará repensar todo lo que sabías sobre...",
+        "La historia detrás de esta película te dejará sin palabras..."
     ]
 }
 
-def get_content_type_for_day(day_offset=0):
+def get_last_format_for_channel(channel_name, filename="data.json"):
     """
-    Determina el tipo de contenido para un día específico basándose en la rotación.
-    
-    Args:
-        day_offset: Número de días desde hoy (0 = hoy, 1 = mañana, etc.)
-    
-    Returns:
-        Diccionario con la configuración del tipo de contenido
+    Busca en el historial el último formato publicado para un canal específico.
     """
-    target_date = datetime.datetime.now() + datetime.timedelta(days=day_offset)
-    # Usar el día del año para crear un ciclo consistente
-    day_of_year = target_date.timetuple().tm_yday
-    cycle_position = (day_of_year - 1) % 3  # 0, 1 o 2
-    
-    return CONTENT_ROTATION[cycle_position]
+    try:
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding='utf-8') as f:
+                history = json.load(f)
+                # Filtrar por canal y ordenar por fecha/hora (el historial suele estar en orden cronológico)
+                channel_history = [entry for entry in history if entry.get('canal') == channel_name]
+                if channel_history:
+                    last_entry = channel_history[-1]
+                    return last_entry.get('analisis', {}).get('formato_sugerido')
+    except Exception as e:
+        logger.error(f"Error al leer historial para formato: {e}")
+    return None
 
-def get_theme_for_content_type(content_type):
+def get_content_type_for_day(channel_name=None):
+    """
+    Determina el tipo de contenido basándose en la alternancia Short/Largo.
+    """
+    last_format = get_last_format_for_channel(channel_name)
+    
+    # Si el último fue Short, hoy toca Video largo. Si fue Video largo, hoy toca Short.
+    if last_format == "Short":
+        return CONTENT_ROTATION["Video largo"]
+    else:
+        # Por defecto empezamos con Short o alternamos desde Video largo
+        return CONTENT_ROTATION["Short"]
+
+def get_theme_for_content_type(content_config):
     """
     Selecciona un tema apropiado para el tipo de contenido especificado.
-    
-    Args:
-        content_type: Diccionario con configuración del tipo de contenido
-    
-    Returns:
-        Tema recomendado (string)
     """
-    categoria = content_type.get("categoria_temas")
-    temas = TEMA_POOLS.get(categoria, [])
-    
-    if not temas:
-        return "Contenido de calidad"
-    
-    # Con el nuevo sistema, el tema se obtiene de las tendencias validadas, no de un pool predefinido.
-    # Esta función ahora solo sirve para categorizar el tipo de contenido general.
-    return f"Tema dinámico de {categoria}"
+    categoria = content_config.get("categoria_temas")
+    return f"Tema variado de {categoria}"
 
 def get_hook_for_format(formato):
     """
     Selecciona un hook impactante para el formato especificado.
-    
-    Args:
-        formato: Formato del video (Short, Video largo, Video educativo)
-    
-    Returns:
-        Hook sugerido (string)
     """
     hooks = HOOKS_TEMPLATES.get(formato, HOOKS_TEMPLATES["Short"])
-    
-    # Usar el día del año para seleccionar un hook de manera consistente
     day_of_year = datetime.datetime.now().timetuple().tm_yday
     hook_index = day_of_year % len(hooks)
-    
     return hooks[hook_index]
 
 def generate_super_prompt(content_config, tema, titulo, idea_contenido, canal):
     """
     Genera un "Super Prompt" optimizado para la IA basándose en la configuración del contenido.
-    
-    Args:
-        content_config: Diccionario con configuración del tipo de contenido
-        tema: Tema del video
-        titulo: Título del video
-        idea_contenido: Descripción de la idea del contenido
-        canal: Nombre del canal
-    
-    Returns:
-        String con el Super Prompt completo
     """
     formato = content_config.get("formato")
     estilo = content_config.get("estilo")
     estructura = content_config.get("estructura")
+    duracion = content_config.get("duracion")
     
     super_prompt = f"""
 Actúa como un experto creador de contenido para YouTube especializado en {canal}.
@@ -152,7 +124,7 @@ Crea un guion que capture la atención desde los primeros segundos y mantenga al
 TEMA: {tema}
 TÍTULO: {titulo}
 FORMATO: {formato}
-DURACIÓN: {content_config.get('duracion')}
+DURACIÓN: {duracion}
 
 IDEA DEL CONTENIDO:
 {idea_contenido}
@@ -168,28 +140,18 @@ INSTRUCCIONES ESPECÍFICAS:
 RESULTADO ESPERADO:
 Un guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.
 """
-    
     return super_prompt.strip()
 
 def build_enhanced_recommendation(base_recommendation, content_config):
     """
     Enriquece la recomendación base con los nuevos campos del Super Prompt.
-    
-    Args:
-        base_recommendation: Diccionario con la recomendación base de Gemini
-        content_config: Diccionario con configuración del tipo de contenido
-    
-    Returns:
-        Diccionario enriquecido con los nuevos campos
     """
     enhanced = base_recommendation.copy()
     
-    # Agregar campos de Super Prompt
     enhanced["estilo_contenido"] = content_config.get("estilo")
     enhanced["estructura"] = content_config.get("estructura")
     enhanced["hook"] = get_hook_for_format(content_config.get("formato"))
     
-    # Generar el Super Prompt
     enhanced["prompt_ia"] = generate_super_prompt(
         content_config,
         enhanced.get("tema_recomendado", ""),
@@ -198,7 +160,6 @@ def build_enhanced_recommendation(base_recommendation, content_config):
         enhanced.get("canal", "")
     )
     
-    # Asegurar que el formato sugerido esté actualizado
     enhanced["formato_sugerido"] = content_config.get("formato")
     
     return enhanced

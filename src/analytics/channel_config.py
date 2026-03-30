@@ -5,21 +5,23 @@ CHANNEL_CONFIGS = {
         "id": os.getenv("ID_CANAL", "UC_EL_TIO_JOTA_ID"),
         "topics": [
             "Análisis de películas",
-            "Filosofía",
+            "Filosofía (estoicismo)",
+            "Historia (Imperio Inca, civilizaciones antiguas)",
+            "Pensadores (Sócrates, Diógenes, Maquiavelo)",
             "Crecimiento personal",
-            "Motivación",
-            "Noticias actuales"
+            "Motivación"
         ],
-        "description": "Canal enfocado en el crecimiento personal a través del cine, la filosofía y la motivación, analizando la realidad desde una perspectiva crítica y profunda.",
+        "description": "Canal enfocado en el crecimiento personal a través del cine, la filosofía y la historia, analizando la realidad desde una perspectiva crítica y profunda.",
         "website_promo": "https://masitaprex.com/PeliPREX",
         "order": 1
     },
     "El Criterio": {
         "id": os.getenv("ID_CANAL_2", "UC_EL_CRITERIO_ID"),
         "topics": [
-            "Análisis crítico",
+            "Análisis crítico de películas",
             "Cine y cultura",
             "Reflexiones filosóficas",
+            "Historia y grandes pensadores",
             "Actualidad con criterio"
         ],
         "description": "Canal dedicado al análisis profundo de la cultura, el cine y la sociedad, buscando siempre un criterio propio y fundamentado.",
