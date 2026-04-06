@@ -116,5 +116,36 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-04-05 16:35:18"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-04-06",
+    "hora": "04:35:35",
+    "analisis": {
+      "tema_recomendado": "Filosofía Estoica: Marco Aurelio y la paz mental",
+      "titulo": "Estás sufriendo SIN RAZÓN: Marco Aurelio tiene la clave para tu PAZ mental (la necesitas YA)",
+      "idea_contenido": "Short dinámico y de ritmo rápido. Comienza con una pregunta directa y provocadora: '¿Te sientes abrumado? ¿Sufres por cosas que no puedes controlar?'. Transición visual rápida a una imagen de Marco Aurelio o un elemento simbólico del estoicismo. Voz en off enérgica y clara explicando brevemente (10-15 segundos) una máxima clave de Marco Aurelio (ej: 'No tienes poder sobre eventos externos, pero sí sobre tu mente. Aprende a distinguirlos.'). Usa texto en pantalla con la cita clave. Cierre con un mensaje de empoderamiento y una llamada a la acción: 'Aplica esto hoy y transforma tu perspectiva. ¡Síguenos para más criterio!' Visuales: Cortes rápidos, imágenes de contraste (estrés vs. calma), efectos de texto llamativos. Música de fondo inspiradora y motivadora. El tono debe ser urgente, empático pero a la vez autoritario y motivador.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "18:00",
+      "canal": "El Criterio",
+      "categoria": "Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "El rendimiento reciente es bajo en la mayoría de los videos, con un pico notable en un 'Short' interactivo/llamada a la acción ('Si este video llega a 1,000 likes...'). Esto sugiere un gran potencial para el formato Short, especialmente si se vincula a temas virales y de alto impacto emocional o intelectual, como el estoicismo, que genera alta tracción en las tendencias validadas."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "nuevo susceiptor",
+          "respuesta_sugerida": "¡Bienvenido/a a la familia de El Criterio! Nos alegra mucho tenerte aquí. Prepárate para análisis profundos y perspectivas diferentes. ¡Gracias por unirte!"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Esto es lo que nadie te dice sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Filosofía Estoica: Marco Aurelio y la paz mental\nTÍTULO: Estás sufriendo SIN RAZÓN: Marco Aurelio tiene la clave para tu PAZ mental (la necesitas YA)\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nShort dinámico y de ritmo rápido. Comienza con una pregunta directa y provocadora: '¿Te sientes abrumado? ¿Sufres por cosas que no puedes controlar?'. Transición visual rápida a una imagen de Marco Aurelio o un elemento simbólico del estoicismo. Voz en off enérgica y clara explicando brevemente (10-15 segundos) una máxima clave de Marco Aurelio (ej: 'No tienes poder sobre eventos externos, pero sí sobre tu mente. Aprende a distinguirlos.'). Usa texto en pantalla con la cita clave. Cierre con un mensaje de empoderamiento y una llamada a la acción: 'Aplica esto hoy y transforma tu perspectiva. ¡Síguenos para más criterio!' Visuales: Cortes rápidos, imágenes de contraste (estrés vs. calma), efectos de texto llamativos. Música de fondo inspiradora y motivadora. El tono debe ser urgente, empático pero a la vez autoritario y motivador.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-04-06 04:35:34"
+    }
   }
 ]
