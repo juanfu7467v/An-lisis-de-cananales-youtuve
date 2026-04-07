@@ -204,5 +204,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-04-07 04:36:16"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-04-07",
+    "hora": "16:35:55",
+    "analisis": {
+      "tema_recomendado": "Diógenes: El Filósofo Más Libre (y Radical) de la Historia",
+      "titulo": "Diógenes: El FILÓSOFO que VIVIÓ SIN NADA (y te enseña a ser LIBRE) #shorts #filosofia #libertad #crecimientopersonal",
+      "idea_contenido": "El Short comienza con un gancho visual impactante: una imagen o animación de Diógenes de Sínope en su barril, con texto superpuesto: '¿Sabías que el hombre más LIBRE de la historia vivió en un BARRIL?'. Se introduce rápidamente a Diógenes, el cínico que desafió todas las convenciones sociales de su tiempo. Se narran brevemente 2-3 anécdotas clave de forma dinámica (ej. la linterna buscando un hombre honesto, el encuentro con Alejandro Magno pidiéndole que no le quite el sol, su desprecio por las riquezas). El tono es enérgico y cuestionador, con música de fondo que mantiene la atención. Se utilizan transiciones rápidas y texto en pantalla para destacar frases impactantes de Diógenes o el concepto de 'autarquía' (autosuficiencia). El objetivo es que la audiencia reflexione sobre la dependencia de lo material y la búsqueda de una verdadera libertad personal a través de la simplicidad. Se cierra con una pregunta directa al espectador: '¿Qué lujo te impide ser verdaderamente libre hoy?' y un llamado a la acción para comentar y suscribirse. Duración ideal: 45-55 segundos.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Tío Jota",
+      "categoria": "Filosofía / Pensamiento Crítico",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro (debido a la falta de comentarios y bajo engagement en el rendimiento reciente)",
+        "observaciones_engagement": "El rendimiento reciente de los Shorts es extremadamente bajo (1-25 vistas), lo que dificulta identificar patrones de engagement claros o temas 'funcionando mejor' a nivel interno. Los Shorts con temática de humor o un 'call to action' directo a la interacción tuvieron ligeramente más vistas, pero sin comentarios, el nivel de interacción es desconocido. La tendencia externa para 'Estoicismo' es fuerte, pero para este Short priorizamos la variedad y la exploración de otro pensador clave del canal."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Mira esto, es increíble...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Diógenes: El Filósofo Más Libre (y Radical) de la Historia\nTÍTULO: Diógenes: El FILÓSOFO que VIVIÓ SIN NADA (y te enseña a ser LIBRE) #shorts #filosofia #libertad #crecimientopersonal\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEl Short comienza con un gancho visual impactante: una imagen o animación de Diógenes de Sínope en su barril, con texto superpuesto: '¿Sabías que el hombre más LIBRE de la historia vivió en un BARRIL?'. Se introduce rápidamente a Diógenes, el cínico que desafió todas las convenciones sociales de su tiempo. Se narran brevemente 2-3 anécdotas clave de forma dinámica (ej. la linterna buscando un hombre honesto, el encuentro con Alejandro Magno pidiéndole que no le quite el sol, su desprecio por las riquezas). El tono es enérgico y cuestionador, con música de fondo que mantiene la atención. Se utilizan transiciones rápidas y texto en pantalla para destacar frases impactantes de Diógenes o el concepto de 'autarquía' (autosuficiencia). El objetivo es que la audiencia reflexione sobre la dependencia de lo material y la búsqueda de una verdadera libertad personal a través de la simplicidad. Se cierra con una pregunta directa al espectador: '¿Qué lujo te impide ser verdaderamente libre hoy?' y un llamado a la acción para comentar y suscribirse. Duración ideal: 45-55 segundos.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-04-07 16:35:55"
+    }
   }
 ]
