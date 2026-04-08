@@ -230,5 +230,36 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-04-07 16:35:55"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-04-08",
+    "hora": "04:36:38",
+    "analisis": {
+      "tema_recomendado": "Diógenes: El Filósofo Cínico que Vivía en un Barril y te Diría la Verdad Incómoda",
+      "titulo": "Diógenes: EL SECRETO para ser libre que NADIE se atreve a decirte (¡Ni tú!)",
+      "idea_contenido": "Este Short busca impactar con una figura filosófica provocadora y relevante para el pensamiento crítico. \n\n*   **Hook (0-3s):** (Texto en pantalla: \"¿Libertad? ¿Felicidad?\") Una voz en off intrigante: \"Crees que eres libre, pero la sociedad te tiene atado. ¿Y si te dijera que un filósofo de hace miles de años descubrió el secreto para ser auténticamente libre y feliz, viviendo en un barril?\"\n*   **Introducción al Personaje (3-8s):** Rápida sucesión de imágenes o ilustraciones de Diógenes (con su barril, su lámpara). Voz en off: \"Él es Diógenes de Sínope, el cínico más radical de la historia. Su filosofía: Menos es más, y la verdad, ante todo.\"\n*   **Anécdota Clave (8-15s):** Recreación visual o texto animado de la famosa interacción. Voz en off: \"Cuando el mismísimo Alejandro Magno le preguntó qué deseaba, Diógenes le respondió: 'Apártate, que me quitas el sol.' ¡Imagina ese nivel de desapego y audacia!\"\n*   **La Lección (15-25s):** Voz en off: \"Para Diógenes, la verdadera felicidad no estaba en posesiones ni en la aprobación social, sino en la autosuficiencia, la razón y decir la verdad sin filtros. Es un espejo incómodo para nuestra vida moderna, llena de lo superfluo.\"\n*   **Cierre y Llamada a la Acción (25-30s):** Voz en off con tono reflexivo pero desafiante: \"¿Te atreverías a vivir con la autenticidad de Diógenes? ¿Qué 'sol' te están quitando hoy las expectativas ajenas? Reflexiona y déjanos tu opinión en los comentarios.\"\n\n*   **Tono:** Provocador, revelador, crítico, pero con un toque de inspiración. Busca generar controversia y auto-reflexión.\n*   **Visuales:** Transiciones rápidas, imágenes impactantes (ilustraciones de Diógenes, el barril, Alejandro Magno, contrastes entre vida moderna y simplicidad), textos animados con frases clave. Subtítulos claros.\n*   **Música:** Intensa y misteriosa al inicio, con un toque épico o de intriga filosófica, que decae en un tono más reflexivo al final.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "El video de cine/Netflix con un CTA (\"Si este video llega a 1,000 likes...\") fue el que generó mayor rendimiento (2061 vistas, 13 likes), indicando que el contenido de películas con un gancho interactivo funciona bien. Los Shorts recientes sobre Maquiavelo, Estoicismo (Marco Aurelio) e Incas tuvieron muy bajo rendimiento (0-1 vista), a pesar del alto potencial demostrado por las tendencias validadas en estas categorías. Esto sugiere que la ejecución, el título o el enfoque para Shorts en estos temas específicos no fue el adecuado, no necesariamente que los temas no interesen. El comentario de 'nuevo susceiptor' es positivo pero no revela temas específicos de interés."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "nuevo susceiptor",
+          "respuesta_sugerida": "¡Bienvenido/a a la comunidad de El Criterio! Nos alegra mucho tenerte por aquí. Prepárate para analizar el mundo desde otra perspectiva y buscar siempre un criterio propio. 😉"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "No puedes creer lo que pasó con...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Diógenes: El Filósofo Cínico que Vivía en un Barril y te Diría la Verdad Incómoda\nTÍTULO: Diógenes: EL SECRETO para ser libre que NADIE se atreve a decirte (¡Ni tú!)\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEste Short busca impactar con una figura filosófica provocadora y relevante para el pensamiento crítico. \n\n*   **Hook (0-3s):** (Texto en pantalla: \"¿Libertad? ¿Felicidad?\") Una voz en off intrigante: \"Crees que eres libre, pero la sociedad te tiene atado. ¿Y si te dijera que un filósofo de hace miles de años descubrió el secreto para ser auténticamente libre y feliz, viviendo en un barril?\"\n*   **Introducción al Personaje (3-8s):** Rápida sucesión de imágenes o ilustraciones de Diógenes (con su barril, su lámpara). Voz en off: \"Él es Diógenes de Sínope, el cínico más radical de la historia. Su filosofía: Menos es más, y la verdad, ante todo.\"\n*   **Anécdota Clave (8-15s):** Recreación visual o texto animado de la famosa interacción. Voz en off: \"Cuando el mismísimo Alejandro Magno le preguntó qué deseaba, Diógenes le respondió: 'Apártate, que me quitas el sol.' ¡Imagina ese nivel de desapego y audacia!\"\n*   **La Lección (15-25s):** Voz en off: \"Para Diógenes, la verdadera felicidad no estaba en posesiones ni en la aprobación social, sino en la autosuficiencia, la razón y decir la verdad sin filtros. Es un espejo incómodo para nuestra vida moderna, llena de lo superfluo.\"\n*   **Cierre y Llamada a la Acción (25-30s):** Voz en off con tono reflexivo pero desafiante: \"¿Te atreverías a vivir con la autenticidad de Diógenes? ¿Qué 'sol' te están quitando hoy las expectativas ajenas? Reflexiona y déjanos tu opinión en los comentarios.\"\n\n*   **Tono:** Provocador, revelador, crítico, pero con un toque de inspiración. Busca generar controversia y auto-reflexión.\n*   **Visuales:** Transiciones rápidas, imágenes impactantes (ilustraciones de Diógenes, el barril, Alejandro Magno, contrastes entre vida moderna y simplicidad), textos animados con frases clave. Subtítulos claros.\n*   **Música:** Intensa y misteriosa al inicio, con un toque épico o de intriga filosófica, que decae en un tono más reflexivo al final.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-04-08 04:36:37"
+    }
   }
 ]
