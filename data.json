@@ -55,5 +55,31 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-04-11 04:37:08"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-04-11",
+    "hora": "16:37:39",
+    "analisis": {
+      "tema_recomendado": "Dune 2: El Secreto que Hollywood NO QUIERE que Sepas",
+      "titulo": "El SECRETO de DUNE 2 que Hollywood NO QUIERE QUE ENTIENDAS (y cambia TODO)",
+      "idea_contenido": "Este Short debe ser explosivo y rápido. Empieza con un clip impactante de Dune 2 y una pregunta directa: \"¿Y si te digo que Dune 2 no es una historia de héroes, sino una advertencia?\" Transiciones ultrarrápidas de escenas clave de la película, mientras el 'Tío Jota' narra en voz en off (o con texto dinámico) cómo la narrativa oculta una crítica profunda al mesianismo, el fanatismo religioso y la manipulación del poder. Conecta esto con la necesidad del pensamiento crítico en la vida real y la filosofía estoica sobre el libre albedrío frente al destino preestablecido. Puedes hacer un paralelismo rápido con Maquiavelo y las 'razones de estado' detrás de las decisiones de los personajes. El mensaje final debe ser que el crecimiento personal radica en cuestionar las narrativas dominantes. Finaliza con una llamada a la acción intrigante: \"¿Qué otras películas crees que esconden una verdad incómoda? ¡Comenta y te leo!\" La música debe ser épica y creciente, cortada abruptamente al final para generar impacto.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "18:30",
+      "canal": "El Tío Jota",
+      "categoria": "Cine, Filosofía y Pensamiento Crítico",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro",
+        "observaciones_engagement": "El engagement en los últimos shorts ha sido extremadamente bajo. Aunque las publicaciones centradas en filosofía (Diógenes, Marco Aurelio, Maquiavelo) no han generado tracción, un corto sobre 'anime/peliculas/curiosidades' tuvo un rendimiento ligeramente superior. Esto sugiere que, para los Shorts, un tema de cine o una curiosidad que genere intriga rápida puede tener un mejor gancho inicial, especialmente si se combina con una tendencia fuerte y se desmarca de los temas filosóficos recientes y más densos."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Esto es lo que nadie te dice sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Dune 2: El Secreto que Hollywood NO QUIERE que Sepas\nTÍTULO: El SECRETO de DUNE 2 que Hollywood NO QUIERE QUE ENTIENDAS (y cambia TODO)\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEste Short debe ser explosivo y rápido. Empieza con un clip impactante de Dune 2 y una pregunta directa: \"¿Y si te digo que Dune 2 no es una historia de héroes, sino una advertencia?\" Transiciones ultrarrápidas de escenas clave de la película, mientras el 'Tío Jota' narra en voz en off (o con texto dinámico) cómo la narrativa oculta una crítica profunda al mesianismo, el fanatismo religioso y la manipulación del poder. Conecta esto con la necesidad del pensamiento crítico en la vida real y la filosofía estoica sobre el libre albedrío frente al destino preestablecido. Puedes hacer un paralelismo rápido con Maquiavelo y las 'razones de estado' detrás de las decisiones de los personajes. El mensaje final debe ser que el crecimiento personal radica en cuestionar las narrativas dominantes. Finaliza con una llamada a la acción intrigante: \"¿Qué otras películas crees que esconden una verdad incómoda? ¡Comenta y te leo!\" La música debe ser épica y creciente, cortada abruptamente al final para generar impacto.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-04-11 16:37:39"
+    }
   }
 ]
