@@ -24,5 +24,36 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-04-10 16:37:37"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-04-11",
+    "hora": "04:37:09",
+    "analisis": {
+      "tema_recomendado": "Misterios de Civilizaciones Antiguas",
+      "titulo": "LO QUE NO SABES de las Líneas de NAZCA: El SECRETO que la CIENCIA NO EXPLICA",
+      "idea_contenido": "Un Short ultra dinámico y visualmente impactante que desvela el enigma de las Líneas de Nazca. El video comenzará con tomas aéreas espectaculares de los geoglifos, acompañadas de una pregunta provocadora en pantalla: '¿Son solo dibujos en el desierto o hay un mensaje oculto para la humanidad?'. Se presentará en 10-15 segundos la magnitud y precisión de estas figuras gigantes, su descubrimiento y la incredulidad sobre cómo fueron creadas por una civilización antigua sin tecnología de vuelo. Se mencionarán brevemente algunas teorías populares (incluyendo la de los 'alienígenas' para refutarla rápidamente con un tono crítico, muy al estilo de El Criterio). Luego, el foco pasará a la reflexión: ¿Qué nos dicen estas líneas sobre el ingenio y la cosmovisión de los Nazca? ¿Por qué la ciencia aún lucha por una explicación definitiva y unánime? El tono será misterioso pero fundamentado, invitando a la audiencia a cuestionar y pensar más allá de las respuestas fáciles. Finalizará con una pregunta directa a los espectadores: '¿Crees que llegaremos a entender su verdadero propósito? ¡Deja tu teoría!' para fomentar la interacción. Edición ágil, música intrigante y texto en pantalla con datos clave para mantener el engagement.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Historia",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro",
+        "observaciones_engagement": "El contenido reciente del canal (excluyendo el corto viral sobre 'monkey' que no es temático del canal) muestra un rendimiento extremadamente bajo en vistas y likes. Esto sugiere que los temas de filosofía, aunque relevantes para el canal, no están captando la atención en formato Short o los títulos no son lo suficientemente atractivos. El único comentario es una reacción a algo humorístico/sorprendente, lo que indica que el contenido dinámico y sorprendente podría generar más interacción. La tendencia validada sobre 'secretos antiguos' es una gran oportunidad para explotar el interés en misterios y hechos inexplicables."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "😂😮Yy",
+          "respuesta_sugerida": "¡Nos alegra que te haya sacado una sonrisa! 😄 ¿Qué otro misterio te gustaría que analizáramos con 'El Criterio'?"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Esto es lo que nadie te dice sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Misterios de Civilizaciones Antiguas\nTÍTULO: LO QUE NO SABES de las Líneas de NAZCA: El SECRETO que la CIENCIA NO EXPLICA\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nUn Short ultra dinámico y visualmente impactante que desvela el enigma de las Líneas de Nazca. El video comenzará con tomas aéreas espectaculares de los geoglifos, acompañadas de una pregunta provocadora en pantalla: '¿Son solo dibujos en el desierto o hay un mensaje oculto para la humanidad?'. Se presentará en 10-15 segundos la magnitud y precisión de estas figuras gigantes, su descubrimiento y la incredulidad sobre cómo fueron creadas por una civilización antigua sin tecnología de vuelo. Se mencionarán brevemente algunas teorías populares (incluyendo la de los 'alienígenas' para refutarla rápidamente con un tono crítico, muy al estilo de El Criterio). Luego, el foco pasará a la reflexión: ¿Qué nos dicen estas líneas sobre el ingenio y la cosmovisión de los Nazca? ¿Por qué la ciencia aún lucha por una explicación definitiva y unánime? El tono será misterioso pero fundamentado, invitando a la audiencia a cuestionar y pensar más allá de las respuestas fáciles. Finalizará con una pregunta directa a los espectadores: '¿Crees que llegaremos a entender su verdadero propósito? ¡Deja tu teoría!' para fomentar la interacción. Edición ágil, música intrigante y texto en pantalla con datos clave para mantener el engagement.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-04-11 04:37:08"
+    }
   }
 ]
