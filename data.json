@@ -81,5 +81,38 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-04-11 16:37:39"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-04-12",
+    "hora": "01:38:01",
+    "analisis": {
+      "tema_recomendado": "Tu película de infancia: La verdad que te ocultan (Y por qué DEBES saberla YA)",
+      "titulo": "Tu película de infancia: La verdad que te ocultan (Y por qué DEBES saberla YA)",
+      "idea_contenido": "Este Short busca impactar con una revelación rápida y sorprendente sobre una película icónica de la infancia.\n\n**Estructura del Short (aprox. 30-45 segundos):**\n\n1.  **Gancho Visual (0-5s):** Inicia con un fragmento muy reconocible y emotivo de una película de animación clásica o muy popular de la infancia (ej. 'El Rey León', 'Toy Story', 'Buscando a Nemo'). Música alegre y nostálgica de fondo. Texto superpuesto: \"¿Recuerdas [Nombre de la película]? ¡Tu película FAVORITA!\"\n2.  **Giro Dramático (5-15s):** Cambio abrupto de música a algo más misterioso o tenso. Corte rápido a una imagen menos conocida, un concepto o un fragmento de una entrevista/documental que insinúe algo oculto. Voz en off (rápida, intrigante): \"Lo que no sabes es la VERDAD OCULTA detrás de ella. Una historia más oscura... o un mensaje que NUNCA viste.\"\n3.  **La Revelación Impactante (15-30s):** Presenta un dato concreto, impactante y verificable sobre la película. Podría ser:\n    *   El origen sombrío de su cuento de hadas (ej. la versión original de 'La Sirenita' o 'Cenicienta').\n    *   Una crítica social o metáfora política profunda que pasó desapercibida (ej. 'Wall-E' y el consumismo, 'Zootopia' y el racismo).\n    *   Un hecho de producción escandaloso o un significado oculto de un personaje.\n    *   (Ejemplo para el short): \"¿Sabías que la supuesta felicidad de [Personaje] en realidad es una metáfora de [Problema Social/Filosofía Oscura] que te han estado mostrando desde niño?\"\n    *   Visuales dinámicos que apoyen el dato, con texto clave superpuesto.\n4.  **Cierre y Llamada a la Acción (30-45s):** Voz en off: \"Una vez que conoces esta verdad, NUNCA volverás a ver [Nombre de la película] de la misma manera. Y hay muchísimas más...\". Texto final superpuesto: \"¿Qué película crees que esconde la verdad? ¡Comenta y síguenos para más Criterio!\" Música con un final potente.\n\n**Tono:** Intrigante, revelador, ligeramente conspiranoico pero fundamentado, dinámico, rápido y con un toque de asombro.\n\n**Objetivo:** Generar curiosidad, sorpresa y alta retención en formato Short, llevando al usuario a ver más contenido del canal sobre análisis crítico de cine.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Cine y Cultura",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "No se detectaron peticiones directas en los comentarios recientes."
+        ],
+        "sentimiento_general": "Neutro/Indefinido",
+        "observaciones_engagement": "El rendimiento de los últimos Shorts temáticos del canal (Maquiavelo, Estoicismo, Incas) ha sido extremadamente bajo en vistas y likes (entre 0 y 2 vistas), lo que sugiere una desconexión o una ejecución ineficaz para el formato. Las excepciones ('monkey') parecen ser contenido fuera del nicho. Las tendencias validadas, especialmente en la categoría de 'Películas', tienen un potencial significativamente mayor de engagement que no se ha explotado con éxito en el formato Short hasta ahora."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "😂😮Yy",
+          "respuesta_sugerida": "¡Gracias por el comentario! Nos alegra que te haya sacado una sonrisa. 😊"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Mira esto, es increíble...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Tu película de infancia: La verdad que te ocultan (Y por qué DEBES saberla YA)\nTÍTULO: Tu película de infancia: La verdad que te ocultan (Y por qué DEBES saberla YA)\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEste Short busca impactar con una revelación rápida y sorprendente sobre una película icónica de la infancia.\n\n**Estructura del Short (aprox. 30-45 segundos):**\n\n1.  **Gancho Visual (0-5s):** Inicia con un fragmento muy reconocible y emotivo de una película de animación clásica o muy popular de la infancia (ej. 'El Rey León', 'Toy Story', 'Buscando a Nemo'). Música alegre y nostálgica de fondo. Texto superpuesto: \"¿Recuerdas [Nombre de la película]? ¡Tu película FAVORITA!\"\n2.  **Giro Dramático (5-15s):** Cambio abrupto de música a algo más misterioso o tenso. Corte rápido a una imagen menos conocida, un concepto o un fragmento de una entrevista/documental que insinúe algo oculto. Voz en off (rápida, intrigante): \"Lo que no sabes es la VERDAD OCULTA detrás de ella. Una historia más oscura... o un mensaje que NUNCA viste.\"\n3.  **La Revelación Impactante (15-30s):** Presenta un dato concreto, impactante y verificable sobre la película. Podría ser:\n    *   El origen sombrío de su cuento de hadas (ej. la versión original de 'La Sirenita' o 'Cenicienta').\n    *   Una crítica social o metáfora política profunda que pasó desapercibida (ej. 'Wall-E' y el consumismo, 'Zootopia' y el racismo).\n    *   Un hecho de producción escandaloso o un significado oculto de un personaje.\n    *   (Ejemplo para el short): \"¿Sabías que la supuesta felicidad de [Personaje] en realidad es una metáfora de [Problema Social/Filosofía Oscura] que te han estado mostrando desde niño?\"\n    *   Visuales dinámicos que apoyen el dato, con texto clave superpuesto.\n4.  **Cierre y Llamada a la Acción (30-45s):** Voz en off: \"Una vez que conoces esta verdad, NUNCA volverás a ver [Nombre de la película] de la misma manera. Y hay muchísimas más...\". Texto final superpuesto: \"¿Qué película crees que esconde la verdad? ¡Comenta y síguenos para más Criterio!\" Música con un final potente.\n\n**Tono:** Intrigante, revelador, ligeramente conspiranoico pero fundamentado, dinámico, rápido y con un toque de asombro.\n\n**Objetivo:** Generar curiosidad, sorpresa y alta retención en formato Short, llevando al usuario a ver más contenido del canal sobre análisis crítico de cine.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-04-12 01:38:01"
+    }
   }
 ]
