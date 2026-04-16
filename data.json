@@ -254,5 +254,38 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-04-15 14:39:08"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-04-16",
+    "hora": "00:39:17",
+    "analisis": {
+      "tema_recomendado": "La Sabiduría de Sócrates para la Vida Moderna",
+      "titulo": "Sócrates: La VERDAD INCÓMODA que CAMBIARÁ tu forma de pensar (¿ESTÁS LISTO?)",
+      "idea_contenido": "El short comenzará con un gancho visual rápido de Sócrates y una pregunta provocadora: '¿Crees que sabes mucho? Sócrates diría lo contrario...' (Texto superpuesto con música enérgica y misteriosa). Se introducirá la famosa frase 'Solo sé que no sé nada' de forma dramática, explicando brevemente que no es una admisión de ignorancia, sino la base del verdadero conocimiento y del pensamiento crítico. Se mostrarán ejemplos visuales rápidos de personas que creen tener todas las respuestas vs. aquellos que cuestionan y aprenden. El tono será reflexivo pero dinámico, invitando a la audiencia a cuestionar sus propias certezas. Se utilizarán transiciones rápidas y texto en pantalla para enfatizar los puntos clave. Al final, se lanzará una pregunta directa para fomentar la interacción: '¿Qué creías saber con certeza y Sócrates te hizo dudar?' para fomentar comentarios y el 'criterio propio'.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "19:00",
+      "canal": "El Criterio",
+      "categoria": "Filosofía y Pensamiento Crítico",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "No se detectaron peticiones explícitas en los comentarios proporcionados."
+        ],
+        "sentimiento_general": "Neutro",
+        "observaciones_engagement": "El short sobre 'monkey/kpopgrupo' tuvo un pico de 404 vistas, sugiriendo que ganchos virales y temas inesperados pueden generar alto engagement. Dentro de los temas centrales, los shorts de filosofía (estoicismo de Marco Aurelio, 186 vistas) han mostrado un rendimiento moderadamente mejor que los de historia (Machu Picchu, 6 vistas) o cine (6 vistas), o Maquiavelo (4 vistas). Hay potencial para capitalizar temas profundos con títulos y estructuras más atractivas y dinámicas, siguiendo la línea viral de los trending topics."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "😂😮Yy",
+          "respuesta_sugerida": "¡Nos alegra que te haya gustado! Si tienes alguna idea para un próximo análisis, ¡somos todo oídos! 😉"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Esto es lo que nadie te dice sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: La Sabiduría de Sócrates para la Vida Moderna\nTÍTULO: Sócrates: La VERDAD INCÓMODA que CAMBIARÁ tu forma de pensar (¿ESTÁS LISTO?)\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEl short comenzará con un gancho visual rápido de Sócrates y una pregunta provocadora: '¿Crees que sabes mucho? Sócrates diría lo contrario...' (Texto superpuesto con música enérgica y misteriosa). Se introducirá la famosa frase 'Solo sé que no sé nada' de forma dramática, explicando brevemente que no es una admisión de ignorancia, sino la base del verdadero conocimiento y del pensamiento crítico. Se mostrarán ejemplos visuales rápidos de personas que creen tener todas las respuestas vs. aquellos que cuestionan y aprenden. El tono será reflexivo pero dinámico, invitando a la audiencia a cuestionar sus propias certezas. Se utilizarán transiciones rápidas y texto en pantalla para enfatizar los puntos clave. Al final, se lanzará una pregunta directa para fomentar la interacción: '¿Qué creías saber con certeza y Sócrates te hizo dudar?' para fomentar comentarios y el 'criterio propio'.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-04-16 00:39:17"
+    }
   }
 ]
