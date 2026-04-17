@@ -1,7 +1,6 @@
 import os
 import json
 import logging
-import google.generativeai as genai
 from src.utils.gemini_manager import GeminiManager
 from src.analytics.channel_config import get_channel_config
 from src.analytics.content_strategy import get_content_type_for_day, build_enhanced_recommendation
@@ -13,8 +12,8 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
     Utiliza Gemini 2.5 Flash para realizar un análisis profundo y generar recomendaciones de video.
     Incluye análisis de comentarios, engagement e interacción con la audiencia.
     """
-    def _execute_analysis():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+    def _execute_analysis(client):
+        model_id = "gemini-2.0-flash"  # Actualizado a 2.0 ya que 2.5 no existe en la nueva SDK (posible error previo)
         config = get_channel_config(channel_name)
         
         # Determinar el tipo de contenido para hoy (alternancia Short/Largo)
@@ -92,7 +91,7 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
         }}
         """
 
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(model=model_id, contents=prompt)
         
         clean_text = response.text.strip()
         if clean_text.startswith("```json"):

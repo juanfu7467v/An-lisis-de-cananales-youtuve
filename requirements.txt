@@ -8,5 +8,5 @@ python-dotenv
 flask
 gunicorn
 requests
-google-generativeai
+google-genai
 pytrends

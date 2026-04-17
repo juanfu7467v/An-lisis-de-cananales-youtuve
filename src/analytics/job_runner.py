@@ -48,7 +48,7 @@ def _job_execution():
     # Verificar si ya fue analizado hoy
     if has_channel_been_analyzed_today(channel_name):
         logger.warning(f"El canal '{channel_name}' ya fue analizado hoy.")
-        logger.info("Esperando la siguiente petición externa (en 12 horas)...")
+        logger.info("Esperando la siguiente petición externa (en 8 horas)...")
         logger.info("=" * 80)
         return
     
@@ -103,7 +103,7 @@ def _job_execution():
             logger.error(f"✗ Error en la petición HTTP al servidor de destino para {channel_name}: {e}")
 
         logger.info(f"✓ Análisis de {channel_name} completado exitosamente.")
-        logger.info("Esperando la siguiente petición externa (en 12 horas)...")
+        logger.info("Esperando la siguiente petición externa (en 8 horas)...")
 
     except Exception as e:
         logger.error(f"Error inesperado durante la ejecución del job: {e}")

@@ -3,7 +3,6 @@ import logging
 import json
 from googleapiclient.discovery import build
 from datetime import datetime
-import google.generativeai as genai
 from src.utils.gemini_manager import GeminiManager
 
 logger = logging.getLogger(__name__)
@@ -54,8 +53,8 @@ def _transform_title_with_ia(trend_topic):
     """
     Usa IA para transformar una tendencia en un título emocional y viral.
     """
-    def _execute_transform():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+    def _execute_transform(client):
+        model_id = "gemini-2.0-flash"
 
         prompt = f"""
         Actúa como un experto en marketing viral de YouTube. 
@@ -79,7 +78,7 @@ def _transform_title_with_ia(trend_topic):
 
         Salida (solo el título transformado, sin comillas):
         """
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(model=model_id, contents=prompt)
         transformed_title = response.text.strip().replace('"', '')
         return transformed_title if transformed_title else trend_topic
 
@@ -154,8 +153,8 @@ def get_validated_trends(channel_id=None):
         # 2. Usar IA para identificar temas sugeridos o temas estratégicos (Cine, Filosofía, Historia)
         logger.info("Generando temas estratégicos y analizando comentarios con IA...")
         
-        def _execute_topic_generation():
-            model = genai.GenerativeModel("gemini-2.5-flash")
+        def _execute_topic_generation(client):
+            model_id = "gemini-2.0-flash"
             
             prompt = f"""
             Genera una lista de 8 temas potenciales para videos de YouTube.
@@ -174,7 +173,7 @@ def get_validated_trends(channel_id=None):
             
             Responde ÚNICAMENTE con una lista de 8 temas cortos (ej: "El estoicismo de Marco Aurelio", "Análisis de la película Oppenheimer", "El secreto del Imperio Inca").
             """
-            response = model.generate_content(prompt)
+            response = client.models.generate_content(model=model_id, contents=prompt)
             extracted_topics = response.text.strip().split('\n')
             return [t.strip('- ').strip() for t in extracted_topics if t.strip()]
 

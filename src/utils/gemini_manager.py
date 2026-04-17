@@ -1,6 +1,6 @@
 import os
 import logging
-import google.generativeai as genai
+from google import genai
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ class GeminiManager:
         Ejecuta una función que usa la API de Gemini, rotando las claves si falla por cuota.
         
         Args:
-            func: Función que realiza la llamada a Gemini. Debe aceptar el modelo configurado o realizar su propia configuración.
+            func: Función que realiza la llamada a Gemini. Debe aceptar el cliente configurado.
             *args, **kwargs: Argumentos para la función.
             
         Returns:
@@ -45,11 +45,11 @@ class GeminiManager:
 
         for i, api_key in enumerate(keys):
             try:
-                # Configurar la API con la clave actual
-                genai.configure(api_key=api_key)
+                # Crear el cliente con la clave actual
+                client = genai.Client(api_key=api_key)
                 
-                # Intentar ejecutar la función
-                return func(*args, **kwargs)
+                # Intentar ejecutar la función pasando el cliente
+                return func(client, *args, **kwargs)
                 
             except Exception as e:
                 error_msg = str(e).lower()
