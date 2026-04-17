@@ -2,6 +2,7 @@ import os
 import json
 import logging
 import google.generativeai as genai
+from src.utils.gemini_manager import GeminiManager
 from src.analytics.channel_config import get_channel_config
 from src.analytics.content_strategy import get_content_type_for_day, build_enhanced_recommendation
 
@@ -12,15 +13,8 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
     Utiliza Gemini 2.5 Flash para realizar un análisis profundo y generar recomendaciones de video.
     Incluye análisis de comentarios, engagement e interacción con la audiencia.
     """
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        logger.error("Falta GEMINI_API_KEY para análisis de tendencias")
-        return None
-
-    try:
-        genai.configure(api_key=api_key)
+    def _execute_analysis():
         model = genai.GenerativeModel("gemini-2.5-flash")
-
         config = get_channel_config(channel_name)
         
         # Determinar el tipo de contenido para hoy (alternancia Short/Largo)
@@ -117,6 +111,13 @@ def analyze_trends_and_recommend(trends_data, channel_name=None):
         
         return recommendation
 
+    try:
+        # Usar el sistema de rotación de claves
+        result = GeminiManager.call_with_rotation(_execute_analysis)
+        if not result:
+            logger.error("No se pudo completar el análisis de tendencias con ninguna de las claves disponibles.")
+        return result
+
     except Exception as e:
-        logger.error(f"Error al analizar tendencias con Gemini: {e}")
+        logger.error(f"Error crítico al analizar tendencias con Gemini: {e}")
         return None

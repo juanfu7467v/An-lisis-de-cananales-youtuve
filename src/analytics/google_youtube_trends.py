@@ -4,6 +4,7 @@ import json
 from googleapiclient.discovery import build
 from datetime import datetime
 import google.generativeai as genai
+from src.utils.gemini_manager import GeminiManager
 
 logger = logging.getLogger(__name__)
 
@@ -53,13 +54,7 @@ def _transform_title_with_ia(trend_topic):
     """
     Usa IA para transformar una tendencia en un título emocional y viral.
     """
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        logger.error("Falta GEMINI_API_KEY para la transformación de títulos con IA.")
-        return trend_topic
-
-    try:
-        genai.configure(api_key=api_key)
+    def _execute_transform():
         model = genai.GenerativeModel("gemini-2.5-flash")
 
         prompt = f"""
@@ -88,8 +83,11 @@ def _transform_title_with_ia(trend_topic):
         transformed_title = response.text.strip().replace('"', '')
         return transformed_title if transformed_title else trend_topic
 
+    try:
+        result = GeminiManager.call_with_rotation(_execute_transform)
+        return result if result else trend_topic
     except Exception as e:
-        logger.error(f"Error al transformar título con IA para {trend_topic}: {e}")
+        logger.error(f"Error crítico al transformar título con IA para {trend_topic}: {e}")
         return trend_topic
 
 def get_validated_trends(channel_id=None):
@@ -155,9 +153,8 @@ def get_validated_trends(channel_id=None):
 
         # 2. Usar IA para identificar temas sugeridos o temas estratégicos (Cine, Filosofía, Historia)
         logger.info("Generando temas estratégicos y analizando comentarios con IA...")
-        gemini_key = os.getenv("GEMINI_API_KEY")
-        if gemini_key:
-            genai.configure(api_key=gemini_key)
+        
+        def _execute_topic_generation():
             model = genai.GenerativeModel("gemini-2.5-flash")
             
             prompt = f"""
@@ -179,7 +176,11 @@ def get_validated_trends(channel_id=None):
             """
             response = model.generate_content(prompt)
             extracted_topics = response.text.strip().split('\n')
-            potential_topics = [t.strip('- ').strip() for t in extracted_topics if t.strip()]
+            return [t.strip('- ').strip() for t in extracted_topics if t.strip()]
+
+        generated_topics = GeminiManager.call_with_rotation(_execute_topic_generation)
+        if generated_topics:
+            potential_topics = generated_topics
             logger.info(f"✓ Temas potenciales generados: {potential_topics}")
 
     except Exception as e:
