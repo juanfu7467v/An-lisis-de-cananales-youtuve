@@ -313,5 +313,36 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-04-16 05:39:13"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-04-17",
+    "hora": "01:39:48",
+    "analisis": {
+      "tema_recomendado": "Estoicismo: Tu Superpoder Oculto para la Vida Moderna",
+      "titulo": "Por qué el Estoicismo es el superpoder que necesitas hoy",
+      "idea_contenido": "El Short inicia con un gancho visual muy rápido y directo: un texto superpuesto en pantalla grande que dice '¿Estresado? ¿Ansioso? ¡STOP!'. Música dinámica y de fondo impactante. Narración enérgica y concisa: 'La vida moderna es un caos... ¿y si te dijera que un 'superpoder' de hace 2000 años puede transformarla?' Se presenta el Estoicismo no como una filosofía antigua y aburrida, sino como un kit de herramientas mentales para el siglo XXI. Se muestran 2-3 escenarios cotidianos y reconocibles (ej: un mensaje de texto que te molesta, un problema inesperado en el trabajo, la incertidumbre del futuro) con una animación rápida que indica cómo una reacción estoica (calma, enfoque en lo controlable) cambia el resultado. Utiliza frases cortas y potentes como 'No controlas lo que pasa, pero SÍ tu reacción' o 'Tu mente es tu fortaleza más grande'. Se podría incluir una imagen icónica de un estoico (Marco Aurelio) con un filtro moderno, como un 'héroe del pensamiento'. El tono es motivacional, práctico y alineado con el 'criterio propio y fundamentado' del canal. Termina con una pregunta provocadora para la interacción: '¿Listo para activar tu superpoder estoico? Cuéntanos qué desafío enfrentarías primero.'",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "15:00",
+      "canal": "El Criterio",
+      "categoria": "Filosofía Práctica",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "neutro/positivo",
+        "observaciones_engagement": "Los shorts sobre filosofía (especialmente Estoicismo y Sócrates) han mostrado un rendimiento significativamente mejor en comparación con los de historia o cine recientes, aunque aún con margen de crecimiento. El corto 'no-core' de 'monkey/kpop' logró el mayor alcance, sugiriendo que la audiencia responde bien a contenido muy dinámico y con gancho, incluso si está fuera de los temas centrales. La tendencia validada sobre Estoicismo es muy prometedora y encaja perfectamente con el interés ya demostrado por la audiencia en esta temática."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "😂🤨Yy",
+          "respuesta_sugerida": "¡Nos alegra muchísimo que te haya sacado una sonrisa! Si te gustó, prepárate para el siguiente análisis. ¿Algún tema que te gustaría que viéramos con nuestro 'criterio'?"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Mira esto, es increíble...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Estoicismo: Tu Superpoder Oculto para la Vida Moderna\nTÍTULO: Por qué el Estoicismo es el superpoder que necesitas hoy\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEl Short inicia con un gancho visual muy rápido y directo: un texto superpuesto en pantalla grande que dice '¿Estresado? ¿Ansioso? ¡STOP!'. Música dinámica y de fondo impactante. Narración enérgica y concisa: 'La vida moderna es un caos... ¿y si te dijera que un 'superpoder' de hace 2000 años puede transformarla?' Se presenta el Estoicismo no como una filosofía antigua y aburrida, sino como un kit de herramientas mentales para el siglo XXI. Se muestran 2-3 escenarios cotidianos y reconocibles (ej: un mensaje de texto que te molesta, un problema inesperado en el trabajo, la incertidumbre del futuro) con una animación rápida que indica cómo una reacción estoica (calma, enfoque en lo controlable) cambia el resultado. Utiliza frases cortas y potentes como 'No controlas lo que pasa, pero SÍ tu reacción' o 'Tu mente es tu fortaleza más grande'. Se podría incluir una imagen icónica de un estoico (Marco Aurelio) con un filtro moderno, como un 'héroe del pensamiento'. El tono es motivacional, práctico y alineado con el 'criterio propio y fundamentado' del canal. Termina con una pregunta provocadora para la interacción: '¿Listo para activar tu superpoder estoico? Cuéntanos qué desafío enfrentarías primero.'\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-04-17 01:39:48"
+    }
   }
 ]
