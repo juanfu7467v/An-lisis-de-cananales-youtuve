@@ -202,8 +202,8 @@ def get_validated_trends(channel_id=None):
             logger.info(f"✓ Tema aprobado: '{topic}' con prioridad {priority} ({avg_views:.0f} vistas).")
             
             # Pausa después de validar cada tema de YouTube
-            logger.info("Esperando 10 segundos antes de generar el título viral...")
-            time.sleep(10)
+            logger.info("Esperando 40 segundos antes de generar el título viral...")
+            time.sleep(40)
             
             # Pausa antes de generar el título viral (ya incluida arriba por contexto)
             transformed_title = _transform_title_with_ia(topic)
