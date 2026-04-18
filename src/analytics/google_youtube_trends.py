@@ -1,6 +1,7 @@
 import os
 import logging
 import json
+import time
 from googleapiclient.discovery import build
 from datetime import datetime
 from src.utils.gemini_manager import GeminiManager
@@ -200,6 +201,11 @@ def get_validated_trends(channel_id=None):
             priority = "ALTA" if avg_views > 500000 else "NORMAL"
             logger.info(f"✓ Tema aprobado: '{topic}' con prioridad {priority} ({avg_views:.0f} vistas).")
             
+            # Pausa después de validar cada tema de YouTube
+            logger.info("Esperando 10 segundos antes de generar el título viral...")
+            time.sleep(10)
+            
+            # Pausa antes de generar el título viral (ya incluida arriba por contexto)
             transformed_title = _transform_title_with_ia(topic)
             logger.info(f"✓ Título viral generado: '{transformed_title}'")
             
