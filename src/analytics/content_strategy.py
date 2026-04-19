@@ -79,16 +79,19 @@ def get_last_format_for_channel(channel_name, filename="data.json"):
 
 def get_content_type_for_day(channel_name=None):
     """
-    Determina el tipo de contenido basándose en la alternancia Short/Largo.
+    Determina el tipo de contenido basándose en la configuración o alternancia Short/Largo.
     """
-    last_format = get_last_format_for_channel(channel_name)
+    # Nueva lógica: Si VIDEO_LARGO está en true, siempre recomienda Video largo.
+    # Si no está configurado o es false, por defecto recomienda Shorts.
+    video_largo_env = os.getenv("VIDEO_LARGO", "false").lower() == "true"
     
-    # Si el último fue Short, hoy toca Video largo. Si fue Video largo, hoy toca Short.
-    if last_format == "Short":
+    if video_largo_env:
         return CONTENT_ROTATION["Video largo"]
-    else:
-        # Por defecto empezamos con Short o alternamos desde Video largo
-        return CONTENT_ROTATION["Short"]
+    
+    # Si no está configurado VIDEO_LARGO=true, por defecto recomienda Shorts.
+    # Mantenemos la lógica de alternancia comentada por si se desea recuperar en el futuro,
+    # pero cumplimos con el requerimiento de "por defecto debe recomendar videos Shorts".
+    return CONTENT_ROTATION["Short"]
 
 def get_theme_for_content_type(content_config):
     """
