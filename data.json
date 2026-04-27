@@ -58,5 +58,39 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-04-27 10:44:26"
     }
+  },
+  {
+    "canal": "El Pensamiento",
+    "fecha": "2026-04-27",
+    "hora": "17:50:51",
+    "analisis": {
+      "tema_recomendado": "Los enigmas de la mente ancestral: Secretos que desafían la lógica moderna",
+      "titulo": "Los enigmas de la mente ancestral: Secretos que desafían la lógica moderna",
+      "idea_contenido": "En este video corto exploraremos los misterios de la mente desde la perspectiva de la sabiduría ancestral, analizando cómo conceptos antiguos desafían nuestra comprensión actual. Abordaremos brevemente teorías psicológicas antiguas, paralelismos con la filosofía moderna y la relevancia de estos conocimientos en la actualidad.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "15:00",
+      "canal": "El Pensamiento",
+      "categoria": "Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "Filosofía antigua",
+          "Sabiduría ancestral"
+        ],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "Aunque no hay datos específicos recientes, la audiencia del canal suele responder bien a contenidos que combinan reflexiones con elementos históricos y filosóficos."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "¡Me encantaría ver un video sobre la conexión entre la filosofía antigua y la psicología moderna!",
+          "respuesta_sugerida": "¡Gracias por tu sugerencia! Estamos preparando un video que explora esa fascinante relación. ¡Esperamos que te guste!"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Mira esto, es increíble...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Pensamiento.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Los enigmas de la mente ancestral: Secretos que desafían la lógica moderna\nTÍTULO: Los enigmas de la mente ancestral: Secretos que desafían la lógica moderna\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEn este video corto exploraremos los misterios de la mente desde la perspectiva de la sabiduría ancestral, analizando cómo conceptos antiguos desafían nuestra comprensión actual. Abordaremos brevemente teorías psicológicas antiguas, paralelismos con la filosofía moderna y la relevancia de estos conocimientos en la actualidad.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Pensamiento",
+      "fecha_analisis": "2026-04-27 17:50:50"
+    }
   }
 ]
