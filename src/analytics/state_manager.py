@@ -4,31 +4,32 @@ import logging
 import requests
 import base64
 from datetime import datetime
+from src.analytics.channel_config import CHANNEL_CONFIGS
 
 logger = logging.getLogger(__name__)
 
-# Orden de canales para alternancia
-CHANNELS_ROTATION = ["El Tío Jota", "El Criterio"]
+# Orden de canales para alternancia (obtenido dinámicamente de la configuración)
+CHANNELS_ROTATION = sorted(CHANNEL_CONFIGS.keys(), key=lambda k: CHANNEL_CONFIGS[k]['order'])
 
 def get_next_channel_to_analyze(filename="data.json"):
     """
     Determina qué canal debe analizarse en la próxima petición.
     
     Lógica:
-    - Si data.json está vacío, comienza con "El Tío Jota"
-    - Si el último análisis fue de "El Tío Jota", analiza "El Criterio"
-    - Si el último análisis fue de "El Criterio", analiza "El Tío Jota"
+    - Si data.json está vacío, comienza con el primer canal de la rotación.
+    - Si el último análisis fue de un canal, analiza el siguiente en la lista CHANNELS_ROTATION.
+    - Si el último análisis fue del último canal, vuelve al primero.
     
     Returns:
-        str: Nombre del canal a analizar ("El Tío Jota" o "El Criterio")
+        str: Nombre del canal a analizar.
     """
     try:
         # Intentar obtener el historial desde GitHub
         history = _get_analysis_history(filename)
         
         if not history:
-            logger.info("Historial vacío. Iniciando con 'El Tío Jota'.")
-            return "El Tío Jota"
+            logger.info(f"Historial vacío. Iniciando con '{CHANNELS_ROTATION[0]}'.")
+            return CHANNELS_ROTATION[0]
         
         # Obtener el último análisis
         last_entry = history[-1]
@@ -36,22 +37,22 @@ def get_next_channel_to_analyze(filename="data.json"):
         
         logger.info(f"Último canal analizado: {last_channel}")
         
-        # Determinar el siguiente canal
-        if last_channel == "El Tío Jota":
-            next_channel = "El Criterio"
-        elif last_channel == "El Criterio":
-            next_channel = "El Tío Jota"
+        # Determinar el siguiente canal basándose en la lista CHANNELS_ROTATION
+        if last_channel in CHANNELS_ROTATION:
+            current_index = CHANNELS_ROTATION.index(last_channel)
+            next_index = (current_index + 1) % len(CHANNELS_ROTATION)
+            next_channel = CHANNELS_ROTATION[next_index]
         else:
-            # Si hay un canal desconocido, reiniciar con "El Tío Jota"
-            next_channel = "El Tío Jota"
+            # Si hay un canal desconocido, reiniciar con el primero
+            next_channel = CHANNELS_ROTATION[0]
         
         logger.info(f"Próximo canal a analizar: {next_channel}")
         return next_channel
         
     except Exception as e:
         logger.error(f"Error al determinar el próximo canal: {e}")
-        # Por defecto, analizar "El Tío Jota"
-        return "El Tío Jota"
+        # Por defecto, analizar el primer canal configurado
+        return CHANNELS_ROTATION[0]
 
 
 def _get_analysis_history(filename="data.json"):
@@ -107,7 +108,7 @@ def has_channel_been_analyzed_today(channel_name, filename="data.json"):
     
     Args:
         channel_name (str): Nombre del canal
-        filename (str): Nombre del archivo de datos
+            filename (str): Nombre del archivo de datos
     
     Returns:
         bool: True si ya fue analizado hoy, False en caso contrario

@@ -27,6 +27,19 @@ CHANNEL_CONFIGS = {
         "description": "Canal dedicado al análisis profundo de la cultura, el cine y la sociedad, buscando siempre un criterio propio y fundamentado.",
         "website_promo": "https://masitaprex.com/PeliPREX",
         "order": 2
+    },
+    "El Pensamiento": {
+        "id": os.getenv("ID_CANAL_3", "UC_EL_PENSAMIENTO_ID"),
+        "topics": [
+            "Reflexiones sobre la vida",
+            "Psicología aplicada",
+            "Grandes misterios de la mente",
+            "Sabiduría ancestral",
+            "Crecimiento espiritual"
+        ],
+        "description": "Canal dedicado a explorar las profundidades del pensamiento humano, la psicología y la sabiduría que trasciende el tiempo.",
+        "website_promo": "https://masitaprex.com/PeliPREX",
+        "order": 3
     }
 }
 

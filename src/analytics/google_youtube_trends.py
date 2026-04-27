@@ -5,6 +5,7 @@ import time
 from googleapiclient.discovery import build
 from datetime import datetime
 from src.utils.gemini_manager import GeminiManager
+from src.utils.openai_manager import OpenAIManager
 
 logger = logging.getLogger(__name__)
 
@@ -54,37 +55,33 @@ def _transform_title_with_ia(trend_topic):
     """
     Usa IA para transformar una tendencia en un título emocional y viral.
     """
-    def _execute_transform(client):
+    prompt = f"""
+    Actúa como un experto en marketing viral de YouTube. 
+    
+    TAREA: Convierte el siguiente tema en un TÍTULO ALTAMENTE VIRAL.
+    
+    REGLAS DE ORO:
+    1. Debe generar CURIOSIDAD EXTREMA, EMOCIÓN o MISTERIO.
+    2. No usar títulos genéricos.
+    3. Usar estilo clickbait inteligente (sin mentir).
+    4. Debe sonar como algo que el usuario NECESITA saber ahora mismo.
+
+    TEMA A TRANSFORMAR: "{trend_topic}"
+
+    Salida (solo el título transformado, sin comillas):
+    """
+
+    def _execute_gemini(client):
         model_id = "gemini-2.0-flash"
-
-        prompt = f"""
-        Actúa como un experto en marketing viral de YouTube. 
-        
-        TAREA: Convierte el siguiente tema en un TÍTULO ALTAMENTE VIRAL.
-        
-        REGLAS DE ORO:
-        1. Debe generar CURIOSIDAD EXTREMA, EMOCIÓN o MISTERIO.
-        2. No usar títulos genéricos.
-        3. Usar estilo clickbait inteligente (sin mentir).
-        4. Debe sonar como algo que el usuario NECESITA saber ahora mismo.
-
-        EJEMPLO:
-        Entrada: "gatos"
-        Salida: "Por qué los gatos te observan mientras duermes (da miedo)"
-        
-        Entrada: "Spider Man"
-        Salida: "El caso real que nadie pudo explicar sobre Spider-Man"
-        
-        TEMA A TRANSFORMAR: "{trend_topic}"
-
-        Salida (solo el título transformado, sin comillas):
-        """
         response = client.models.generate_content(model=model_id, contents=prompt)
-        transformed_title = response.text.strip().replace('"', '')
-        return transformed_title if transformed_title else trend_topic
+        return response.text.strip().replace('"', '')
+
+    def _execute_openai_fallback():
+        response_text = OpenAIManager.analyze_with_fallback(prompt)
+        return response_text.strip().replace('"', '') if response_text else None
 
     try:
-        result = GeminiManager.call_with_rotation(_execute_transform)
+        result = GeminiManager.call_with_rotation(_execute_gemini, fallback_func=_execute_openai_fallback)
         return result if result else trend_topic
     except Exception as e:
         logger.error(f"Error crítico al transformar título con IA para {trend_topic}: {e}")
@@ -151,34 +148,41 @@ def get_validated_trends(channel_id=None):
                     except Exception as ce:
                         logger.warning(f"No se pudieron obtener comentarios para el video {v_id}: {ce}")
 
-        # 2. Usar IA para identificar temas sugeridos o temas estratégicos (Cine, Filosofía, Historia)
+        # 2. Usar IA para identificar temas sugeridos o temas estratégicos
         logger.info("Generando temas estratégicos y analizando comentarios con IA...")
         
-        def _execute_topic_generation(client):
+        prompt_topics = f"""
+        Genera una lista de 8 temas potenciales para videos de YouTube.
+        
+        REQUISITOS:
+        1. Incluye temas de PELÍCULAS (análisis, curiosidades, cine actual).
+        2. Incluye temas de FILOSOFÍA (Estoicismo, Sócrates, Diógenes, Maquiavelo).
+        3. Incluye temas de HISTORIA (Imperio Inca, civilizaciones antiguas, misterios históricos).
+        4. Considera estos comentarios y rendimiento reciente:
+        
+        RENDIMIENTO RECIENTE:
+        {json.dumps(channel_data['recent_performance'], indent=2)}
+        
+        COMENTARIOS DE LA AUDIENCIA:
+        {json.dumps(channel_data['audience_comments'][:50], indent=2)}
+        
+        Responde ÚNICAMENTE con una lista de 8 temas cortos, uno por línea.
+        """
+
+        def _execute_gemini_topics(client):
             model_id = "gemini-2.0-flash"
-            
-            prompt = f"""
-            Genera una lista de 8 temas potenciales para videos de YouTube.
-            
-            REQUISITOS:
-            1. Incluye temas de PELÍCULAS (análisis, curiosidades, cine actual).
-            2. Incluye temas de FILOSOFÍA (Estoicismo, Sócrates, Diógenes, Maquiavelo).
-            3. Incluye temas de HISTORIA (Imperio Inca, civilizaciones antiguas, misterios históricos).
-            4. Considera estos comentarios y rendimiento reciente para ajustar la relevancia:
-            
-            RENDIMIENTO RECIENTE:
-            {json.dumps(channel_data['recent_performance'], indent=2)}
-            
-            COMENTARIOS DE LA AUDIENCIA:
-            {json.dumps(channel_data['audience_comments'][:50], indent=2)}
-            
-            Responde ÚNICAMENTE con una lista de 8 temas cortos (ej: "El estoicismo de Marco Aurelio", "Análisis de la película Oppenheimer", "El secreto del Imperio Inca").
-            """
-            response = client.models.generate_content(model=model_id, contents=prompt)
+            response = client.models.generate_content(model=model_id, contents=prompt_topics)
             extracted_topics = response.text.strip().split('\n')
             return [t.strip('- ').strip() for t in extracted_topics if t.strip()]
 
-        generated_topics = GeminiManager.call_with_rotation(_execute_topic_generation)
+        def _execute_openai_topics_fallback():
+            response_text = OpenAIManager.analyze_with_fallback(prompt_topics)
+            if response_text:
+                extracted_topics = response_text.strip().split('\n')
+                return [t.strip('- ').strip() for t in extracted_topics if t.strip()]
+            return None
+
+        generated_topics = GeminiManager.call_with_rotation(_execute_gemini_topics, fallback_func=_execute_openai_topics_fallback)
         if generated_topics:
             potential_topics = generated_topics
             logger.info(f"✓ Temas potenciales generados: {potential_topics}")
@@ -195,17 +199,13 @@ def get_validated_trends(channel_id=None):
         logger.info(f"Validando tema: '{topic}'")
         avg_views = _get_youtube_search_views(topic)
 
-        # Filtro de vistas (bajamos un poco el umbral para temas de nicho como filosofía si es necesario, 
-        # pero mantenemos 100k para asegurar calidad mínima)
         if avg_views > 100000:
             priority = "ALTA" if avg_views > 500000 else "NORMAL"
             logger.info(f"✓ Tema aprobado: '{topic}' con prioridad {priority} ({avg_views:.0f} vistas).")
             
-            # Pausa después de validar cada tema de YouTube
-            logger.info("Esperando 40 segundos antes de generar el título viral...")
-            time.sleep(40)
+            # Pausa para evitar rate limits
+            time.sleep(1)
             
-            # Pausa antes de generar el título viral (ya incluida arriba por contexto)
             transformed_title = _transform_title_with_ia(topic)
             logger.info(f"✓ Título viral generado: '{transformed_title}'")
             
@@ -220,7 +220,6 @@ def get_validated_trends(channel_id=None):
             logger.info(f"✗ Tema rechazado: '{topic}'. Vistas insuficientes ({avg_views:.0f}).")
 
     if not validated_trends:
-        # Fallback de emergencia con temas fijos si nada pasa el filtro
         validated_trends = [{
             "original_topic": "Lecciones de Estoicismo",
             "transformed_title": "Por qué el Estoicismo es el superpoder que necesitas hoy",
