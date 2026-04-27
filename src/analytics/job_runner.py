@@ -2,6 +2,8 @@ import os
 import logging
 import requests
 import threading
+import time
+import sys
 from datetime import datetime
 from src.analytics.google_youtube_trends import get_validated_trends
 from src.analytics.ai_analyzer import analyze_trends_and_recommend
@@ -32,9 +34,7 @@ def _job_execution():
     3. Analiza el canal seleccionado
     4. Guarda el resultado en data.json
     5. Envía el reporte al servidor externo
-    6. Se duerme esperando la siguiente petición externa
-    
-    No hay temporizadores internos. Todo se activa por peticiones externas.
+    6. Se detiene el sistema para ahorrar recursos
     """
     logger.info("=" * 80)
     logger.info("Iniciando ejecución del job autónomo (activado por petición externa)")
@@ -48,8 +48,9 @@ def _job_execution():
     # Verificar si ya fue analizado hoy
     if has_channel_been_analyzed_today(channel_name):
         logger.warning(f"El canal '{channel_name}' ya fue analizado hoy.")
-        logger.info("Esperando la siguiente petición externa (en 8 horas)...")
+        logger.info("Finalizando proceso para ahorrar recursos...")
         logger.info("=" * 80)
+        _shutdown_system()
         return
     
     # Obtener configuración del canal
@@ -57,6 +58,7 @@ def _job_execution():
     if not channel_config:
         logger.error(f"No se encontró configuración para el canal: {channel_name}")
         logger.info("=" * 80)
+        _shutdown_system()
         return
     
     channel_id = channel_config.get("id")
@@ -71,7 +73,7 @@ def _job_execution():
             logger.info("=" * 80)
             return
 
-        # 2. Generar recomendaciones profundas usando Gemini 2.5 Flash
+        # 2. Generar recomendaciones profundas usando Gemini (con fallback a OpenAI)
         logger.info(f"Generando recomendaciones profundas para {channel_name}...")
         recommendation = analyze_trends_and_recommend(trends, channel_name=channel_name)
         if not recommendation:
@@ -103,10 +105,25 @@ def _job_execution():
             logger.error(f"✗ Error en la petición HTTP al servidor de destino para {channel_name}: {e}")
 
         logger.info(f"✓ Análisis de {channel_name} completado exitosamente.")
-        logger.info("Esperando la siguiente petición externa (en 8 horas)...")
+        logger.info("Proceso finalizado. Apagando sistema para ahorrar recursos...")
 
     except Exception as e:
         logger.error(f"Error inesperado durante la ejecución del job: {e}")
     
     finally:
         logger.info("=" * 80)
+        _shutdown_system()
+
+def _shutdown_system():
+    """
+    Intenta detener la máquina o el proceso de forma segura.
+    En entornos como Fly.io o Docker, terminar el proceso principal 
+    suele ser suficiente para que la instancia entre en reposo o se detenga.
+    """
+    logger.info("Iniciando secuencia de apagado automático...")
+    # Pequeña espera para asegurar que los logs se envíen
+    time.sleep(5)
+    
+    # En Fly.io, terminar el proceso principal (PID 1) detiene la máquina
+    # Intentamos salir del proceso de Python. Si Flask está corriendo, esto matará el servidor.
+    os._exit(0)
