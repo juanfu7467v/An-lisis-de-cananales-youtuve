@@ -92,5 +92,31 @@
       "canal_objetivo": "El Pensamiento",
       "fecha_analisis": "2026-04-27 17:50:50"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-04-28",
+    "hora": "06:44:42",
+    "analisis": {
+      "tema_recomendado": "Descubre los secretos detrás de los grandes líderes históricos",
+      "titulo": "Los Grandes Líderes de la Historia: Lecciones para el Éxito Personal",
+      "idea_contenido": "En este video corto, exploraremos las estrategias y enseñanzas de líderes históricos como Sócrates, Maquiavelo y otros, y cómo aplicar sus lecciones en la vida cotidiana para alcanzar el éxito personal. Analizaremos sus decisiones clave y reflexionaremos sobre su impacto en la historia y en nuestro crecimiento personal.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "15:00",
+      "canal": "El Tío Jota",
+      "categoria": "Filosofía/Historia",
+      "analisis_audiencia": {
+        "temas_solicitados": [],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "Aunque el rendimiento reciente ha sido variado, los videos con temáticas históricas y filosóficas han tenido mayor aceptación."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "No puedes creer lo que pasó con...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Descubre los secretos detrás de los grandes líderes históricos\nTÍTULO: Los Grandes Líderes de la Historia: Lecciones para el Éxito Personal\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEn este video corto, exploraremos las estrategias y enseñanzas de líderes históricos como Sócrates, Maquiavelo y otros, y cómo aplicar sus lecciones en la vida cotidiana para alcanzar el éxito personal. Analizaremos sus decisiones clave y reflexionaremos sobre su impacto en la historia y en nuestro crecimiento personal.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-04-28 06:44:42"
+    }
   }
 ]
