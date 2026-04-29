@@ -186,5 +186,34 @@
       "canal_objetivo": "El Pensamiento",
       "fecha_analisis": "2026-04-29 02:45:00"
     }
+  },
+  {
+    "canal": "El Tío Jota",
+    "fecha": "2026-04-29",
+    "hora": "12:45:16",
+    "analisis": {
+      "tema_recomendado": "Los Enigmas de Sócrates: Descubriendo la Sabiduría Oculta del Filósofo",
+      "titulo": "Los Enigmas de Sócrates: Descubriendo la Sabiduría Oculta del Filósofo",
+      "idea_contenido": "En este video corto, exploraremos los enigmas y reflexiones más profundos de Sócrates, uno de los pensadores más influyentes de la historia. Descubre cómo sus enseñanzas pueden aplicarse a la vida moderna y cómo su filosofía perdura a través de los siglos.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "18:00",
+      "canal": "El Tío Jota",
+      "categoria": "Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "Sócrates",
+          "Filosofía"
+        ],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "Recientes videos han tenido un buen nivel de interacción, especialmente aquellos relacionados con la historia y la reflexión filosófica."
+      },
+      "interaccion_sugerida": [],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "¿Sabías esto sobre...?",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Tío Jota.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Los Enigmas de Sócrates: Descubriendo la Sabiduría Oculta del Filósofo\nTÍTULO: Los Enigmas de Sócrates: Descubriendo la Sabiduría Oculta del Filósofo\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEn este video corto, exploraremos los enigmas y reflexiones más profundos de Sócrates, uno de los pensadores más influyentes de la historia. Descubre cómo sus enseñanzas pueden aplicarse a la vida moderna y cómo su filosofía perdura a través de los siglos.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Tío Jota",
+      "fecha_analisis": "2026-04-29 12:45:16"
+    }
   }
 ]
