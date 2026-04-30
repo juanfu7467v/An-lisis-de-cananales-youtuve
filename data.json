@@ -244,5 +244,39 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-04-29 22:45:21"
     }
+  },
+  {
+    "canal": "El Pensamiento",
+    "fecha": "2026-04-30",
+    "hora": "08:45:39",
+    "analisis": {
+      "tema_recomendado": "Descubre la sabiduría ancestral del pensamiento crítico",
+      "titulo": "El arte de pensar: Secretos milenarios para potenciar tu mente",
+      "idea_contenido": "En este Short, exploraremos la conexión entre la sabiduría ancestral y el pensamiento crítico, revelando técnicas y enseñanzas que han perdurado a lo largo del tiempo. Descubre cómo aplicar estas enseñanzas en tu vida diaria para potenciar tu mente y alcanzar una mayor plenitud.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "10:00",
+      "canal": "El Pensamiento",
+      "categoria": "Filosofía",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "Filosofía para la vida",
+          "Pensamiento de Sócrates"
+        ],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "El canal ha mantenido una buena interacción con la audiencia, especialmente en temas relacionados con filosofía y pensamiento crítico."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "¡Me encantan tus videos sobre filosofía! ¿Podrías hacer uno sobre Sócrates?",
+          "respuesta_sugerida": "¡Gracias por tu apoyo! Estoy trabajando en un nuevo video sobre Sócrates, ¡espero que te guste!"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Espera al final, te sorprenderá...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Pensamiento.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Descubre la sabiduría ancestral del pensamiento crítico\nTÍTULO: El arte de pensar: Secretos milenarios para potenciar tu mente\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEn este Short, exploraremos la conexión entre la sabiduría ancestral y el pensamiento crítico, revelando técnicas y enseñanzas que han perdurado a lo largo del tiempo. Descubre cómo aplicar estas enseñanzas en tu vida diaria para potenciar tu mente y alcanzar una mayor plenitud.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Pensamiento",
+      "fecha_analisis": "2026-04-30 08:45:38"
+    }
   }
 ]
