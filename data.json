@@ -338,5 +338,39 @@
       "canal_objetivo": "El Criterio",
       "fecha_analisis": "2026-05-01 04:45:54"
     }
+  },
+  {
+    "canal": "El Pensamiento",
+    "fecha": "2026-05-01",
+    "hora": "14:46:22",
+    "analisis": {
+      "tema_recomendado": "Los Misterios del Pensamiento de Leonardo Da Vinci",
+      "titulo": "Descubre los enigmas ocultos en las reflexiones de Leonardo Da Vinci",
+      "idea_contenido": "En este video corto, exploraremos las profundidades del pensamiento de Leonardo Da Vinci, analizando sus reflexiones sobre arte, ciencia y la naturaleza. Descubriremos cómo su mente visionaria sigue siendo relevante en la actualidad y cómo sus ideas pueden inspirarnos a pensar de manera innovadora.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "15:00",
+      "canal": "El Pensamiento",
+      "categoria": "Historia",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "Leonardo Da Vinci",
+          "Arte y Ciencia"
+        ],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "Aunque los últimos videos han tenido poca interacción, el contenido propuesto tiene gran potencial de generar interés y participación por parte de la audiencia."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "¡Me encantaría ver un video sobre Leonardo Da Vinci y su pensamiento revolucionario!",
+          "respuesta_sugerida": "¡Gracias por tu sugerencia! Estamos preparando un nuevo video que te fascinará. ¡Esperamos que lo disfrutes!"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Esto es lo que nadie te dice sobre...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Pensamiento.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Los Misterios del Pensamiento de Leonardo Da Vinci\nTÍTULO: Descubre los enigmas ocultos en las reflexiones de Leonardo Da Vinci\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nEn este video corto, exploraremos las profundidades del pensamiento de Leonardo Da Vinci, analizando sus reflexiones sobre arte, ciencia y la naturaleza. Descubriremos cómo su mente visionaria sigue siendo relevante en la actualidad y cómo sus ideas pueden inspirarnos a pensar de manera innovadora.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Pensamiento",
+      "fecha_analisis": "2026-05-01 14:46:20"
+    }
   }
 ]
