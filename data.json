@@ -24,5 +24,39 @@
       "canal_objetivo": "El Tío Jota",
       "fecha_analisis": "2026-05-02 12:46:44"
     }
+  },
+  {
+    "canal": "El Criterio",
+    "fecha": "2026-05-02",
+    "hora": "18:46:59",
+    "analisis": {
+      "tema_recomendado": "Los Grandes Misterios Filosóficos Revelados en la Historia",
+      "titulo": "Descubre los enigmas que conectan la filosofía y la historia en un viaje fascinante",
+      "idea_contenido": "Explora los misterios filosóficos más impactantes que han marcado la historia, desde las enseñanzas de Sócrates hasta los enigmas del Imperio Inca. Conecta las reflexiones de grandes pensadores con los hitos históricos que desafían nuestra comprensión. Un video dinámico y revelador que invita a cuestionar y reflexionar.",
+      "formato_sugerido": "Short",
+      "hora_optima_publicacion": "17:00",
+      "canal": "El Criterio",
+      "categoria": "Filosofía e Historia",
+      "analisis_audiencia": {
+        "temas_solicitados": [
+          "Filosofía",
+          "Historia"
+        ],
+        "sentimiento_general": "positivo",
+        "observaciones_engagement": "Audiencia comprometida con contenido filosófico e histórico, con interacción positiva en comentarios recientes."
+      },
+      "interaccion_sugerida": [
+        {
+          "comentario_original": "TOTALMENTE DE ACUERDO......UN PUEBLO QUE NO APRENDE DEL PASADO, PERECE.....🙌🏅🙌🎸🎸",
+          "respuesta_sugerida": "¡Gracias por tu reflexión! En este próximo video vamos a explorar más a fondo cómo el pasado influye en nuestro presente. ¡Esperamos que te sorprenda!"
+        }
+      ],
+      "estilo_contenido": "viral, impactante, directo",
+      "estructura": "gancho + punto clave + llamada a la acción",
+      "hook": "Mira esto, es increíble...",
+      "prompt_ia": "Actúa como un experto creador de contenido para YouTube especializado en El Criterio.\n\nOBJETIVO PRINCIPAL:\nCrea un guion que capture la atención desde los primeros segundos y mantenga al espectador enganchado hasta el final. El contenido debe ser viral, impactante, directo.\n\nTEMA: Los Grandes Misterios Filosóficos Revelados en la Historia\nTÍTULO: Descubre los enigmas que conectan la filosofía y la historia en un viaje fascinante\nFORMATO: Short\nDURACIÓN: 30-60 segundos\n\nIDEA DEL CONTENIDO:\nExplora los misterios filosóficos más impactantes que han marcado la historia, desde las enseñanzas de Sócrates hasta los enigmas del Imperio Inca. Conecta las reflexiones de grandes pensadores con los hitos históricos que desafían nuestra comprensión. Un video dinámico y revelador que invita a cuestionar y reflexionar.\n\nINSTRUCCIONES ESPECÍFICAS:\n1. ESTILO: Mantén un tono viral, impactante, directo en todo momento.\n2. ESTRUCTURA: Sigue este orden: gancho + punto clave + llamada a la acción\n3. GANCHO INICIAL: Comienza con una frase impactante que genere curiosidad inmediata (primeros 5 segundos).\n4. CONTENIDO: Utiliza datos interesantes, ejemplos concretos y lenguaje claro que resuene con la audiencia.\n5. RETENCIÓN: Cada sección debe fluir naturalmente hacia la siguiente, evitando caídas en el engagement.\n6. CONCLUSIÓN: Termina con una reflexión memorable o una llamada a la acción que invite a la interacción.\n\nRESULTADO ESPERADO:\nUn guion completo, listo para ser grabado, que sea profesional, entretenido y que maximice la retención de la audiencia.",
+      "canal_objetivo": "El Criterio",
+      "fecha_analisis": "2026-05-02 18:46:58"
+    }
   }
 ]
